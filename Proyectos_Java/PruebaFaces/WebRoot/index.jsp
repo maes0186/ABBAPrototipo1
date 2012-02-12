@@ -8,7 +8,7 @@
     
   </head>
   
-  <body class="cuerpo">
-    Cargando pagina principal ... <br>
+  <body class="cuerpo"> 
+    Cargando pagina principald ... <br>
   </body>
 </html>
