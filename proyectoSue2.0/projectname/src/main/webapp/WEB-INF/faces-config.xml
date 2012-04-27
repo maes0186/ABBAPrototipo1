@@ -5,7 +5,7 @@
 /begin.jsp
 </from-view-id>
 <navigation-case>
-<from-outcome>accion</from-outcome>
+<from-outcome>acciones</from-outcome>
 <to-view-id>prueba.jsp</to-view-id>
 </navigation-case>
 </navigation-rule>
