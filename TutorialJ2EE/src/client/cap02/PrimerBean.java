@@ -20,7 +20,7 @@ public static void main(String[] args){
 		Context ctx=new InitialContext(p);
 		Object ref=ctx.lookup("PrimerBean/remote");
 		PrimerBeanRemote ebr=(PrimerBeanRemote) PortableRemoteObject.narrow(ref, PrimerBeanRemote.class);
-		System.out.println("5 + 8 ="+ebr.adieren(5, 8));
+		System.out.println("5 + 8 ="+ebr.mFecha());
 	}
 	catch(Exception e){
 		e.printStackTrace();
