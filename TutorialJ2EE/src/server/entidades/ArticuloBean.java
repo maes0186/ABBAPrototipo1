@@ -13,9 +13,9 @@ public class ArticuloBean implements ArticuloRemote {
 	private EntityManager manager;
 
 	public void addArticulo(Articulo articulo) throws ArticuloException {
-		//if (manager.find(Articulo.class, articulo.getArtnr()) != null) {
-		//	throw new ArticuloException("El Articulo ya existe");
-		//}
+		if (manager.find(Articulo.class, articulo.getArtnr()) != null) {
+			throw new ArticuloException("El Articulo ya existe");
+		}
 		manager.persist(articulo);
 	
 	}
