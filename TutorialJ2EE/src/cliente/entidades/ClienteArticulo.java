@@ -11,7 +11,6 @@ import javax.rmi.PortableRemoteObject;
 import server.entidades.Articulo;
 import server.entidades.ArticuloException;
 import server.entidades.ArticuloRemote;
-import server.temporizador.MonitorRemote;
 
 public class ClienteArticulo {
 	public static void main(String[] args) {
@@ -26,7 +25,7 @@ public class ClienteArticulo {
 			ArticuloRemote mr = (ArticuloRemote) PortableRemoteObject.narrow(ref,
 					ArticuloRemote.class);
 			Articulo ar=new Articulo();
-			ar.setArtnr(1);
+			ar.setArtnr(2);
 			ar.setCantidad(1);
 			ar.setDes("Des");
 			ar.setPrecio(new BigDecimal(23));

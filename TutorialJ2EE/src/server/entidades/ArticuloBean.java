@@ -1,5 +1,6 @@
 package server.entidades;
 
+
 import java.util.List;
 import java.util.Vector;
 
@@ -8,12 +9,12 @@ import javax.persistence.*;
 //gd
 @Stateful
 public class ArticuloBean implements ArticuloRemote {
-	@PersistenceContext(unitName = "JavaEE")
+	@PersistenceContext(unitName = "testUNIT")
 	private EntityManager manager;
 
 	public void addArticulo(Articulo articulo) throws ArticuloException {
 		if (manager.find(Articulo.class, articulo.getArtnr()) != null) {
-			throw new ArticuloException("Artikel bereits vorhanden");
+			throw new ArticuloException("El Articulo ya existe");
 		}
 		manager.persist(articulo);
 	}
@@ -33,7 +34,7 @@ public class ArticuloBean implements ArticuloRemote {
 	public Articulo getArticulo(int artnr) throws ArticuloException {
 		Articulo erg = manager.find(Articulo.class, artnr);
 		if (erg == null)
-			throw new ArticuloException("Articulo nicht gefunden");
+			throw new ArticuloException("no hay Articulo");
 		else
 			return erg;
 	}
@@ -45,11 +46,12 @@ public class ArticuloBean implements ArticuloRemote {
 	public void deleteArticulo(int artnr) throws ArticuloException {
 		Articulo alt = manager.find(Articulo.class, artnr);
 		if (alt == null)
-			throw new ArticuloException("Artikel nicht gefunden");
+			throw new ArticuloException("no hay Articulo");
 		manager.remove(alt);
 	}
 
 	@Remove
 	public void remove() {
 	}
+	
 }

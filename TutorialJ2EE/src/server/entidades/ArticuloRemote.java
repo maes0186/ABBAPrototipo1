@@ -1,6 +1,5 @@
 package server.entidades;
 
-import java.util.Vector;
 
 import javax.ejb.Remote;
 
@@ -8,7 +7,7 @@ import javax.ejb.Remote;
 public interface ArticuloRemote {
 	public void addArticulo(Articulo artikel) throws ArticuloException;
 
-	public Vector<Articulo> getArticulo();
+	/*public Vector<Articulo> getArticulo();
 
 	public Articulo getArticulo(int artnr) throws ArticuloException;
 
@@ -16,5 +15,5 @@ public interface ArticuloRemote {
 
 	public void deleteArticulo(int artnr) throws ArticuloException;
 
-	public void remove();
+	public void remove();*/
 }
