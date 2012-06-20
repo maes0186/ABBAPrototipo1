@@ -6,5 +6,7 @@
 	version="1.0">
 	<persistence-unit name="testUNIT">
 		<jta-data-source>java:/OracleDS</jta-data-source>
+		<class>server.entidades.Articulo</class>
+		<exclude-unlisted-classes />
 	</persistence-unit>
 </persistence>

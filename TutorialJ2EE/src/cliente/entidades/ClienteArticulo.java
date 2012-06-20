@@ -11,9 +11,11 @@ import javax.rmi.PortableRemoteObject;
 import server.entidades.Articulo;
 import server.entidades.ArticuloException;
 import server.entidades.ArticuloRemote;
+import server.entidades.Test;
+import server.entidades.TestException;
 
 public class ClienteArticulo {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws TestException {
 		try {
 			Properties p=new Properties();
 			p.put(Context.INITIAL_CONTEXT_FACTORY,"org.jnp.interfaces.NamingContextFactory");
@@ -25,13 +27,15 @@ public class ClienteArticulo {
 			ArticuloRemote mr = (ArticuloRemote) PortableRemoteObject.narrow(ref,
 					ArticuloRemote.class);
 			Articulo ar=new Articulo();
-			ar.setArtnr(2);
+			ar.setArtnr(3);
 			ar.setCantidad(1);
 			ar.setDes("Des");
 			ar.setPrecio(new BigDecimal(23));
 			
 			mr.addArticulo(ar);
-			
+			Test test = new Test();
+			test.setA(1);
+			mr.addTest(test);
 
 	
 		} catch (NamingException e) {

@@ -19,6 +19,13 @@ public class ArticuloBean implements ArticuloRemote {
 		manager.persist(articulo);
 	
 	}
+	public void addTest(Test test) throws TestException {
+		if (manager.find(Test.class, test.getA()) != null) {
+			throw new TestException("El Test ya existe");
+		}
+		manager.persist(test);
+	
+	}
 
 	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
 	public Vector<Articulo> getArticulo() {
