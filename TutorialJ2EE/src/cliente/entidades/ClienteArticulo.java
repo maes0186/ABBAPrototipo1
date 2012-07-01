@@ -11,6 +11,8 @@ import javax.rmi.PortableRemoteObject;
 import pruebaMario.Test2;
 import pruebaMario.claseRemota;
 
+import relationsEntities.Hijo;
+import relationsEntities.Papa;
 import server.entidades.Articulo;
 import server.entidades.ArticuloException;
 import server.entidades.ArticuloRemote;
@@ -53,7 +55,17 @@ import server.entidades.TestInterface;
 					claseRemota.class);
 			Test2 test2= new Test2();
 			test2.setId("id");
-			cRemota.addEntidad(test2);
+			test2.setId2("test");
+			
+			
+			Hijo hijo = new Hijo();
+			hijo.setDescHijo("DescHijo");
+			hijo.setIdHijo(1);
+			
+			
+		
+			hijo=cRemota.loadHijo(hijo);
+			System.out.println(hijo.getDescHijo());
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 
