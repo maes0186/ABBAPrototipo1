@@ -36,7 +36,7 @@ import server.entidades.TestInterface;
 			ar.setCantidad(1);
 			ar.setDes("Des");
 			ar.setPrecio(new BigDecimal(23));
-			
+			adsa
 			mr.addArticulo(ar);
 			Test test = new Test();
 			test.setA(1);
@@ -61,11 +61,11 @@ import server.entidades.TestInterface;
 			Hijo hijo = new Hijo();
 			hijo.setDescHijo("DescHijo");
 			hijo.setIdHijo(1);
+			hijo.setIdPapaFk(new Papa());
 			
-			
-		
+		   // cRemota.addEntidad(hijo);
 			hijo=cRemota.loadHijo(hijo);
-			System.out.println(hijo.getDescHijo());
+			System.out.println(hijo.getIdPapaFk().getDescPapa());
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 

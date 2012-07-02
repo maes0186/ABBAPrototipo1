@@ -37,7 +37,7 @@ public class Hijo implements java.io.Serializable{
 	public void setDescHijo(String descHijo) {
 		this.descHijo = descHijo;
 	}
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(cascade=CascadeType.PERSIST,fetch=FetchType.LAZY)
 	@JoinColumn(name="idPapaFk")
 	public Papa getIdPapaFk() {
 		return idPapaFk;
