@@ -1,8 +1,14 @@
 package relationsEntities;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -16,6 +22,15 @@ public class Papa implements java.io.Serializable{
 	
 	private int idPapa;
 	private String descPapa;
+	private List<Hijo> hijos;
+	@OneToMany(fetch=FetchType.EAGER)
+	@JoinColumn(name="idHijo")
+	public List<Hijo> getHijos() {
+		return hijos;
+	}
+	public void setHijos(List<Hijo> hijos) {
+		this.hijos = hijos;
+	}
 	@Id
 	@Column(name="idPapa")
 	public int getIdPapa() {

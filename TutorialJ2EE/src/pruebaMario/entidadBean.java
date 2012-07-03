@@ -33,6 +33,18 @@ public class entidadBean implements claseRemota {
 			throw e;
 		}
 	}
-	
+	public Papa loadPapa(Papa papa) throws Exception {
+		try{
+		Papa papaAux=entityManager.find(Papa.class, papa.getIdPapa());
+		
+		return papaAux;
+		
+		}
+		catch(Exception e){
+			
+			e.printStackTrace();
+			throw e;
+		}
+	}
 
 }

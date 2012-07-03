@@ -1,6 +1,8 @@
 package cliente.entidades;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import javax.naming.Context;
@@ -62,10 +64,14 @@ import server.entidades.TestInterface;
 			hijo.setDescHijo("DescHijo");
 			hijo.setIdHijo(1);
 			hijo.setIdPapaFk(new Papa());
-			
+			Papa papa = new Papa();
+			papa.setIdPapa(1);
+			List<Hijo> hijos=new ArrayList<Hijo>();
+			cRemota.loadPapa(papa);
+			hijos=papa.getHijos();
 		   // cRemota.addEntidad(hijo);
-			hijo=cRemota.loadHijo(hijo);
-			System.out.println(hijo.getIdPapaFk().getDescPapa());
+		//	hijo=cRemota.loadHijo(hijo);
+		System.out.println(hijos.get(0).getDescHijo());
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 
