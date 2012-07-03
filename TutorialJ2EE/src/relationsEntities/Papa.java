@@ -23,14 +23,7 @@ public class Papa implements java.io.Serializable{
 	private int idPapa;
 	private String descPapa;
 	private List<Hijo> hijos;
-	@OneToMany(fetch=FetchType.EAGER)
-	@JoinColumn(name="idHijo")
-	public List<Hijo> getHijos() {
-		return hijos;
-	}
-	public void setHijos(List<Hijo> hijos) {
-		this.hijos = hijos;
-	}
+	
 	@Id
 	@Column(name="idPapa")
 	public int getIdPapa() {
@@ -45,6 +38,14 @@ public class Papa implements java.io.Serializable{
 	}
 	public void setDescPapa(String descPapa) {
 		this.descPapa = descPapa;
+	}
+	@OneToMany(fetch=FetchType.LAZY)
+	@JoinColumn(name="idHijo")
+	public List<Hijo> getHijos() {
+		return hijos;
+	}
+	public void setHijos(List<Hijo> hijos) {
+		this.hijos = hijos;
 	}
 
 }

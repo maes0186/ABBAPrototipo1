@@ -67,7 +67,7 @@ import server.entidades.TestInterface;
 			Papa papa = new Papa();
 			papa.setIdPapa(1);
 			List<Hijo> hijos=new ArrayList<Hijo>();
-			cRemota.loadPapa(papa);
+			papa=cRemota.loadPapa(papa);
 			hijos=papa.getHijos();
 		   // cRemota.addEntidad(hijo);
 		//	hijo=cRemota.loadHijo(hijo);
