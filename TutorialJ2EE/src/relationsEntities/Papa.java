@@ -39,7 +39,7 @@ public class Papa implements java.io.Serializable{
 	public void setDescPapa(String descPapa) {
 		this.descPapa = descPapa;
 	}
-	@OneToMany(fetch=FetchType.LAZY)
+	@OneToMany(fetch=FetchType.EAGER)
 	@JoinColumn(name="idHijo")
 	public List<Hijo> getHijos() {
 		return hijos;
