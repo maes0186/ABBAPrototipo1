@@ -67,11 +67,15 @@ import server.entidades.TestInterface;
 			Papa papa = new Papa();
 			papa.setIdPapa(1);
 			List<Hijo> hijos=new ArrayList<Hijo>();
-			papa=cRemota.loadPapa(papa);
-			hijos=papa.getHijos();
+			//papa=cRemota.loadPapa(papa);
+			//hijos=papa.getHijos();
 		   // cRemota.addEntidad(hijo);
 		//	hijo=cRemota.loadHijo(hijo);
-		System.out.println(hijos.get(0).getDescHijo());
+			List<Test2> lstTodos=cRemota.getAll();
+			for(Test2 testAux:lstTodos){
+				System.out.println("Id1:"+testAux.getId()+" Id2:"+testAux.getId2());
+			}
+		
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 

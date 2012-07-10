@@ -1,8 +1,11 @@
 package pruebaMario;
 
+import java.util.List;
+
 import javax.ejb.Stateful;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import relationsEntities.Hijo;
 import relationsEntities.Papa;
@@ -45,6 +48,14 @@ public class entidadBean implements claseRemota {
 			e.printStackTrace();
 			throw e;
 		}
+	}
+
+	@Override
+	public List<Test2> getAll() {
+		Query query=entityManager.createNamedQuery("Test2.findAll");
+		@SuppressWarnings("unchecked")
+		List<Test2> lstTodos=query.getResultList();
+		return lstTodos;
 	}
 
 }

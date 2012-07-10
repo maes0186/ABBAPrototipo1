@@ -1,13 +1,19 @@
 package pruebaMario;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityManager;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.Query;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
 @Entity
 @Table(name="TEST2")
+@NamedQuery(name="Test2.findAll",query="select test2 from Test2 test2")
 public class Test2 implements java.io.Serializable {
 
 	/**
@@ -36,6 +42,6 @@ public class Test2 implements java.io.Serializable {
 	public void setId2(String id2) {
 		this.id2 = id2;
 	}
-	
+
 	
 }
