@@ -6,7 +6,7 @@
 </from-view-id>
 <navigation-case>
 <from-outcome>accion</from-outcome>
-<to-view-id>prueba.jsp</to-view-id>
+<to-view-id>/prueba.jsp</to-view-id>
 </navigation-case>
 </navigation-rule>
 
