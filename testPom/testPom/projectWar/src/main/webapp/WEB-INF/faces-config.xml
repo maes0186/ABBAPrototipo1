@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <faces-config>
-<navigation-rule>
-<from-view-id>
-/begin.jsp
-</from-view-id>
-<navigation-case>
-<from-outcome>accion</from-outcome>
-<to-view-id>/prueba.jsp</to-view-id>
-</navigation-case>
-</navigation-rule>
-<managed-bean>
-<managed-bean-name>usuario</managed-bean-name>
-<managed-bean-class>org.projectSue.beans.UsuarioBean</managed-bean-class>
-<managed-bean-scope>session</managed-bean-scope>
-</managed-bean>
+	<navigation-rule>
+		<from-view-id>
+			/begin.jsp
+		</from-view-id>
+		<navigation-case>
+			<from-outcome>accion</from-outcome>
+			<to-view-id>/prueba.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<managed-bean>
+		<managed-bean-name>usuario</managed-bean-name>
+		<managed-bean-class>org.projectSue.beans.UsuarioBean
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
 </faces-config>
