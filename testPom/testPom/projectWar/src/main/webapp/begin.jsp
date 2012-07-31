@@ -9,6 +9,7 @@
 <h:form>
 <h3>Por favor, introduzca su nombre y password.</h3>
 <p>
+<h:inputText value="#{usuario.usuario}"></h:inputText>
 <h:commandButton value="Aceptar" action="accion"/>
 </p>
 </h:form>
