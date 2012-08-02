@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <faces-config>
+
+<application>  
+    <view-handler>com.sun.facelets.FaceletViewHandler</view-handler>  
+</application> 
+
 	<navigation-rule>
 		<from-view-id>
-			/begin.jsp
+			/begin.xhtml
 		</from-view-id>
 		<navigation-case>
 			<from-outcome>accion</from-outcome>
-			<to-view-id>/prueba.jsp</to-view-id>
+			<to-view-id>/prueba.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	<managed-bean>
