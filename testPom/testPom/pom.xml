@@ -43,6 +43,37 @@
     <artifactId>richfaces-ui</artifactId>
     <version>3.2.2.GA</version>
 </dependency>
+
+<!-- Faces -->
+
+<dependency>
+      <groupId>com.sun.faces</groupId>
+      <artifactId>jsf-api</artifactId>
+      <version>1.2</version>
+      <scope>provided</scope>
+    </dependency>
+ 
+    <dependency>
+    <groupId>javax.faces</groupId>
+    <artifactId>jsf-impl</artifactId>
+    <version>1.2_10</version>
+    <scope>provided</scope>
+</dependency>
+ 
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+      <scope>provided</scope>
+    </dependency>
+ 
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>2.5</version>
+      <scope>provided</scope>
+    </dependency>
+
   </dependencies>
   <modules>
     <module>projectJar</module>
