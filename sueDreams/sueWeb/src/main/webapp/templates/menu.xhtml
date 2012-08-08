@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:rich="http://richfaces.org/rich">
+   <ui:composition>
+
+
+    
+    <h:form>
+
+       <rich:panelMenu mode="ajax">
+
+        <rich:panelMenuGroup label="test Group" action="#{bean.action}"> 
+
+                <rich:panelMenuItem label="test" reRender="test" action="#{capitalsBean.action}"> 
+
+                        <f:param value="test value" name="test"/> 
+
+                </rich:panelMenuItem> 
+                <rich:panelMenuItem label="test" reRender="test" action="#{capitalsBean.action}"> 
+
+                        <f:param value="test value" name="test"/> 
+
+                </rich:panelMenuItem> 
+                <rich:panelMenuItem label="test" reRender="test" action="#{capitalsBean.action}"> 
+
+                        <f:param value="test value" name="test"/> 
+
+                </rich:panelMenuItem> 
+
+        </rich:panelMenuGroup>
+        <rich:panelMenuGroup label="test Group2" action="#{bean.action}"> 
+
+                <rich:panelMenuItem label="test" reRender="test" action="#{capitalsBean.action}"> 
+
+                        <f:param value="test value" name="test"/> 
+
+                </rich:panelMenuItem> 
+                <rich:panelMenuItem label="test" reRender="test" action="#{capitalsBean.action}"> 
+
+                        <f:param value="test value" name="test"/> 
+
+                </rich:panelMenuItem> 
+                <rich:panelMenuItem label="test" reRender="test" action="#{capitalsBean.action}"> 
+
+                        <f:param value="test value" name="test"/> 
+
+                </rich:panelMenuItem> 
+
+        </rich:panelMenuGroup>
+        <rich:panelMenuGroup label="test Group3" action="#{bean.action}"> 
+
+                <rich:panelMenuItem label="test" reRender="test" action="#{capitalsBean.action}"> 
+
+                        <f:param value="test value" name="test"/> 
+
+                </rich:panelMenuItem> 
+                <rich:panelMenuItem label="test" reRender="test" action="#{capitalsBean.action}"> 
+
+                        <f:param value="test value" name="test"/> 
+
+                </rich:panelMenuItem> 
+                <rich:panelMenuItem label="test" reRender="test" action="#{capitalsBean.action}"> 
+
+                        <f:param value="test value" name="test"/> 
+
+                </rich:panelMenuItem> 
+
+        </rich:panelMenuGroup>
+</rich:panelMenu>
+    </h:form>
+</ui:composition>
+</html>
