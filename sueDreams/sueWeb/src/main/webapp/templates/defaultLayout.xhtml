@@ -10,21 +10,15 @@
   <title><ui:insert name="title" /></title>
 </h:head>
 <h:body>
-    <div id="layout">     
-        <div id="header">
-            <div id="logo"></div>
-            <ui:include src="menu.xhtml"/>
-        </div>
-     
-        <div id="content">
-            <ui:insert name="content">
-                <span>Página en construcción</span>
-            </ui:insert>
-        </div>
-             
-        <div id="footer">
-            <p><a href="#">©</a></p>
-        </div>
-    </div>
+<h:panelGrid columns="2" >
+ <h:panelGrid id="Menu">
+ <ui:include src="menu.xhtml"/>
+ </h:panelGrid>
+ <h:panelGrid id="Menu2">
+ <ui:include src="menu.xhtml"/>
+ </h:panelGrid>
+ 
+</h:panelGrid>
+    
 </h:body>
 </html>
