@@ -9,50 +9,38 @@
 
 
 <h:form>
-<style type="text/css">
-		        body {
-		            background-image: url(resources/azul5.jpg);	           
-		            width: 100%; 
-   					height: 100%; 
-    				position: absolute; 
-    left: 0px; 
-    top: 0px; 
-    z-index: 0;					
-		        }
-		.cols{
-            vertical-align:top;
-        }
-        .col100{
-            width: 100%;
-        }
-	
-        </style>
-<h:head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title><ui:insert name="title" /></title>
-	
-</h:head>
+	<f:view>
+		<link href="resources/css/estilos.css" rel="stylesheet"
+			type="text/css" />
+		<f:loadBundle basename="propiedades.template" var="template" />
+		<f:loadBundle basename="propiedades.menu" var="menu" />
+		<h:head>
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+			<title><ui:insert name="title" /></title>
 
-<h:body>
-	<h:panelGrid columns="1" columnClasses="col100">
-		<h:panelGrid columns="1" id="titulo">
-		<img src="resources/sueBanner.png" height="100" width="500" />
-		</h:panelGrid>
+		</h:head>
+
+		<h:body styleClass="cuerpo">
+			<h:panelGrid columns="1" columnClasses="col100">
+				<h:panelGrid columns="1" id="titulo">
+					<img src="#{template.imagenBanner}" height="100" width="500" />
+				</h:panelGrid>
 
 
 
-		<h:panelGrid columns="2" id="cuerpo"  columnClasses="cols,cols">
-			<h:panelGrid columns="1" id="menu" >
-				<ui:include src="menu.xhtml"/>
+				<h:panelGrid columns="2" id="cuerpo" columnClasses="colTop,colTop">
+					<h:panelGrid columns="1" id="menu">
+						<ui:include src="menu.xhtml" />
+					</h:panelGrid>
+
+					<h:panelGrid columns="1" id="aplicacion">
+						<ui:insert name="aplicacion" />
+					</h:panelGrid>
+
+
+				</h:panelGrid>
 			</h:panelGrid>
-
-			<h:panelGrid columns="1" id="aplicacion">
-				<ui:insert name="aplicacion" />
-			</h:panelGrid>
-
-
-		</h:panelGrid>
-	</h:panelGrid>
-</h:body>
+		</h:body>
+	</f:view>
 </h:form>
 </html>

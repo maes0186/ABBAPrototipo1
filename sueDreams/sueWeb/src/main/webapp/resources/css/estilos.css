@@ -1,0 +1,17 @@
+.cuerpo {
+	background-image: url(../../resources/azul5.jpg);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 0;
+}
+
+.colTop {
+	vertical-align: top;
+}
+
+.col100 {
+	width: 100%;
+}
