@@ -20,14 +20,16 @@
 
 		</h:head>
 
-		<h:body styleClass="cuerpo">
+		<h:body styleClass="cuerpo" style="background-image: url(#{template.colorFondo});">
 			<h:panelGrid columns="1" columnClasses="col100">
 				<h:panelGrid columns="1" id="titulo">
-					<img src="#{template.imagenBanner}" height="100" width="500" />
+					<img src="#{template.imagenBanner}" class="styleBanner" />
 				</h:panelGrid>
-
-
-
+				<p id="SaltoLinea1"/>			
+				<hr class="styleLine" style="background-color: #{template.colorLinea};"/>
+				<p id="SaltoLinea2"/>
+				<hr class="styleLine" style="background-color: #{template.colorLinea};"/>
+				<p id="SaltoLinea3"/>
 				<h:panelGrid columns="2" id="cuerpo" columnClasses="colTop,colTop">
 					<h:panelGrid columns="1" id="menu">
 						<ui:include src="menu.xhtml" />
