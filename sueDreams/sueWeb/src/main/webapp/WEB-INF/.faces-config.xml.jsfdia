@@ -1,2 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<PROCESS model-entity="JSFProcess"/>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#index.xhtml" PATH="/index.xhtml"
+  SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#index.xhtml:0" NAME="item"
+   PATH="/index.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="commandButton::#paginas#ejemplos#AjaxSupport#commandButton.xhtml"
+    NAME="output"
+    PATH="/paginas/ejemplos/AjaxSupport/commandButton.xhtml"
+    TARGET="rules:#paginas#ejemplos#AjaxSupport#commandButton.xhtml"
+    TITLE="commandButton" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#paginas#ejemplos#AjaxSupport#commandButton.xhtml"
+  PATH="/paginas/ejemplos/AjaxSupport/commandButton.xhtml"
+  SHAPE="240,33,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

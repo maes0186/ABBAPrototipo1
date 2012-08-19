@@ -56,5 +56,12 @@
     <login-config>
         <auth-method>BASIC</auth-method>
     </login-config>
+    <context-param>
+
+     <param-name>org.richfaces.SKIN</param-name>
+
+     <param-value>sueDreamsSkin</param-value>
+
+      </context-param>
 
 </web-app>
