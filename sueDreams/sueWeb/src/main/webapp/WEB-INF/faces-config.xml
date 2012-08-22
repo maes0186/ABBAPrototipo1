@@ -14,7 +14,7 @@
  
  
  <navigation-rule>
-    <from-view-id>/index.xhtml</from-view-id>
+    <from-view-id>/inicio.xhtml</from-view-id>
     <navigation-case>
         <from-outcome>commandButton</from-outcome>
         <to-view-id>/paginas/ejemplos/AjaxSupport/commandButton.xhtml</to-view-id>
