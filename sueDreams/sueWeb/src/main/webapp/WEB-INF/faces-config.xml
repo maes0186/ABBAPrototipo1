@@ -18,6 +18,7 @@
     <navigation-case>
         <from-outcome>commandButton</from-outcome>
         <to-view-id>/paginas/ejemplos/AjaxSupport/commandButton.xhtml</to-view-id>
+     <redirect/> 
     </navigation-case>
 </navigation-rule>
 </faces-config>
