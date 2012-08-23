@@ -10,8 +10,9 @@
 
 <h:form>
 	<f:view>
-		<link href="resources/css/estilos.css" rel="stylesheet"
+		<link href="#{request.contextPath}/resources/css/estilos.css" rel="stylesheet"
 			type="text/css" />
+			
 		<f:loadBundle basename="propiedades.template" var="template" />
 		<f:loadBundle basename="propiedades.menu" var="menu" />
 		<h:head>
@@ -20,15 +21,15 @@
 
 		</h:head>
 
-		<h:body styleClass="cuerpo" style="background-image: url(#{template.colorFondo});">
+		<h:body styleClass="cuerpo" style="background-image: url(#{request.contextPath}/#{template.colorFondo});">
 			<h:panelGrid columns="1" columnClasses="col100">
 				<h:panelGrid columns="1" id="titulo">
-					<img src="#{template.imagenBanner}" class="styleBanner" />
+					<img src="#{request.contextPath}/#{template.imagenBanner}" class="styleBanner" />
 				</h:panelGrid>
 				<p id="SaltoLinea1"/>			
-				<hr class="styleLine" style="background-color: #{template.colorLinea};"/>
+				<hr class="styleLine" style="background-color: #{request.contextPath}/#{template.colorLinea};"/>
 				<p id="SaltoLinea2"/>
-				<hr class="styleLine" style="background-color: #{template.colorLinea};"/>
+				<hr class="styleLine" style="background-color: #{request.contextPath}/#{template.colorLinea};"/>
 				<p id="SaltoLinea3"/>
 				<h:panelGrid columns="2" id="cuerpo" columnClasses="colTop,colTop">
 					<h:panelGrid columns="1" id="menu">
