@@ -17,7 +17,7 @@
     <from-view-id>/inicio.xhtml</from-view-id>
     <navigation-case>
         <from-outcome>commandButton</from-outcome>
-        <to-view-id>/paginas/ejemplos/AjaxSupport/commandButton.xhtml</to-view-id>
+        <to-view-id>/paginas/ejemplos/pruebaComponente.xhtml</to-view-id>
      <redirect/> 
     </navigation-case>
 </navigation-rule>

@@ -5,12 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	 xmlns:sue="http://java.sun.com/jsf/composite/componentes">
 
 
 <h:form>
 	<f:view>
-		<link href="#{request.contextPath}/resources/css/estilos.css" rel="stylesheet"
+		<link href="#{request.contextPath}/estilos/css/estilos.css" rel="stylesheet"
 			type="text/css" />
 			
 		<f:loadBundle basename="propiedades.template" var="template" />
@@ -33,7 +34,7 @@
 				<p id="SaltoLinea3"/>
 				<h:panelGrid columns="2" id="cuerpo" columnClasses="colTop,colTop">
 					<h:panelGrid columns="1" id="menu">
-						<ui:include src="menu.xhtml" />
+						<sue:menu/>
 					</h:panelGrid>
 
 					<h:panelGrid columns="1" id="aplicacion">

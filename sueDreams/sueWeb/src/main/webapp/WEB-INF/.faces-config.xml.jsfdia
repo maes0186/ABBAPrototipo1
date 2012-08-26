@@ -5,15 +5,12 @@
   <PROCESS-ITEM ID="rules:#inicio.xhtml:0" NAME="item"
    PATH="/inicio.xhtml" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT
-    ID="commandButton::#paginas#ejemplos#AjaxSupport#commandButton.xhtml"
-    NAME="output"
-    PATH="/paginas/ejemplos/AjaxSupport/commandButton.xhtml"
-    TARGET="rules:#paginas#ejemplos#AjaxSupport#commandButton.xhtml"
+    ID="commandButton::#paginas#ejemplos#pruebaComponente.xhtml"
+    NAME="output" PATH="/paginas/ejemplos/pruebaComponente.xhtml"
+    TARGET="rules:#paginas#ejemplos#pruebaComponente.xhtml"
     TITLE="commandButton" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
- <PROCESS-ITEM
-  NAME="rules:#paginas#ejemplos#AjaxSupport#commandButton.xhtml"
-  PATH="/paginas/ejemplos/AjaxSupport/commandButton.xhtml"
-  SHAPE="240,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#paginas#ejemplos#pruebaComponente.xhtml"
+  PATH="/paginas/ejemplos/pruebaComponente.xhtml" SHAPE="240,33,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>
