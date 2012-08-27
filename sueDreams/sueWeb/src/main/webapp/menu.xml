@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<Descargas>
-    <descarga id="1">
-        <titulo>Libros Java</titulo>
-        <autor>Anonimo</autor>
-        <hits>2546</hits>
-    </descarga>
-    <descarga id="2">
-        <titulo>Libros SQL</titulo>
-        <autor>Anonimo</autor>
-        <hits>1654</hits>
-    </descarga>
-</Descargas>
+<raiz contenido="padre1">
+	<padre contenido="padre1">
+		<hijo contenido="hijo1_1"></hijo>
+		<hijo contenido="hijo1_2"></hijo>
+	</padre>
+	<padre contenido="padre2">
+		<hijo contenido="hijo2_1">
+			<nieto contenido="nieto2_1_1"></nieto>
+		</hijo>
+		<hijo contenido="hijo2_2"></hijo>
+	</padre>
+</raiz>

@@ -96,6 +96,5 @@
     <modules> 
     <module>sueJar</module> 
     <module>sueWeb</module>
-    <module>projectname</module>
   </modules>
 </project>

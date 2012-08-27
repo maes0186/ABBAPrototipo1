@@ -1,26 +1,18 @@
 package org;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Serializable;
 import java.io.StringReader;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-
-import javax.faces.component.UIComponent;
-import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
-import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-
-import org.util.menuUtil;
+import org.util.*;
+import org.util.MenuUtil;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -32,54 +24,53 @@ public class Beans implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String nombre;
 	private List<String> lista1;
 
 	public List<String> getLista1(){
 		
 		        
 		        try {
-		        	String menuXML = menuUtil.getMenuXMLURL();			
-		        	URL url=
-		        	    new URL(menuXML);
-		        	BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
-		        	String entrada;
-		        	String cadena="";
+		          Document documento=MenuUtil.getDocumentMenu();
+		          XMLManager xmlManager= new XMLManager();
+		          xmlManager.procesarXML();
+		          
 
-		        	while ((entrada = br.readLine()) != null){
-		        		cadena = cadena + entrada;
-		        	}
-
-		        	DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-		        	DocumentBuilder db = dbf.newDocumentBuilder();
-
-		        	InputSource archivo = new InputSource();
-		        	archivo.setCharacterStream(new StringReader(cadena)); 
-
-		        	Document documento = db.parse(archivo);
-		        	documento.getDocumentElement().normalize();
-
-		        	NodeList nodeLista = documento.getElementsByTagName("descarga");
-		        	System.out.println("Informacion de los libros");
-		        	
+		        	/*NodeList nodeLista = documento.getElementsByTagName("MENU");
+		       // 	NodeList nodeLista = documento.getElementsByTagName("NODO1").item(0);
 		        	for (int s = 0; s < nodeLista.getLength(); s++) {
 
 		        		Node primerNodo = nodeLista.item(s);
-		        		String titulo;
-		        		String autor;
-		        		String hits;
-
+		        		String value2;
+		        		String value;
+		        		NodeList nodeLista2=primerNodo.getChildNodes();
+		        		for (int i = 0; i < nodeLista2.getLength(); i++) {
+		        			Node segNodo = nodeLista2.item(s);
+		        			if (segNodo.getNodeType() == Node.ELEMENT_NODE) {
+		        				Element segElemento = (Element) segNodo;
+		        				NodeList segNombreElementoLista =
+	        	                        segElemento.getElementsByTagName("value");
+		        				
+		        				Element segNombreElemento =
+	        	                        (Element) segNombreElementoLista.item(0);
+	        		NodeList segNombre = segNombreElemento.getChildNodes();
+	        		value2 = ((Node) segNombre.item(0)).getNodeValue().toString();
+	        		System.out.println("value2 : "  + value2);
+		        				
+		        				
+		        			}
+		        		}
+		        		
 		        		if (primerNodo.getNodeType() == Node.ELEMENT_NODE) {
 
 		        		Element primerElemento = (Element) primerNodo;
 
 		        		NodeList primerNombreElementoLista =
-		        	                        primerElemento.getElementsByTagName("titulo");
+		        	                        primerElemento.getElementsByTagName("value");
 		        		Element primerNombreElemento =
 		        	                        (Element) primerNombreElementoLista.item(0);
 		        		NodeList primerNombre = primerNombreElemento.getChildNodes();
-		        		titulo = ((Node) primerNombre.item(0)).getNodeValue().toString();
-		        		System.out.println("Titulo : "  + titulo);
+		        		value = ((Node) primerNombre.item(0)).getNodeValue().toString();
+		        		System.out.println("value : "  + value);
 
 		        		NodeList segundoNombreElementoLista =
 		        	                        primerElemento.getElementsByTagName("autor");
@@ -88,7 +79,7 @@ public class Beans implements Serializable {
 		        		NodeList segundoNombre = segundoNombreElemento.getChildNodes();
 
 		        		autor = ((Node) segundoNombre.item(0)).getNodeValue().toString();
-		        		System.out.println("Autor : "  + autor);
+		        		//System.out.println("Autor : "  + autor);
 
 		        		NodeList tercerNombreElementoLista =
 		        	                        primerElemento.getElementsByTagName("hits");
@@ -99,7 +90,7 @@ public class Beans implements Serializable {
 		        		System.out.println("Hits : "  + hits);
 
 		        		}
-		        	      }
+		        	      }*/
 		        	  }
 		        	  catch (Exception e) {
 		        	    	e.printStackTrace();
@@ -117,13 +108,6 @@ public class Beans implements Serializable {
 		this.lista1 = lista1;
 	}
 
-	public String getNombre() {
-		return nombre+"Prueba";
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
 	public String getRequestURL()
 	{
 	    Object request = FacesContext.getCurrentInstance().getExternalContext().getRequest();
