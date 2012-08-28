@@ -1,6 +1,7 @@
 package org;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Serializable;
 import java.io.StringReader;
@@ -12,12 +13,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.util.*;
-import org.util.MenuUtil;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+import org.xml.sax.XMLReader;
+import org.xml.sax.helpers.XMLReaderFactory;
 
 public class Beans implements Serializable {
 	/**
@@ -30,9 +33,16 @@ public class Beans implements Serializable {
 		
 		        
 		        try {
+		        	ManejadorEjemplo manejador= new ManejadorEjemplo();
+		        	XMLReader reader = XMLReaderFactory.createXMLReader();  
+		            // Añadimos nuestro manejador al reader  
+		            reader.setContentHandler(manejador);      
+		            // Procesamos el xml de ejemplo  
+		            reader.parse(new InputSource(new URL(MenuUtil.getMenuXMLURL()).openStream()));  
+		        
+		            List<String[]> datos = manejador.getLista();
 		          Document documento=MenuUtil.getDocumentMenu();
-		          XMLManager xmlManager= new XMLManager();
-		          xmlManager.procesarXML();
+		         
 		          
 
 		        	/*NodeList nodeLista = documento.getElementsByTagName("MENU");
