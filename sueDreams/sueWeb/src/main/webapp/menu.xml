@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
 	<item1 name="uno" action="accion1">
-		<item2>
-			<value>2</value>
-			<action>accion2</action>
+		<item2 name="extra" action="extra2">
+		<item3 name="hijo" action="hijo1">
+		<item4 name="nieto" action="nieto1">
+		</item4>
+		</item3>
 		</item2>
 	</item1>
 	<item1 name="dos" action="accion2">
 		<item2 name="tres" action="accion3">
+		<item3 name="superhijo" action="superhijo1">
+		</item3>
 		</item2>
 	</item1>
 	<item1 name="cuatro" action="accion4">

@@ -16,12 +16,17 @@
  </composite:interface>
  <composite:implementation>
 <h1>For Loop in JSTL</h1>
-<c:forEach var="i" begin="1" end="20" step="1" varStatus ="status">
-<h:inputText value="${i}"/>
-</c:forEach>
-
-<ui:repeat value="#{beans.lista1}" var="item">
-   <h:inputText value="#{item}" />
+<ui:repeat value="#{beans.allMapping.childs}" var="item1">
+<h:inputText value="#{item1.value}" />
+<ui:repeat value="#{item1.childs}" var="item2">
+<h:inputText value="#{item2.value}" />
+<ui:repeat value="#{item2.childs}" var="item3">
+<h:inputText value="#{item3.value}" />
+<ui:repeat value="#{item3.childs}" var="item4">
+   <h:inputText value="#{item4.value}" />
+</ui:repeat>
+</ui:repeat>
+</ui:repeat>
 </ui:repeat>
 
 
