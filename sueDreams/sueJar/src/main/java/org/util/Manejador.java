@@ -40,8 +40,6 @@ public class Manejador extends DefaultHandler {
 
 	@Override
 	public void endDocument() throws SAXException {
-		int test=9;
-		test=test+8;
 	}
 
 	@Override

@@ -23,9 +23,9 @@
 			iconExpandedGroup="disc" iconCollapsedGroup="disc"
 			iconExpandedTopGroup="chevronUp" iconGroupTopPosition="right"
 			iconCollapsedTopGroup="chevronDown">
+ <rich:panelMenu id="MenuList"  binding="#{beans.menu}" />
 
-
-			<ui:repeat value="#{beans.allMapping.childs}" var="item1">
+<!-- 			<ui:repeat value="#{beans.allMapping.childs}" var="item1">
 				<rich:panelMenuGroup label="#{item1.value}">
 					<ui:repeat value="#{item1.childs}" var="item2">
 						<rich:panelMenuGroup label="#{item2.value}">
@@ -40,8 +40,11 @@
 							</ui:repeat>
 						</rich:panelMenuGroup>
 					</ui:repeat>
+					
 				</rich:panelMenuGroup>
-			</ui:repeat>
+	</ui:repeat>-->
+	
+			
 
 <!-- 
 			<rich:panelMenuItem label="#{menu.opcion1_2}" action="commandButton">
