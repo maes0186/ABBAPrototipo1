@@ -2,6 +2,7 @@ package org.util;
 
 import java.util.ArrayList;
 
+import org.constantes.MenuConstantes;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -45,7 +46,7 @@ public class Manejador extends DefaultHandler {
 	@Override
 	public void startElement(String uri, String localName, String name,
 			Attributes attributes) throws SAXException {
-		if (name == "config") {
+		if (name.equalsIgnoreCase(MenuConstantes.PADRE_ETIQUETA_XML)) {
 			nodo.setTipo(name);
 
 		} else {
@@ -55,9 +56,9 @@ public class Manejador extends DefaultHandler {
 			for (int i = 0; i < attributes.getLength(); i++) {
 				String nombre = attributes.getQName(i);
 				String valor = attributes.getValue(i);
-				if (nombre.equalsIgnoreCase("name"))
-					actual.setName(nombre);
-				else if (nombre.equalsIgnoreCase("action"))
+				if (nombre.equalsIgnoreCase(MenuConstantes.NOMBRE_ETIQUETA))
+					actual.setName(valor);
+				else if (nombre.equalsIgnoreCase(MenuConstantes.VALOR_ETIQUETA))
 					actual.setValue(valor);
 			}
 
@@ -114,9 +115,10 @@ public class Manejador extends DefaultHandler {
 		try {
 			if (cad == null)
 				return -1;
-			if (cad.equalsIgnoreCase("config"))
+			if (cad.equalsIgnoreCase(MenuConstantes.PADRE_ETIQUETA_XML))
 				return 10;
-			int num = Integer.valueOf(cad.substring(4, 5));
+			int dist=cad.length();
+			int num = Integer.valueOf(cad.substring(dist-1, dist));
 			return num;
 		} catch (Exception e) {
 			return -1;

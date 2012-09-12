@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PROCESS model-entity="JSFProcess">
- <PROCESS-ITEM NAME="rules:#inicio.xhtml" PATH="/inicio.xhtml"
-  SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:#inicio.xhtml:0" NAME="item"
-   PATH="/inicio.xhtml" model-entity="JSFProcessItem">
+ <PROCESS-ITEM NAME="rules:#paginas#ejemplos#pruebaComponente.xhtml"
+  PATH="/paginas/ejemplos/pruebaComponente.xhtml" SHAPE="240,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:*" PATH="*" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:0" NAME="item" PATH="*" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT
     ID="commandButton::#paginas#ejemplos#pruebaComponente.xhtml"
     NAME="output" PATH="/paginas/ejemplos/pruebaComponente.xhtml"
@@ -11,6 +11,4 @@
     TITLE="commandButton" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#paginas#ejemplos#pruebaComponente.xhtml"
-  PATH="/paginas/ejemplos/pruebaComponente.xhtml" SHAPE="240,33,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>

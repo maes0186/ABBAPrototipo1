@@ -26,13 +26,12 @@
 	width: 120%;
 	position: relative;
 }
-.styleMenu{
+
+.styleMenu {
 	width: 200px;
-	
-	
 }
 
-.styleLine{
-height: 1px;
-width: 250%;
+.styleLine {
+	height: 1px;
+	width: 250%;
 }

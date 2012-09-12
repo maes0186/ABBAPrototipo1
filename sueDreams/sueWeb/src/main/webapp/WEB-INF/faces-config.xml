@@ -11,10 +11,15 @@
   <managed-bean-class>org.userBean</managed-bean-class>
   <managed-bean-scope>session</managed-bean-scope>
  </managed-bean>
+ <managed-bean>
+  <managed-bean-name>menuBeans</managed-bean-name>
+  <managed-bean-class>org.beansFrame.MenuBeans</managed-bean-class>
+  <managed-bean-scope>session</managed-bean-scope>
+ </managed-bean>
  
  
  <navigation-rule>
-    <from-view-id>/inicio.xhtml</from-view-id>
+    <from-view-id>*</from-view-id>
     <navigation-case>
         <from-outcome>commandButton</from-outcome>
         <to-view-id>/paginas/ejemplos/pruebaComponente.xhtml</to-view-id>
