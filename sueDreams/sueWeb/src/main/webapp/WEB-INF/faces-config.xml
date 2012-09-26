@@ -16,13 +16,27 @@
   <managed-bean-class>org.beansFrame.MenuBeans</managed-bean-class>
   <managed-bean-scope>session</managed-bean-scope>
  </managed-bean>
+ <managed-bean>
+  <managed-bean-name>ingresoDatos</managed-bean-name>
+  <managed-bean-class>org.paginas.criteria.IngresoDatos</managed-bean-class>
+  <managed-bean-scope>session</managed-bean-scope>
+ </managed-bean>
  
  
  <navigation-rule>
     <from-view-id>*</from-view-id>
     <navigation-case>
         <from-outcome>commandButton</from-outcome>
-        <to-view-id>/paginas/ejemplos/pruebaComponente.xhtml</to-view-id>
+        <to-view-id>/paginas/ejemplos/formularios/datosPersonalesResults.xhtml</to-view-id>
+     <redirect/> 
+    </navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+    <from-view-id>*</from-view-id>
+    <navigation-case>
+        <from-outcome>datosPersonales</from-outcome>
+        <to-view-id>/paginas/ejemplos/formularios/datosPersonales.xhtml</to-view-id>
      <redirect/> 
     </navigation-case>
 </navigation-rule>

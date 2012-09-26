@@ -3,7 +3,7 @@
 	<item1 name="Item1">
 		<item2 name="Item1_1">
 		<item3 name="Item1_1_1">
-		<item4 name="Item1_1_1_1" action="commandButton">
+		<item4 name="Item1_1_1_1" action="datosPersonales">
 		</item4>
 		</item3>
 		</item2>
