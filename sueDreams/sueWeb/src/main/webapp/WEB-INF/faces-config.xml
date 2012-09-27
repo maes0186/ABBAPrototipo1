@@ -21,6 +21,12 @@
   <managed-bean-class>org.paginas.criteria.IngresoDatos</managed-bean-class>
   <managed-bean-scope>session</managed-bean-scope>
  </managed-bean>
+ <managed-bean>
+  <managed-bean-name>remoteDatos</managed-bean-name>
+  <managed-bean-class>org.local.servicios.datosPersonales.DatosPersonalesManagement</managed-bean-class>
+  <managed-bean-scope>session</managed-bean-scope>
+ </managed-bean>
+
  
  
  <navigation-rule>

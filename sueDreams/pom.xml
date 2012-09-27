@@ -102,5 +102,8 @@
     <modules> 
     <module>sueJar</module> 
     <module>sueWeb</module>
+    <module>sueJ2EEBeans</module>
+    <module>sueJ2EEInterfaces</module>
+    <module>sueEntidades</module>
   </modules>
 </project>
