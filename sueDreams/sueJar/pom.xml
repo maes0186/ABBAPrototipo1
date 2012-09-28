@@ -23,15 +23,10 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org</groupId>
-  <artifactId>sueJ2EEInterfaces</artifactId>
+     <groupId>org</groupId>
+  <artifactId>sueArq</artifactId>
   <version>1.0-SNAPSHOT</version>
     </dependency>
-    <!-- Solo para pruebas...esto debe ir en el servidor -->
-    <dependency>
-      <groupId>org</groupId>
-  <artifactId>sueJ2EEBeans</artifactId>
-  <version>1.0-SNAPSHOT</version>
-    </dependency>
+
   </dependencies>
 </project>
