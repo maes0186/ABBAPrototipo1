@@ -1,7 +1,14 @@
 package org.paginas.criteria;
 
-public class IngresoDatos {
+import java.io.Serializable;
 
+public class IngresoDatos implements Serializable {
+
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 	private String nombre1;
 	private String nombre2;

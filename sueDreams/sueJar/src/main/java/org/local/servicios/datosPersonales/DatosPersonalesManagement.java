@@ -1,5 +1,7 @@
 package org.local.servicios.datosPersonales;
 
+import java.io.IOException;
+import java.io.Serializable;
 import java.util.Properties;
 
 import javax.naming.Context;
@@ -8,18 +10,15 @@ import javax.naming.NamingException;
 import javax.rmi.PortableRemoteObject;
 
 import org.interfaces.servicios.datosPersonales.RemoteIntDatos;
+import org.util.GeneralUtil;
+import org.util.J2EEUtil;
 
 
-public class DatosPersonalesManagement {
+@SuppressWarnings("serial")
+public class DatosPersonalesManagement implements Serializable {
 
-	public int getCantidad() throws NamingException{
-
-			Properties p=new Properties();
-			p.put(Context.INITIAL_CONTEXT_FACTORY,"org.jnp.interfaces.NamingContextFactory");
-			p.put(Context.URL_PKG_PREFIXES,"org.jboss.naming.org.jnp.interfaces");
-			p.put(Context.PROVIDER_URL,"jnp://localhost:1199");
-			Context ctx=new InitialContext(p);
-			Object ref=ctx.lookup("RemoteBeanDatos/remote");
+	public int getCantidad() throws NamingException, IOException{
+			Object ref=J2EEUtil.readEJB("RemoteBeanDatos/remote");
 			RemoteIntDatos ebr=(RemoteIntDatos) PortableRemoteObject.narrow(ref, RemoteIntDatos.class);
 			return ebr.cantidad();
 		
