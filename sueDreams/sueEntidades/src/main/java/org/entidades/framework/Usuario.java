@@ -1,6 +1,6 @@
 package org.entidades.framework;
 
-import javax.persistence.Column;
+import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -15,14 +15,14 @@ public class Usuario {
 	private String nombre1;
 	private String nombre2;
 	@Id
-    @Column(name="ID")
+	
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	@Column(name="APELLIDO1")
+	@Column(name="DESC", nullable=false, length=512)
 	public String getApellido1() {
 		return apellido1;
 	}

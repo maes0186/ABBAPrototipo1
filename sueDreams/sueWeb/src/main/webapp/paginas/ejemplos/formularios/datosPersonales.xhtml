@@ -10,13 +10,13 @@
 	 template="/templates/template.xhtml">
 
 	<ui:define name="aplicacion">
-	
+	<h:panelGrid id="DatosGenerales" >
     <h:inputText value="#{ingresoDatos.nombre1}" />
     <h:inputText value="#{ingresoDatos.nombre2}" />
     <h:inputText value="#{ingresoDatos.apellido1}" />
     <h:inputText value="#{ingresoDatos.apellido2}" />
-    
-    <h:commandButton value="Procesar" action="commandButton" />
+    </h:panelGrid>
+    <h:commandButton value="Procesar" action="processInDatos" />
 	</ui:define>
 
 </ui:composition>

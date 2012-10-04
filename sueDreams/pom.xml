@@ -93,11 +93,10 @@
                     <scope>provided</scope>
                 </dependency>
                  <dependency>
-      <groupId>javaee</groupId>
-      <artifactId>javaee-api</artifactId>
-      <version>5</version>
-      <scope>provided</scope>
-    </dependency>
+    	<groupId>javax</groupId>
+    	<artifactId>javaee-api</artifactId>
+    	<version>6.0</version>
+	</dependency>
     </dependencies>
     <modules> 
     <module>sueJar</module> 
