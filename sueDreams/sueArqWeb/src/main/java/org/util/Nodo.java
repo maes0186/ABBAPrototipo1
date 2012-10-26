@@ -6,6 +6,13 @@ public class Nodo {
 	private String tipo;
 	private String value;
 	private String name;
+	private String id;
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	private Nodo padre;
 	private List<Nodo> childs;
 	public Nodo getPadre() {

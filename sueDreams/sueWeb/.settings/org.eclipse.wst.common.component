@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="sueWeb">
-        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
-        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+  <wb-module deploy-name="sueWeb">
         <dependent-module archiveName="sueArqWeb-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/sueArqWeb/sueArqWeb">
             <dependency-type>uses</dependency-type>
         </dependent-module>
@@ -19,7 +16,10 @@
         <dependent-module archiveName="sueJar-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/sueJar/sueJar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <property name="context-root" value="sueWeb"/>
-        <property name="java-output-path" value="/sueWeb/target/classes"/>
-    </wb-module>
+    <property name="context-root" value="sueWeb"/>
+    <wb-resource deploy-path="/" source-path="src/main/webapp"/>
+    <property name="java-output-path" value="/target/classes"/>
+    <wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/java"/>
+    <wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/resources"/>
+  </wb-module>
 </project-modules>

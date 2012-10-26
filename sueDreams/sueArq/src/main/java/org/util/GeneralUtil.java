@@ -32,8 +32,8 @@ public class GeneralUtil {
 		String webApp = ec.getRequestContextPath();
 		String httpProtocol = ec.getRequestScheme();
 		String rootURL = httpProtocol + TWO_POINTS + URL_SEPARATOR
-				+ URL_SEPARATOR + server + TWO_POINTS + port + webApp
-				+ servletPath + URL_SEPARATOR;
+				+ URL_SEPARATOR + server + TWO_POINTS + port + webApp+URL_SEPARATOR;
+				//+ servletPath + URL_SEPARATOR
 		return rootURL;
 	}
 	

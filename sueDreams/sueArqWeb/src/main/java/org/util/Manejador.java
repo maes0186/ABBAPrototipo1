@@ -60,6 +60,8 @@ public class Manejador extends DefaultHandler {
 					actual.setName(valor);
 				else if (nombre.equalsIgnoreCase(MenuConstantes.VALOR_ETIQUETA))
 					actual.setValue(valor);
+				else if (nombre.equalsIgnoreCase(MenuConstantes.VALOR_ID))
+					actual.setId(valor);
 			}
 
 			if (actual.getTipo().equalsIgnoreCase(anterior.getTipo())

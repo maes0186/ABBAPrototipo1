@@ -18,14 +18,7 @@
 		displayName="Input text field with label, input and message components">
 	</composite:interface>
 	<composite:implementation>
-		<rich:panelMenu mode="ajax" styleClass="styleMenu" id="menuP"
-			iconExpandedGroup="disc" iconCollapsedGroup="disc"
-			iconExpandedTopGroup="chevronUp" iconGroupTopPosition="right"
-			iconCollapsedTopGroup="chevronDown">
-			<rich:panelMenu styleClass="styleMenu" binding="#{menuBeans.menu}"
-				id="menuH" />
-		</rich:panelMenu>
-
+			<rich:panelMenu styleClass="styleMenu" binding="#{menuBeans.menu}"/>
 	</composite:implementation>
 </h:body>
 </html>
