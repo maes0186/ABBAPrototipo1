@@ -38,8 +38,9 @@ public class MenuBeans implements Serializable{
 
 	public UIPanelMenu getMenu() throws MalformedURLException, SAXException,
 			IOException {
-		menupanel = new UIPanelMenu();
+		if(menupanel==null){menupanel = new UIPanelMenu();
 		initMenu();
+		}
 		
 		return this.menupanel;
 	}
@@ -67,7 +68,7 @@ public class MenuBeans implements Serializable{
 		item.setLabel(name);
 		//item.setImmediate(true);
 		MethodExpression methodExpression = expFactory.createMethodExpression(
-                elcontext, "#{generic.getAction}", Void.class, new Class[]{});
+                elcontext, value, String.class, new Class[]{});
 		
 		item.setActionExpression(methodExpression);
 		return item;
