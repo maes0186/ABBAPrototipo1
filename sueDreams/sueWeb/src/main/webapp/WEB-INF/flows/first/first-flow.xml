@@ -4,11 +4,13 @@
       xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
 	
 	<view-state id="first">
-		<transition on="proximo" to="enterBookingDetails" />
-		
+		<transition on="proximo" to="goDocuPers" />
+		<transition on="proximo2" to="goIni" />
 	</view-state>
 	
-	<view-state id="enterBookingDetails" view="/WEB-INF/flows/documentosPersonales/documentosPersonales.xhtml">
+	<view-state id="goDocuPers" view="/WEB-INF/flows/documentosPersonales/documentosPersonales.xhtml">
+	</view-state>
+	<view-state id="goIni" view="/WEB-INF/flows/ini/ini.xhtml">
 	</view-state>
 	
 		<end-state id="terminar" />
