@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/templates/template.xhtml"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+
+	<ui:define name="aplicacion">
+	<rich:panel id="panelCriteria" switchType="client" height="60%">
+		
+			<ui:include src="/WEB-INF/flows/ini/iniCriteria.xhtml" />
+		
+	</rich:panel>
+	<rich:panel id="panelEntity" switchType="client" height="60%">
+		
+			<ui:include src="/WEB-INF/flows/ini/iniEntity.xhtml" />
+		
+	</rich:panel>
+	<rich:panel id="panelResults" switchType="client" height="60%">
+		
+			<ui:include src="/WEB-INF/flows/ini/iniResults.xhtml" />
+		
+	</rich:panel>
+		
+	</ui:define>
+
+</ui:composition>
