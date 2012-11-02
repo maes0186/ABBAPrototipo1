@@ -3,18 +3,20 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
 
-
-	
 	<view-state id="ini">
-		<transition on="mostrar" to="docPersonal">
+		<transition on="proximo" to="docPersonal"/>
 		
+		<transition on="backIns" to="finishIni"/>
+		<transition on="procesar">
+		<render fragments="panelEntity"></render>
 		</transition>
 	</view-state>
+	
 
 	 <subflow-state id="docPersonal" subflow="documentosPersonales">
 		<transition on="finishDetail" to="ini"/>
 	</subflow-state>
 
-	<end-state id="terminar" />
+	<end-state id="finishIni" />
 
 </flow>

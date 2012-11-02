@@ -4,17 +4,10 @@
       xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
 
 	<view-state id="documentosPersonales">
-		<transition on="back">
-		 <render fragments="DatosGenerales" />
+		<transition on="back" to="finishDetail">
+		 
 		</transition>
 	</view-state>
-	
-	 <action-state id="accion">
-       <transition to="finishDetail" />
-    </action-state>
-   <action-state id="view2">
-		<transition on="back2" to="finishDetail" />
-	</action-state>
    
 	<end-state id="finishDetail" />
 	

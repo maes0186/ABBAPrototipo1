@@ -5,13 +5,16 @@
 	
 	<view-state id="first">
 		<transition on="proximo" to="goDocuPers" />
-		<transition on="proximo2" to="goIni" />
+		<transition on="proximo2" to="inicio" />
 	</view-state>
 	
 	<view-state id="goDocuPers" view="/WEB-INF/flows/documentosPersonales/documentosPersonales.xhtml">
 	</view-state>
-	<view-state id="goIni" view="/WEB-INF/flows/ini/ini.xhtml">
-	</view-state>
+
+	
+	<subflow-state id="inicio" subflow="ini">
+		<transition on="finishIni" to="first"/>
+	</subflow-state>
 	
 		<end-state id="terminar" />
 </flow>

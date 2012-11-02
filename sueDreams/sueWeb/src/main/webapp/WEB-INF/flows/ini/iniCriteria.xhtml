@@ -9,14 +9,16 @@
 	xmlns:rich="http://richfaces.org/rich"
 	xmlns:a4j="http://richfaces.org/a4j">
 
-	<h:form id="appIniRenderedCriteria">
+	
 	<h:panelGrid id="idCriteria" >
     <h:inputText value="#{ingresoDatos.nombre1}" />
     <h:inputText value="#{ingresoDatos.nombre2}" />
     <h:inputText value="#{ingresoDatos.apellido1}" />
     <h:inputText value="#{ingresoDatos.apellido2}" />
     </h:panelGrid>
-    <h:commandButton value="Procesar" action="mostrar" reRender="#{flowRenderFragments}"/>
-	</h:form>
+    <h:commandButton value="Proximo" action="proximo" />
+    <h:commandButton value="Regresar" action="backIns"/>
+    <h:commandButton value="Procesar" action="procesar" reRender="idCriteria"/>
+	
 	
 </ui:composition>

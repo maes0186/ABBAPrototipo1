@@ -9,13 +9,14 @@
 	xmlns:rich="http://richfaces.org/rich"
 	xmlns:a4j="http://richfaces.org/a4j">
 
-	<h:form id="appIniRenderedResults">
+	
 	<h:panelGrid id="idResults" >
     <h:outputLabel value="#{ingresoDatos.nombre1}" />
     <h:outputLabel value="#{ingresoDatos.nombre2}" />
     <h:outputLabel value="#{ingresoDatos.apellido1}" />
     <h:outputLabel value="#{ingresoDatos.apellido2}" />
     </h:panelGrid>
-	</h:form>
+    <h:commandButton id="Boton1" value="Regresar" action="backIns" />
+	
 
 </ui:composition>
