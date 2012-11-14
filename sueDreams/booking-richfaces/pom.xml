@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	 <parent>
+    <artifactId>sueDreams</artifactId>
+    <groupId>org</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+	<groupId>org.springframework.webflow.samples</groupId>
+	<artifactId>booking-richfaces</artifactId>
+	<packaging>war</packaging>
+	<name>Hotel Booking : Spring MVC + Web Flow + JSF/RichFaces</name>
+	<version>2.3.0.RELEASE</version>
+	
+	<build>
+		<finalName>swf-booking-richfaces</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<junitArtifactName>junit:junit</junitArtifactName>
+					<includes>
+						<include>**/*Tests.java</include>
+					</includes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.8</version>
+				<configuration>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>false</downloadJavadocs>
+					<wtpversion>2.0</wtpversion>
+				</configuration>
+			</plugin>			
+		</plugins>
+	</build>
+</project>

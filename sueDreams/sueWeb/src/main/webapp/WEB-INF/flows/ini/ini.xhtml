@@ -2,31 +2,48 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+
+<h:form id="hotels" xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	template="/templates/template.xhtml"
 	xmlns:rich="http://richfaces.org/rich"
-	xmlns:a4j="http://richfaces.org/a4j">
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:sf="http://www.springframework.org/tags/faces"
+	>
+	
+	
+<h:head>
+    
+</h:head>
 
-	<ui:define name="aplicacion">
-	<rich:panel id="panelCriteria" switchType="client" height="60%">
-		
-			<ui:include src="/WEB-INF/flows/ini/iniCriteria.xhtml" />
-		
-	</rich:panel>
-	<rich:panel id="panelEntity" switchType="client" height="60%">
-		
-			<ui:include src="/WEB-INF/flows/ini/iniEntity.xhtml" />
-		
-	</rich:panel>
-	<rich:panel id="panelResults" switchType="client" height="60%">
-		
-			<ui:include src="/WEB-INF/flows/ini/iniResults.xhtml" />
-		
-	</rich:panel>
-		
-	</ui:define>
 
-</ui:composition>
+<h:panelGrid id="infoBlock">
+<h:outputLabel value="#{ingresoDatos.nombre1}" />
+		<h:outputLabel value="#{ingresoDatos.nombre2}" />
+		<h:outputLabel value="#{ingresoDatos.apellido1}" />
+		<h:outputLabel value="#{ingresoDatos.apellido2}" />
+
+</h:panelGrid>
+
+
+	<a4j:outputPanel id="panelCriteria">
+		<h:inputText value="#{ingresoDatos.nombre1}" />
+		<h:inputText value="#{ingresoDatos.nombre2}" />
+		<h:inputText value="#{ingresoDatos.apellido1}" />
+		<h:inputText value="#{ingresoDatos.apellido2}" />
+	</a4j:outputPanel>
+	<a4j:outputPanel id="panelResults" immediate="true" >
+		<h:outputLabel value="#{ingresoDatos.nombre1}" immediate="true" />
+		<h:outputLabel value="#{ingresoDatos.nombre2}" immediate="true" />
+		<h:outputLabel value="#{ingresoDatos.apellido1}" immediate="true" />
+		<h:outputLabel value="#{ingresoDatos.apellido2}" immediate="true" />
+
+	</a4j:outputPanel>
+	<h:commandButton value="Proximo" action="proximo" />
+	<h:commandButton value="Regresar" action="backIns" />
+	<a4j:commandButton value="update" reRender="infoBlock"/>
+	<a4j:commandButton id="botonTest" value="Procesar" action="procesar"
+		reRender="panelResults" ajaxSingle="true" />
+</h:form>
+

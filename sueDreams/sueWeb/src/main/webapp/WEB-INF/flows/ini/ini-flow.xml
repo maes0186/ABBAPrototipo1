@@ -8,7 +8,7 @@
 		
 		<transition on="backIns" to="finishIni"/>
 		<transition on="procesar">
-		<render fragments="panelEntity"></render>
+		<render fragments="panelResults"></render>
 		</transition>
 	</view-state>
 	
