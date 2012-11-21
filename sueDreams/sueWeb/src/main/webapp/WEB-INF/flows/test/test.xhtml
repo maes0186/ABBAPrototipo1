@@ -1,0 +1,47 @@
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:maif="http://fr.maif.socle.framework.pn.ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j" id="pageAccueil"
+	label="#{msg_iard.messageBienvenue}">
+	<h:head>
+	</h:head>
+	<h:body>
+		<h:form prependId="false">
+		
+			<h:panelGrid columns="3">
+				<h:outputText value="Name:" />
+				<h:inputText value="#{demoBean.name}" /><br/>
+				<a4j:commandButton value="A4J button with render" render="#{flowRenderFragments}" action="doit"/>
+				<br/>				
+				<h:commandButton value="h:CommandButton with render" action="doit">
+					<f:ajax render="#{flowRenderFragments}" execute="@form" />
+				</h:commandButton>							
+			</h:panelGrid>
+
+		<br />
+		
+			<a4j:outputPanel id="panel1">
+				<rich:panel header="Panel1" rendered="#{not empty demoBean.name}">
+					
+				<h:outputText value="#{demoBean.currentDate}"/><br/>	
+				<h:outputText value="Hello #{demoBean.name} !"  />
+				</rich:panel>				
+			</a4j:outputPanel>
+			
+			<a4j:outputPanel  id="panel2">
+				<rich:panel header="Panel2 ">		
+							<h:outputText value="#{demoBean.currentDate}" style="background-color: yellow"/>
+			    </rich:panel>
+			</a4j:outputPanel>		
+			
+   		    <rich:panel header="Panel3" id="panel3">
+				<h:outputText value="#{demoBean.currentDate}"/>   		    
+			</rich:panel> 
+			
+		<h:commandButton id="endMe" action="end" value="End !"/>
+		</h:form>
+		</h:body>
+</f:view>

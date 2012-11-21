@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow
+        http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+	
+	<var name="demoBean" class="demo.DemoBean"/>
+	
+	<!-- A simple flow with one view -->
+	<view-state id="test" >			
+		<transition on="doit">	
+			<!-- If you comment the following render tag, no exception with a4j:commandButton ...
+			--> 
+			<render fragments="panel1,panel2"/>
+			
+		</transition>
+		<transition on="end" to="end"/>
+	</view-state>
+
+	<end-state id="end" view="externalRedirect:/index.html"/>
+
+	
+</flow>
+

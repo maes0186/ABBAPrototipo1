@@ -2,13 +2,18 @@
 <flow xmlns="http://www.springframework.org/schema/webflow"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+<var name="demoBean" class="demo.DemoBean"/>
+<var name="ingresoDatos" class="org.paginas.criteria.IngresoDatos"/>
+
 
 	<view-state id="ini">
-		<transition on="proximo" to="docPersonal"/>
-		
-		<transition on="backIns" to="finishIni"/>
-		<transition on="procesar">
-		<render fragments="panelResults"></render>
+<transition on="doit">	
+			<!-- If you comment the following render tag, no exception with a4j:commandButton ... -->
+			<render fragments="panelResults"/>
+		</transition>
+		<transition on="doit2">	
+			<!-- If you comment the following render tag, no exception with a4j:commandButton ... -->
+			<render fragments="panel1,panel2,panel3"/>
 		</transition>
 	</view-state>
 	
