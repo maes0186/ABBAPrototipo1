@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>org</groupId>
-  <artifactId>sueDreams</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
+	<groupId>org</groupId>
+	<artifactId>sueDreams</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
 
-  <name>sueDreams</name>
-  <url>http://maven.apache.org</url>
+	<name>sueDreams</name>
+	<url>http://maven.apache.org</url>
 
-  <properties>
+	<properties>
 		<org.springframework-version>3.0.5.RELEASE</org.springframework-version>
 		<org.springsecurity-version>3.0.2.RELEASE</org.springsecurity-version>
 		<org.slf4j-version>1.5.10</org.slf4j-version>
@@ -18,16 +19,16 @@
 		<richfaces-version>4.0.0.Final</richfaces-version>
 	</properties>
 	<dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.richfaces</groupId>
-                <artifactId>richfaces-bom</artifactId>
-                <version>${richfaces-version}</version>
-                <scope>import</scope>
-                <type>pom</type>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.richfaces</groupId>
+				<artifactId>richfaces-bom</artifactId>
+				<version>${richfaces-version}</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	<dependencies>
 		<!-- Spring -->
 		<dependency>
@@ -39,14 +40,14 @@
 				<exclusion>
 					<groupId>commons-logging</groupId>
 					<artifactId>commons-logging</artifactId>
-				 </exclusion>
+				</exclusion>
 			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
 			<version>${org.springframework-version}</version>
-		</dependency>				
+		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
@@ -71,8 +72,8 @@
 				<exclusion>
 					<groupId>commons-logging</groupId>
 					<artifactId>commons-logging</artifactId>
-				 </exclusion>
-			</exclusions>						
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
@@ -83,9 +84,9 @@
 				<exclusion>
 					<groupId>commons-logging</groupId>
 					<artifactId>commons-logging</artifactId>
-				 </exclusion>
-			</exclusions>						
-        </dependency>	
+				</exclusion>
+			</exclusions>
+		</dependency>
 		<!-- Database, JPA -->
 		<dependency>
 			<groupId>org.hsqldb</groupId>
@@ -171,16 +172,14 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>4.0.2.GA</version>
 		</dependency>
-		<!--
-			JAXB is needed when running on Java 5. In this environment these dependencies have to be added 
-			(unless xml	configuration is explicitly disabled via Configuration.ignoreXmlConfiguration) 
-			On Java 6 jaxb is part of the runtime environment.
-		-->
-        <dependency>
-          <groupId>javax.xml.bind</groupId>
-          <artifactId>jaxb-api</artifactId>
-          <version>2.1</version>
-        </dependency>
+		<!-- JAXB is needed when running on Java 5. In this environment these dependencies 
+			have to be added (unless xml configuration is explicitly disabled via Configuration.ignoreXmlConfiguration) 
+			On Java 6 jaxb is part of the runtime environment. -->
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.1</version>
+		</dependency>
 		<!-- Test -->
 		<dependency>
 			<groupId>org.easymock</groupId>
@@ -200,19 +199,19 @@
 			<version>${org.springframework-version}</version>
 			<scope>test</scope>
 		</dependency>
-		
-	<dependency>
-    <groupId>javax.servlet</groupId>
-        <artifactId>jstl</artifactId>
-        <version>1.2</version>
-</dependency>
-		
+
 		<dependency>
-    	<groupId>javax</groupId>
-    	<artifactId>javaee-api</artifactId>
-    	<version>6.0</version>
-	</dependency>
-	
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>6.0</version>
+		</dependency>
+
 	</dependencies>
 	<repositories>
 		<!-- Maven Central -->
@@ -220,23 +219,31 @@
 			<id>org.maven.central</id>
 			<name>Maven Central Repository</name>
 			<url>http://repo1.maven.org/maven2</url>
-			<snapshots><enabled>false</enabled></snapshots>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
 		</repository>
 		<!-- For testing against latest Spring snapshots -->
 		<repository>
 			<id>org.springframework.maven.snapshot</id>
 			<name>Spring Maven Snapshot Repository</name>
 			<url>http://maven.springframework.org/snapshot</url>
-			<releases><enabled>false</enabled></releases>
-			<snapshots><enabled>true</enabled></snapshots>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
 		</repository>
 		<!-- For developing against latest Spring milestones -->
-        <repository>
+		<repository>
 			<id>org.springframework.maven.milestone</id>
 			<name>Spring Maven Milestone Repository</name>
 			<url>http://maven.springframework.org/milestone</url>
-			<snapshots><enabled>false</enabled></snapshots>
-		</repository>		
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
 		<!-- For Mojarra 2.x -->
 		<repository>
 			<id>java.net.release</id>
@@ -244,10 +251,10 @@
 			<url>http://download.java.net/maven/2</url>
 		</repository>
 		<repository>
-		  <id>jboss-public-repository-group</id>
-		  <name>JBoss Public Maven Repository Group</name>
-		  <url>https://repository.jboss.org/nexus/content/groups/public-jboss</url>
-		  <layout>default</layout>
+			<id>jboss-public-repository-group</id>
+			<name>JBoss Public Maven Repository Group</name>
+			<url>https://repository.jboss.org/nexus/content/groups/public-jboss</url>
+			<layout>default</layout>
 		</repository>
 	</repositories>
 	<build>
@@ -280,17 +287,17 @@
 					<downloadJavadocs>false</downloadJavadocs>
 					<wtpversion>2.0</wtpversion>
 				</configuration>
-			</plugin>			
+			</plugin>
 		</plugins>
 	</build>
 
-    <modules> 
-    <module>sueJar</module> 
-    <module>sueWeb</module>
-    <module>sueJ2EEBeans</module>
-    <module>sueJ2EEInterfaces</module>
-    <module>sueEntidades</module>
-    <module>sueArq</module>
-    <module>sueArqWeb</module>
-  </modules>
+	<modules>
+		<module>sueJar</module>
+		<module>sueWeb</module>
+		<module>sueJ2EEBeans</module>
+		<module>sueJ2EEInterfaces</module>
+		<module>sueEntidades</module>
+		<module>sueArq</module>
+		<module>sueArqWeb</module>
+	</modules>
 </project>

@@ -7,7 +7,7 @@ import javax.ejb.Stateless;
 import org.interfaces.servicios.datosPersonales.RemoteIntDatos;
 
 
-@Stateless
+//@Stateless
 public class RemoteBeanDatos implements RemoteIntDatos,Serializable {
 
 	/**

@@ -2,24 +2,38 @@
 <flow xmlns="http://www.springframework.org/schema/webflow"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
-<var name="demoBean" class="demo.DemoBean"/>
-<var name="ingresoDatos" class="org.paginas.criteria.IngresoDatos"/>
+	<var name="demoBean" class="demo.DemoBean" />
+	<var name="ingresoDatos" class="org.paginas.criteria.IngresoDatos" />
 
 
 	<view-state id="ini">
-<transition on="doit">	
-			<!-- If you comment the following render tag, no exception with a4j:commandButton ... -->
-			<render fragments="panelResults"/>
+		<transition on="doit">
+			<!-- If you comment the following render tag, no exception with a4j:commandButton 
+				... -->
+			<render fragments="panelResults" />
 		</transition>
-		<transition on="doit2">	
-			<!-- If you comment the following render tag, no exception with a4j:commandButton ... -->
-			<render fragments="panel1,panel2,panel3"/>
+		<transition on="doit2">
+			<!-- If you comment the following render tag, no exception with a4j:commandButton 
+				... -->
+			<render fragments="panel1,panel2,panel3" />
 		</transition>
-	</view-state>
-	
 
-	 <subflow-state id="docPersonal" subflow="documentosPersonales">
-		<transition on="finishDetail" to="ini"/>
+		<transition on="proximo" to="goDocuPers" />
+		<transition on="proximo2" to="inicio" />
+
+	</view-state>
+
+	<view-state id="goDocuPers"
+		view="/WEB-INF/flows/documentosPersonales/documentosPersonales.xhtml">
+	</view-state>
+
+
+	<subflow-state id="inicio" subflow="ini">
+		<transition on="finishIni" to="first" />
+	</subflow-state>
+
+	<subflow-state id="docPersonal" subflow="documentosPersonales">
+		<transition on="finishDetail" to="ini" />
 	</subflow-state>
 
 	<end-state id="finishIni" />
