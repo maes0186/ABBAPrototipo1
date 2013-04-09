@@ -1,11 +1,7 @@
 <projectDescription>
   <name>sueJar</name>
   <comment>NO_M2ECLIPSE_SUPPORT: Project files created with the maven-eclipse-plugin are not supported in M2Eclipse.</comment>
-  <projects>
-    <project>sueArq</project>
-    <project>sueJ2EEBeans</project>
-    <project>sueJ2EEInterfaces</project>
-  </projects>
+  <projects/>
   <buildSpec>
     <buildCommand>
       <name>org.eclipse.wst.common.project.facet.core.builder</name>

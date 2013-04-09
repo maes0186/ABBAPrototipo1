@@ -16,15 +16,18 @@ import org.util.J2EEUtil;
 @SuppressWarnings("serial")
 @SessionScoped @Named("datosPersonalesManagement")
 public class DatosPersonalesManagement implements Serializable {
+	
 	public String getProcesar(IngresoDatos ingresoDatos){
 		String sal="processInDatos";
 		return sal;
 	}
 	
 	public int getCantidad() throws NamingException, IOException{
-			Object ref=J2EEUtil.readEJB("RemoteBeanDatos/remote");
-			RemoteIntDatos ebr=(RemoteIntDatos) PortableRemoteObject.narrow(ref, RemoteIntDatos.class);
-			return ebr.cantidad();
+		String prefix = "java:comp/env/";
+		String ejbRefName = "ejb/myBean";
+		Object ref=J2EEUtil.readEJB(prefix+ejbRefName);
+		RemoteIntDatos ebr=(RemoteIntDatos) PortableRemoteObject.narrow(ref, RemoteIntDatos.class);
+		return ebr.cantidad();
 		
 	}
 	

@@ -211,9 +211,23 @@
 			<artifactId>javaee-api</artifactId>
 			<version>6.0</version>
 		</dependency>
-
+		<!-- 
+		 <dependency>
+      <groupId>org.glassfish.appclient</groupId>
+      <artifactId>gf-client</artifactId>
+      <version>3.0.1</version>
+    </dependency>
+     -->
 	</dependencies>
+	  
 	<repositories>
+	<!--
+	  <repository>
+        <id>glassfish</id>
+        <name>Glassfish</name>
+        <url>https://repository.jboss.org/nexus/content/repositories/glassfish</url>
+      </repository>
+      -->
 		<!-- Maven Central -->
 		<repository>
 			<id>org.maven.central</id>
@@ -258,7 +272,7 @@
 		</repository>
 	</repositories>
 	<build>
-		<finalName>swf-booking-richfaces</finalName>
+
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -295,7 +309,7 @@
 		<module>sueJar</module>
 		<module>sueWeb</module>
 		<module>sueJ2EEBeans</module>
-		<module>sueJ2EEInterfaces</module>
+		<!-- <module>sueJ2EEInterfaces</module> -->
 		<module>sueEntidades</module>
 		<module>sueArq</module>
 		<module>sueArqWeb</module>
