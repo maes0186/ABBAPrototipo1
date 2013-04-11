@@ -10,7 +10,7 @@
         <dependent-module archiveName="sueTutorialJar-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/sueTutorialJar/sueTutorialJar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="sueJ2EEInterfaces-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/sueJ2EEInterfaces/sueJ2EEInterfaces">
+        <dependent-module archiveName="sueJ2EEBeans-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/sueJ2EEBeans/sueJ2EEBeans">
             <dependency-type>uses</dependency-type>
         </dependent-module>
     <property name="context-root" value="sueWeb"/>

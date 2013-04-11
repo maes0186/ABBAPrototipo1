@@ -40,7 +40,10 @@ public class Usuario {
 	public void setApellido2(String apellido2) {
 		this.apellido2 = apellido2;
 	}
-
+/**
+ * 
+ * @return
+ */
 	@Column(name = "NOMBRE1")
 	public String getNombre1() {
 		return nombre1;

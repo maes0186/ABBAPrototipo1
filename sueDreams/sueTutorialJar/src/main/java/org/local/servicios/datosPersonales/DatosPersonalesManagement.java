@@ -8,7 +8,7 @@ import javax.inject.Named;
 import javax.naming.NamingException;
 import javax.rmi.PortableRemoteObject;
 
-import org.interfaces.servicios.datosPersonales.RemoteIntDatos;
+import org.ejb.beans.tutorial.RemoteIntDatos;
 import org.paginas.criteria.IngresoDatos;
 import org.util.J2EEUtil;
 
