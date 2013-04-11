@@ -82,7 +82,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org</groupId>
-			<artifactId>sueJar</artifactId>
+			<artifactId>sueTutorialJar</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>

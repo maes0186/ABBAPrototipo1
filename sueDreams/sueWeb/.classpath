@@ -1,184 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-  <classpathentry kind="src" path="src/main/java" including="**/*.java"/>
-  <classpathentry kind="src" path="src/main/resources" excluding="**/*.java"/>
-  <classpathentry kind="output" path="target/classes"/>
-  <classpathentry kind="var" path="M2_REPO/javax/activation/activation/1.1/activation-1.1.jar" sourcepath="M2_REPO/javax/activation/activation/1.1/activation-1.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/javax/el/el-api/1.0/el-api-1.0.jar" sourcepath="M2_REPO/javax/el/el-api/1.0/el-api-1.0-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/javax/xml/bind/jaxb-api/2.1/jaxb-api-2.1.jar" sourcepath="M2_REPO/javax/xml/bind/jaxb-api/2.1/jaxb-api-2.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/javax/xml/bind/jaxb-api-osgi/2.2.1.1-promoted-b2/jaxb-api-osgi-2.2.1.1-promoted-b2.jar"/>
-  <classpathentry kind="var" path="M2_REPO/javax/servlet/jstl/1.2/jstl-1.2.jar" sourcepath="M2_REPO/javax/servlet/jstl/1.2/jstl-1.2-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/javax/transaction/jta/1.1/jta-1.1.jar" sourcepath="M2_REPO/javax/transaction/jta/1.1/jta-1.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/javax/mail/mail/1.4.3/mail-1.4.3.jar" sourcepath="M2_REPO/javax/mail/mail/1.4.3/mail-1.4.3-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar" sourcepath="M2_REPO/javax/servlet/servlet-api/2.5/servlet-api-2.5-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar" sourcepath="M2_REPO/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA.jar" sourcepath="M2_REPO/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/javax/xml/webservices-api-osgi/2.0.1/webservices-api-osgi-2.0.1.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/appclient/acc-config/3.0.1/acc-config-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/appclient/acc-config/3.0.1/acc-config-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/admin/admin-core/3.0.1/admin-core-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/admin/admin-core/3.0.1/admin-core-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/admin/admin-util/3.0.1/admin-util-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/admin/admin-util/3.0.1/admin-util-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/common/amx-core/3.0.1/amx-core-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/common/amx-core/3.0.1/amx-core-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/common/amx-j2ee/3.0.1/amx-j2ee-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/common/amx-j2ee/3.0.1/amx-j2ee-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/common/annotation-framework/3.0.1/annotation-framework-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/common/annotation-framework/3.0.1/annotation-framework-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/antlr/antlr/2.7.6/antlr-2.7.6.jar" sourcepath="M2_REPO/antlr/antlr/2.7.6/antlr-2.7.6-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/aopalliance/aopalliance/1.0/aopalliance-1.0.jar" sourcepath="M2_REPO/aopalliance/aopalliance/1.0/aopalliance-1.0-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/security/appclient.security/3.0.1/appclient.security-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/security/appclient.security/3.0.1/appclient.security-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/asm/asm/3.1/asm-3.1.jar" sourcepath="M2_REPO/asm/asm/3.1/asm-3.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/external/asm-all-repackaged/3.0.1/asm-all-repackaged-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/external/asm-all-repackaged/3.0.1/asm-all-repackaged-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/aspectj/aspectjrt/1.6.8/aspectjrt-1.6.8.jar" sourcepath="M2_REPO/org/aspectj/aspectjrt/1.6.8/aspectjrt-1.6.8-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/aspectj/aspectjweaver/1.6.8/aspectjweaver-1.6.8.jar" sourcepath="M2_REPO/org/aspectj/aspectjweaver/1.6.8/aspectjweaver-1.6.8-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/enterprise/auto-depends/1.0.0/auto-depends-1.0.0.jar" sourcepath="M2_REPO/com/sun/enterprise/auto-depends/1.0.0/auto-depends-1.0.0-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/bean-validator/3.0-JBoss-4.0.2/bean-validator-3.0-JBoss-4.0.2.jar"/>
-  <classpathentry kind="var" path="M2_REPO/cglib/cglib/2.2/cglib-2.2.jar" sourcepath="M2_REPO/cglib/cglib/2.2/cglib-2.2-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/admin/cli-framework/3.0.1/cli-framework-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/admin/cli-framework/3.0.1/cli-framework-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/persistence/cmp/cmp-internal-api/3.0.1/cmp-internal-api-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/persistence/cmp/cmp-internal-api/3.0.1/cmp-internal-api-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/common/common-util/3.0.1/common-util-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/common/common-util/3.0.1/common-util-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/commons-collections/commons-collections/3.1/commons-collections-3.1.jar" sourcepath="M2_REPO/commons-collections/commons-collections/3.1/commons-collections-3.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar" sourcepath="M2_REPO/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/enterprise/config/1.0.0/config-1.0.0.jar" sourcepath="M2_REPO/com/sun/enterprise/config/1.0.0/config-1.0.0-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/admin/config-api/3.0.1/config-api-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/admin/config-api/3.0.1/config-api-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/enterprise/config-types/1.0.0/config-types-1.0.0.jar" sourcepath="M2_REPO/com/sun/enterprise/config-types/1.0.0/config-types-1.0.0-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/connectors/connectors-inbound-runtime/3.0.1/connectors-inbound-runtime-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/connectors/connectors-inbound-runtime/3.0.1/connectors-inbound-runtime-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/connectors/connectors-internal-api/3.0.1/connectors-internal-api-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/connectors/connectors-internal-api/3.0.1/connectors-internal-api-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/connectors/connectors-runtime/3.0.1/connectors-runtime-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/connectors/connectors-runtime/3.0.1/connectors-runtime-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/common/container-common/3.0.1/container-common-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/common/container-common/3.0.1/container-common-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/net/sourceforge/cssparser/cssparser/0.9.5/cssparser-0.9.5.jar" sourcepath="M2_REPO/net/sourceforge/cssparser/cssparser/0.9.5/cssparser-0.9.5-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/deployment/deployment-common/3.0.1/deployment-common-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/deployment/deployment-common/3.0.1/deployment-common-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/deployment/deployment-javaee-core/3.0.1/deployment-javaee-core-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/deployment/deployment-javaee-core/3.0.1/deployment-javaee-core-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/deployment/dol/3.0.1/dol-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/deployment/dol/3.0.1/dol-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar" sourcepath="M2_REPO/dom4j/dom4j/1.6.1/dom4j-1.6.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/easymock/easymock/2.5.2/easymock-2.5.2.jar" sourcepath="M2_REPO/org/easymock/easymock/2.5.2/easymock-2.5.2-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/ejb/ejb-container/3.0.1/ejb-container-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/ejb/ejb-container/3.0.1/ejb-container-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/ejb/ejb-internal-api/3.0.1/ejb-internal-api-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/ejb/ejb-internal-api/3.0.1/ejb-internal-api-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/security/ejb.security/3.0.1/ejb.security-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/security/ejb.security/3.0.1/ejb.security-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/web/el-impl/2.2/el-impl-2.2.jar" sourcepath="M2_REPO/org/glassfish/web/el-impl/2.2/el-impl-2.2-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/flashlight/flashlight-agent/3.0.1/flashlight-agent-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/flashlight/flashlight-agent/3.0.1/flashlight-agent-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/flashlight/flashlight-framework/3.0.1/flashlight-framework-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/flashlight/flashlight-framework/3.0.1/flashlight-framework-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/appclient/gf-client/3.0.1/gf-client-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/appclient/gf-client/3.0.1/gf-client-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/appclient/gf-client-module/3.0.1/gf-client-module-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/appclient/gf-client-module/3.0.1/gf-client-module-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/core/glassfish/3.0.1/glassfish-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/core/glassfish/3.0.1/glassfish-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/common/glassfish-api/3.0.1/glassfish-api-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/common/glassfish-api/3.0.1/glassfish-api-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/corba/glassfish-corba-asm/3.0.0-b001/glassfish-corba-asm-3.0.0-b001.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/corba/glassfish-corba-codegen/3.0.0-b001/glassfish-corba-codegen-3.0.0-b001.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/corba/glassfish-corba-csiv2-idl/3.0.1-b002/glassfish-corba-csiv2-idl-3.0.1-b002.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/corba/glassfish-corba-dynamicany/3.0.0-b001/glassfish-corba-dynamicany-3.0.0-b001.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/corba/glassfish-corba-naming/3.0.0-b001/glassfish-corba-naming-3.0.0-b001.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/corba/glassfish-corba-newtimer/3.0.0-b001/glassfish-corba-newtimer-3.0.0-b001.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/corba/glassfish-corba-omgapi/3.0.1-b002/glassfish-corba-omgapi-3.0.1-b002.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/corba/glassfish-corba-orb/3.0.0-b001/glassfish-corba-orb-3.0.0-b001.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/corba/glassfish-corba-orbgeneric/3.0.1-b002/glassfish-corba-orbgeneric-3.0.1-b002.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/common/glassfish-ee-api/3.0.1/glassfish-ee-api-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/common/glassfish-ee-api/3.0.1/glassfish-ee-api-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/common/glassfish-naming/3.0.1/glassfish-naming-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/common/glassfish-naming/3.0.1/glassfish-naming-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/gmbal/gmbal/3.0.0-b023/gmbal-3.0.0-b023.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/grizzly/grizzly-comet/1.9.18-o/grizzly-comet-1.9.18-o.jar" sourcepath="M2_REPO/com/sun/grizzly/grizzly-comet/1.9.18-o/grizzly-comet-1.9.18-o-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/grizzly/grizzly-config/1.9.18-o/grizzly-config-1.9.18-o.jar" sourcepath="M2_REPO/com/sun/grizzly/grizzly-config/1.9.18-o/grizzly-config-1.9.18-o-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/grizzly/grizzly-framework/1.9.18-o/grizzly-framework-1.9.18-o.jar" sourcepath="M2_REPO/com/sun/grizzly/grizzly-framework/1.9.18-o/grizzly-framework-1.9.18-o-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/grizzly/grizzly-http/1.9.18-o/grizzly-http-1.9.18-o.jar" sourcepath="M2_REPO/com/sun/grizzly/grizzly-http/1.9.18-o/grizzly-http-1.9.18-o-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/grizzly/grizzly-http-servlet/1.9.18-o/grizzly-http-servlet-1.9.18-o.jar" sourcepath="M2_REPO/com/sun/grizzly/grizzly-http-servlet/1.9.18-o/grizzly-http-servlet-1.9.18-o-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/grizzly/grizzly-portunif/1.9.18-o/grizzly-portunif-1.9.18-o.jar" sourcepath="M2_REPO/com/sun/grizzly/grizzly-portunif/1.9.18-o/grizzly-portunif-1.9.18-o-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/grizzly/grizzly-rcm/1.9.18-o/grizzly-rcm-1.9.18-o.jar" sourcepath="M2_REPO/com/sun/grizzly/grizzly-rcm/1.9.18-o/grizzly-rcm-1.9.18-o-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/grizzly/grizzly-utils/1.9.18-o/grizzly-utils-1.9.18-o.jar" sourcepath="M2_REPO/com/sun/grizzly/grizzly-utils/1.9.18-o/grizzly-utils-1.9.18-o-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/google/guava/guava/r08/guava-r08.jar" sourcepath="M2_REPO/com/google/guava/guava/r08/guava-r08-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/hibernate/hibernate-annotations/3.5.0-Final/hibernate-annotations-3.5.0-Final.jar" sourcepath="M2_REPO/org/hibernate/hibernate-annotations/3.5.0-Final/hibernate-annotations-3.5.0-Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/hibernate/hibernate-commons-annotations/3.2.0.Final/hibernate-commons-annotations-3.2.0.Final.jar" sourcepath="M2_REPO/org/hibernate/hibernate-commons-annotations/3.2.0.Final/hibernate-commons-annotations-3.2.0.Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/hibernate/hibernate-core/3.5.0-Final/hibernate-core-3.5.0-Final.jar" sourcepath="M2_REPO/org/hibernate/hibernate-core/3.5.0-Final/hibernate-core-3.5.0-Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/hibernate/hibernate-entitymanager/3.5.0-Final/hibernate-entitymanager-3.5.0-Final.jar" sourcepath="M2_REPO/org/hibernate/hibernate-entitymanager/3.5.0-Final/hibernate-entitymanager-3.5.0-Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/hibernate/javax/persistence/hibernate-jpa-2.0-api/1.0.0.Final/hibernate-jpa-2.0-api-1.0.0.Final.jar" sourcepath="M2_REPO/org/hibernate/javax/persistence/hibernate-jpa-2.0-api/1.0.0.Final/hibernate-jpa-2.0-api-1.0.0.Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/hibernate/hibernate-validator/4.0.2.GA/hibernate-validator-4.0.2.GA.jar" sourcepath="M2_REPO/org/hibernate/hibernate-validator/4.0.2.GA/hibernate-validator-4.0.2.GA-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/enterprise/hk2/1.0.0/hk2-1.0.0.jar" sourcepath="M2_REPO/com/sun/enterprise/hk2/1.0.0/hk2-1.0.0-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/enterprise/hk2-core/1.0.0/hk2-core-1.0.0.jar" sourcepath="M2_REPO/com/sun/enterprise/hk2-core/1.0.0/hk2-core-1.0.0-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/hsqldb/hsqldb/1.8.0.10/hsqldb-1.8.0.10.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/common/internal-api/3.0.1/internal-api-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/common/internal-api/3.0.1/internal-api-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/javax/javaee-api/6.0/javaee-api-6.0.jar"/>
-  <classpathentry kind="var" path="M2_REPO/javassist/javassist/3.9.0.GA/javassist-3.9.0.GA.jar" sourcepath="M2_REPO/javassist/javassist/3.9.0.GA/javassist-3.9.0.GA-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/javax.annotation/3.0.1/javax.annotation-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/javax.annotation/3.0.1/javax.annotation-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/javax.ejb/3.0.1/javax.ejb-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/javax.ejb/3.0.1/javax.ejb-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/javax.enterprise.deploy/3.0.1/javax.enterprise.deploy-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/javax.enterprise.deploy/3.0.1/javax.enterprise.deploy-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/javax.jms/3.0.1/javax.jms-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/javax.jms/3.0.1/javax.jms-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/javax.management.j2ee/3.0.1/javax.management.j2ee-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/javax.management.j2ee/3.0.1/javax.management.j2ee-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/eclipse/persistence/javax.persistence/2.0.0/javax.persistence-2.0.0.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/javax.resource/3.0.1/javax.resource-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/javax.resource/3.0.1/javax.resource-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/javax.security.auth.message/3.0.1/javax.security.auth.message-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/javax.security.auth.message/3.0.1/javax.security.auth.message-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/javax.security.jacc/3.0.1/javax.security.jacc-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/javax.security.jacc/3.0.1/javax.security.jacc-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/javax.servlet/3.0.1/javax.servlet-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/javax.servlet/3.0.1/javax.servlet-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/javax.servlet.jsp/3.0.1/javax.servlet.jsp-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/javax.servlet.jsp/3.0.1/javax.servlet.jsp-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/javax.transaction/3.0.1/javax.transaction-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/javax.transaction/3.0.1/javax.transaction-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/xml/bind/jaxb-impl/2.1.3/jaxb-impl-2.1.3.jar" sourcepath="M2_REPO/com/sun/xml/bind/jaxb-impl/2.1.3/jaxb-impl-2.1.3-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/xml/bind/jaxb-osgi/2.2.1.1-promoted-b2/jaxb-osgi-2.2.1.1-promoted-b2.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/slf4j/jcl-over-slf4j/1.5.10/jcl-over-slf4j-1.5.10.jar" sourcepath="M2_REPO/org/slf4j/jcl-over-slf4j/1.5.10/jcl-over-slf4j-1.5.10-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/jms/jms-core/3.0.1/jms-core-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/jms/jms-core/3.0.1/jms-core-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/persistence/jpa-connector/3.0.1/jpa-connector-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/persistence/jpa-connector/3.0.1/jpa-connector-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/faces/jsf-api/2.0.3/jsf-api-2.0.3.jar" sourcepath="M2_REPO/com/sun/faces/jsf-api/2.0.3/jsf-api-2.0.3-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/faces/jsf-impl/2.0.3/jsf-impl-2.0.3.jar" sourcepath="M2_REPO/com/sun/faces/jsf-impl/2.0.3/jsf-impl-2.0.3-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/web/jsp-impl/2.2.1/jsp-impl-2.2.1.jar" sourcepath="M2_REPO/org/glassfish/web/jsp-impl/2.2.1/jsp-impl-2.2.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/webservices/jsr109-impl/3.0.1/jsr109-impl-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/webservices/jsr109-impl/3.0.1/jsr109-impl-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/transaction/jta/3.0.1/jta-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/transaction/jta/3.0.1/jta-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/transaction/jts/3.0.1/jts-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/transaction/jts/3.0.1/jts-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/junit/junit/3.8.2/junit-3.8.2.jar" sourcepath="M2_REPO/junit/junit/3.8.2/junit-3.8.2-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/core/kernel/3.0.1/kernel-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/core/kernel/3.0.1/kernel-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/external/ldapbp-repackaged/3.0.1/ldapbp-repackaged-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/external/ldapbp-repackaged/3.0.1/ldapbp-repackaged-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/log4j/log4j/1.2.15/log4j-1.2.15.jar" sourcepath="M2_REPO/log4j/log4j/1.2.15/log4j-1.2.15-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/external/management-api/3.0.0-b012/management-api-3.0.0-b012.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/jvnet/mimepull/1.4/mimepull-1.4.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/admin/monitoring-core/3.0.1/monitoring-core-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/admin/monitoring-core/3.0.1/monitoring-core-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/orb/orb-connector/3.0.1/orb-connector-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/orb/orb-connector/3.0.1/orb-connector-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/orb/orb-iiop/3.0.1/orb-iiop-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/orb/orb-iiop/3.0.1/orb-iiop-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/eclipse/persistence/org.eclipse.persistence.antlr/2.0.1/org.eclipse.persistence.antlr-2.0.1.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/eclipse/persistence/org.eclipse.persistence.asm/2.0.1/org.eclipse.persistence.asm-2.0.1.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/eclipse/persistence/org.eclipse.persistence.core/2.0.1/org.eclipse.persistence.core-2.0.1.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/eclipse/persistence/org.eclipse.persistence.jpa/2.0.1/org.eclipse.persistence.jpa-2.0.1.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/eclipse/persistence/org.eclipse.persistence.jpa.modelgen/2.0.1/org.eclipse.persistence.jpa.modelgen-2.0.1.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/eclipse/persistence/org.eclipse.persistence.oracle/2.0.1/org.eclipse.persistence.oracle-2.0.1.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/enterprise/osgi-adapter/1.0.0/osgi-adapter-1.0.0.jar" sourcepath="M2_REPO/com/sun/enterprise/osgi-adapter/1.0.0/osgi-adapter-1.0.0-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/persistence/persistence-common/3.0.1/persistence-common-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/persistence/persistence-common/3.0.1/persistence-common-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/pkg/pkg-client/1.122-38.2791/pkg-client-1.122-38.2791.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/richfaces/ui/richfaces-components-api/4.0.0.Final/richfaces-components-api-4.0.0.Final.jar" sourcepath="M2_REPO/org/richfaces/ui/richfaces-components-api/4.0.0.Final/richfaces-components-api-4.0.0.Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/richfaces/ui/richfaces-components-ui/4.0.0.Final/richfaces-components-ui-4.0.0.Final.jar" sourcepath="M2_REPO/org/richfaces/ui/richfaces-components-ui/4.0.0.Final/richfaces-components-ui-4.0.0.Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/richfaces/core/richfaces-core-api/4.0.0.Final/richfaces-core-api-4.0.0.Final.jar" sourcepath="M2_REPO/org/richfaces/core/richfaces-core-api/4.0.0.Final/richfaces-core-api-4.0.0.Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/richfaces/core/richfaces-core-impl/4.0.0.Final/richfaces-core-impl-4.0.0.Final.jar" sourcepath="M2_REPO/org/richfaces/core/richfaces-core-impl/4.0.0.Final/richfaces-core-impl-4.0.0.Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/w3c/css/sac/1.3/sac-1.3.jar" sourcepath="M2_REPO/org/w3c/css/sac/1.3/sac-1.3-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/security/security/3.0.1/security-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/security/security/3.0.1/security-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-api/1.5.10/slf4j-api-1.5.10.jar" sourcepath="M2_REPO/org/slf4j/slf4j-api/1.5.10/slf4j-api-1.5.10-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-log4j12/1.5.10/slf4j-log4j12-1.5.10.jar" sourcepath="M2_REPO/org/slf4j/slf4j-log4j12/1.5.10/slf4j-log4j12-1.5.10-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-aop/3.0.5.RELEASE/spring-aop-3.0.5.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-aop/3.0.5.RELEASE/spring-aop-3.0.5.RELEASE-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-asm/3.0.5.RELEASE/spring-asm-3.0.5.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-asm/3.0.5.RELEASE/spring-asm-3.0.5.RELEASE-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-beans/3.0.5.RELEASE/spring-beans-3.0.5.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-beans/3.0.5.RELEASE/spring-beans-3.0.5.RELEASE-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/webflow/spring-binding/2.3.0.RELEASE/spring-binding-2.3.0.RELEASE.jar" sourcepath="M2_REPO/org/springframework/webflow/spring-binding/2.3.0.RELEASE/spring-binding-2.3.0.RELEASE-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-context/3.0.5.RELEASE/spring-context-3.0.5.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-context/3.0.5.RELEASE/spring-context-3.0.5.RELEASE-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-context-support/3.0.5.RELEASE/spring-context-support-3.0.5.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-context-support/3.0.5.RELEASE/spring-context-support-3.0.5.RELEASE-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-core/3.0.5.RELEASE/spring-core-3.0.5.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-core/3.0.5.RELEASE/spring-core-3.0.5.RELEASE-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-expression/3.0.5.RELEASE/spring-expression-3.0.5.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-expression/3.0.5.RELEASE/spring-expression-3.0.5.RELEASE-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/webflow/spring-faces/2.3.0.RELEASE/spring-faces-2.3.0.RELEASE.jar" sourcepath="M2_REPO/org/springframework/webflow/spring-faces/2.3.0.RELEASE/spring-faces-2.3.0.RELEASE-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-jdbc/3.0.5.RELEASE/spring-jdbc-3.0.5.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-jdbc/3.0.5.RELEASE/spring-jdbc-3.0.5.RELEASE-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/webflow/spring-js/2.3.0.RELEASE/spring-js-2.3.0.RELEASE.jar" sourcepath="M2_REPO/org/springframework/webflow/spring-js/2.3.0.RELEASE/spring-js-2.3.0.RELEASE-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/webflow/spring-js-resources/2.3.0.RELEASE/spring-js-resources-2.3.0.RELEASE.jar" sourcepath="M2_REPO/org/springframework/webflow/spring-js-resources/2.3.0.RELEASE/spring-js-resources-2.3.0.RELEASE-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-orm/3.0.5.RELEASE/spring-orm-3.0.5.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-orm/3.0.5.RELEASE/spring-orm-3.0.5.RELEASE-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/security/spring-security-config/3.0.2.RELEASE/spring-security-config-3.0.2.RELEASE.jar" sourcepath="M2_REPO/org/springframework/security/spring-security-config/3.0.2.RELEASE/spring-security-config-3.0.2.RELEASE-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/security/spring-security-core/3.0.2.RELEASE/spring-security-core-3.0.2.RELEASE.jar" sourcepath="M2_REPO/org/springframework/security/spring-security-core/3.0.2.RELEASE/spring-security-core-3.0.2.RELEASE-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/security/spring-security-web/3.0.2.RELEASE/spring-security-web-3.0.2.RELEASE.jar" sourcepath="M2_REPO/org/springframework/security/spring-security-web/3.0.2.RELEASE/spring-security-web-3.0.2.RELEASE-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-test/3.0.5.RELEASE/spring-test-3.0.5.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-test/3.0.5.RELEASE/spring-test-3.0.5.RELEASE-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-tx/3.0.5.RELEASE/spring-tx-3.0.5.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-tx/3.0.5.RELEASE/spring-tx-3.0.5.RELEASE-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-web/3.0.5.RELEASE/spring-web-3.0.5.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-web/3.0.5.RELEASE/spring-web-3.0.5.RELEASE-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/webflow/spring-webflow/2.3.0.RELEASE/spring-webflow-2.3.0.RELEASE.jar" sourcepath="M2_REPO/org/springframework/webflow/spring-webflow/2.3.0.RELEASE/spring-webflow-2.3.0.RELEASE-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-webmvc/3.0.5.RELEASE/spring-webmvc-3.0.5.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-webmvc/3.0.5.RELEASE/spring-webmvc-3.0.5.RELEASE-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/common/stats77/3.0.1/stats77-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/common/stats77/3.0.1/stats77-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/sueArq/1.0-SNAPSHOT/sueArq-1.0-SNAPSHOT.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/sueArqWeb/1.0-SNAPSHOT/sueArqWeb-1.0-SNAPSHOT.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/sueJ2EEInterfaces/1.0-SNAPSHOT/sueJ2EEInterfaces-1.0-SNAPSHOT.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/sueJar/1.0-SNAPSHOT/sueJar-1.0-SNAPSHOT.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/enterprise/tiger-types-osgi/1.0.0/tiger-types-osgi-1.0.0.jar" sourcepath="M2_REPO/com/sun/enterprise/tiger-types-osgi/1.0.0/tiger-types-osgi-1.0.0-sources.jar"/>
-  <classpathentry kind="lib" path="C:/Program Files/Java/jdk1.6.0_31/lib/tools.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/transaction/transaction-internal-api/3.0.1/transaction-internal-api-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/transaction/transaction-internal-api/3.0.1/transaction-internal-api-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/web/war-util/3.0.1/war-util-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/web/war-util/3.0.1/war-util-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/web/web-cli/3.0.1/web-cli-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/web/web-cli/3.0.1/web-cli-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/web/web-core/3.0.1/web-core-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/web/web-core/3.0.1/web-core-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/web/web-glue/3.0.1/web-glue-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/web/web-glue/3.0.1/web-glue-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/web/web-gui-plugin-common/3.0.1/web-gui-plugin-common-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/web/web-gui-plugin-common/3.0.1/web-gui-plugin-common-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/web/web-naming/3.0.1/web-naming-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/web/web-naming/3.0.1/web-naming-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/security/websecurity/3.0.1/websecurity-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/security/websecurity/3.0.1/websecurity-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/xml/ws/webservices-osgi/2.0.1/webservices-osgi-2.0.1.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/security/webservices.security/3.0.1/webservices.security-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/security/webservices.security/3.0.1/webservices.security-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/ctc/wstx/woodstox-osgi/3.2.1/woodstox-osgi-3.2.1.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/glassfish/connectors/work-management/3.0.1/work-management-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/connectors/work-management/3.0.1/work-management-3.0.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar" sourcepath="M2_REPO/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2-sources.jar"/>
-  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry including="**/*.java" kind="src" path="src/main/java"/>
+	<classpathentry excluding="**/*.java" kind="src" path="src/main/resources"/>
+	<classpathentry kind="var" path="M2_REPO/javax/activation/activation/1.1/activation-1.1.jar" sourcepath="M2_REPO/javax/activation/activation/1.1/activation-1.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/javax/el/el-api/1.0/el-api-1.0.jar" sourcepath="M2_REPO/javax/el/el-api/1.0/el-api-1.0-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/javax/xml/bind/jaxb-api/2.1/jaxb-api-2.1.jar" sourcepath="M2_REPO/javax/xml/bind/jaxb-api/2.1/jaxb-api-2.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/javax/xml/bind/jaxb-api-osgi/2.2.1.1-promoted-b2/jaxb-api-osgi-2.2.1.1-promoted-b2.jar"/>
+	<classpathentry kind="var" path="M2_REPO/javax/servlet/jstl/1.2/jstl-1.2.jar" sourcepath="M2_REPO/javax/servlet/jstl/1.2/jstl-1.2-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/javax/transaction/jta/1.1/jta-1.1.jar" sourcepath="M2_REPO/javax/transaction/jta/1.1/jta-1.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/javax/mail/mail/1.4.3/mail-1.4.3.jar" sourcepath="M2_REPO/javax/mail/mail/1.4.3/mail-1.4.3-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar" sourcepath="M2_REPO/javax/servlet/servlet-api/2.5/servlet-api-2.5-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar" sourcepath="M2_REPO/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA.jar" sourcepath="M2_REPO/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/javax/xml/webservices-api-osgi/2.0.1/webservices-api-osgi-2.0.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/appclient/acc-config/3.0.1/acc-config-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/appclient/acc-config/3.0.1/acc-config-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/admin/admin-core/3.0.1/admin-core-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/admin/admin-core/3.0.1/admin-core-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/admin/admin-util/3.0.1/admin-util-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/admin/admin-util/3.0.1/admin-util-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/common/amx-core/3.0.1/amx-core-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/common/amx-core/3.0.1/amx-core-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/common/amx-j2ee/3.0.1/amx-j2ee-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/common/amx-j2ee/3.0.1/amx-j2ee-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/common/annotation-framework/3.0.1/annotation-framework-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/common/annotation-framework/3.0.1/annotation-framework-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/antlr/antlr/2.7.6/antlr-2.7.6.jar" sourcepath="M2_REPO/antlr/antlr/2.7.6/antlr-2.7.6-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/aopalliance/aopalliance/1.0/aopalliance-1.0.jar" sourcepath="M2_REPO/aopalliance/aopalliance/1.0/aopalliance-1.0-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/security/appclient.security/3.0.1/appclient.security-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/security/appclient.security/3.0.1/appclient.security-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/asm/asm/3.1/asm-3.1.jar" sourcepath="M2_REPO/asm/asm/3.1/asm-3.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/external/asm-all-repackaged/3.0.1/asm-all-repackaged-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/external/asm-all-repackaged/3.0.1/asm-all-repackaged-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/aspectj/aspectjrt/1.6.8/aspectjrt-1.6.8.jar" sourcepath="M2_REPO/org/aspectj/aspectjrt/1.6.8/aspectjrt-1.6.8-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/aspectj/aspectjweaver/1.6.8/aspectjweaver-1.6.8.jar" sourcepath="M2_REPO/org/aspectj/aspectjweaver/1.6.8/aspectjweaver-1.6.8-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/enterprise/auto-depends/1.0.0/auto-depends-1.0.0.jar" sourcepath="M2_REPO/com/sun/enterprise/auto-depends/1.0.0/auto-depends-1.0.0-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/bean-validator/3.0-JBoss-4.0.2/bean-validator-3.0-JBoss-4.0.2.jar"/>
+	<classpathentry kind="var" path="M2_REPO/cglib/cglib/2.2/cglib-2.2.jar" sourcepath="M2_REPO/cglib/cglib/2.2/cglib-2.2-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/admin/cli-framework/3.0.1/cli-framework-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/admin/cli-framework/3.0.1/cli-framework-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/persistence/cmp/cmp-internal-api/3.0.1/cmp-internal-api-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/persistence/cmp/cmp-internal-api/3.0.1/cmp-internal-api-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/common/common-util/3.0.1/common-util-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/common/common-util/3.0.1/common-util-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/commons-collections/commons-collections/3.1/commons-collections-3.1.jar" sourcepath="M2_REPO/commons-collections/commons-collections/3.1/commons-collections-3.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar" sourcepath="M2_REPO/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/enterprise/config/1.0.0/config-1.0.0.jar" sourcepath="M2_REPO/com/sun/enterprise/config/1.0.0/config-1.0.0-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/admin/config-api/3.0.1/config-api-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/admin/config-api/3.0.1/config-api-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/enterprise/config-types/1.0.0/config-types-1.0.0.jar" sourcepath="M2_REPO/com/sun/enterprise/config-types/1.0.0/config-types-1.0.0-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/connectors/connectors-inbound-runtime/3.0.1/connectors-inbound-runtime-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/connectors/connectors-inbound-runtime/3.0.1/connectors-inbound-runtime-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/connectors/connectors-internal-api/3.0.1/connectors-internal-api-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/connectors/connectors-internal-api/3.0.1/connectors-internal-api-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/connectors/connectors-runtime/3.0.1/connectors-runtime-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/connectors/connectors-runtime/3.0.1/connectors-runtime-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/common/container-common/3.0.1/container-common-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/common/container-common/3.0.1/container-common-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/net/sourceforge/cssparser/cssparser/0.9.5/cssparser-0.9.5.jar" sourcepath="M2_REPO/net/sourceforge/cssparser/cssparser/0.9.5/cssparser-0.9.5-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/deployment/deployment-common/3.0.1/deployment-common-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/deployment/deployment-common/3.0.1/deployment-common-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/deployment/deployment-javaee-core/3.0.1/deployment-javaee-core-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/deployment/deployment-javaee-core/3.0.1/deployment-javaee-core-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/deployment/dol/3.0.1/dol-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/deployment/dol/3.0.1/dol-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar" sourcepath="M2_REPO/dom4j/dom4j/1.6.1/dom4j-1.6.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/easymock/easymock/2.5.2/easymock-2.5.2.jar" sourcepath="M2_REPO/org/easymock/easymock/2.5.2/easymock-2.5.2-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/ejb/ejb-container/3.0.1/ejb-container-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/ejb/ejb-container/3.0.1/ejb-container-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/ejb/ejb-internal-api/3.0.1/ejb-internal-api-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/ejb/ejb-internal-api/3.0.1/ejb-internal-api-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/security/ejb.security/3.0.1/ejb.security-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/security/ejb.security/3.0.1/ejb.security-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/web/el-impl/2.2/el-impl-2.2.jar" sourcepath="M2_REPO/org/glassfish/web/el-impl/2.2/el-impl-2.2-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/flashlight/flashlight-agent/3.0.1/flashlight-agent-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/flashlight/flashlight-agent/3.0.1/flashlight-agent-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/flashlight/flashlight-framework/3.0.1/flashlight-framework-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/flashlight/flashlight-framework/3.0.1/flashlight-framework-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/appclient/gf-client/3.0.1/gf-client-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/appclient/gf-client/3.0.1/gf-client-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/appclient/gf-client-module/3.0.1/gf-client-module-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/appclient/gf-client-module/3.0.1/gf-client-module-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/core/glassfish/3.0.1/glassfish-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/core/glassfish/3.0.1/glassfish-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/common/glassfish-api/3.0.1/glassfish-api-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/common/glassfish-api/3.0.1/glassfish-api-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/corba/glassfish-corba-asm/3.0.0-b001/glassfish-corba-asm-3.0.0-b001.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/corba/glassfish-corba-codegen/3.0.0-b001/glassfish-corba-codegen-3.0.0-b001.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/corba/glassfish-corba-csiv2-idl/3.0.1-b002/glassfish-corba-csiv2-idl-3.0.1-b002.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/corba/glassfish-corba-dynamicany/3.0.0-b001/glassfish-corba-dynamicany-3.0.0-b001.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/corba/glassfish-corba-naming/3.0.0-b001/glassfish-corba-naming-3.0.0-b001.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/corba/glassfish-corba-newtimer/3.0.0-b001/glassfish-corba-newtimer-3.0.0-b001.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/corba/glassfish-corba-omgapi/3.0.1-b002/glassfish-corba-omgapi-3.0.1-b002.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/corba/glassfish-corba-orb/3.0.0-b001/glassfish-corba-orb-3.0.0-b001.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/corba/glassfish-corba-orbgeneric/3.0.1-b002/glassfish-corba-orbgeneric-3.0.1-b002.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/common/glassfish-ee-api/3.0.1/glassfish-ee-api-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/common/glassfish-ee-api/3.0.1/glassfish-ee-api-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/common/glassfish-naming/3.0.1/glassfish-naming-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/common/glassfish-naming/3.0.1/glassfish-naming-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/gmbal/gmbal/3.0.0-b023/gmbal-3.0.0-b023.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/grizzly/grizzly-comet/1.9.18-o/grizzly-comet-1.9.18-o.jar" sourcepath="M2_REPO/com/sun/grizzly/grizzly-comet/1.9.18-o/grizzly-comet-1.9.18-o-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/grizzly/grizzly-config/1.9.18-o/grizzly-config-1.9.18-o.jar" sourcepath="M2_REPO/com/sun/grizzly/grizzly-config/1.9.18-o/grizzly-config-1.9.18-o-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/grizzly/grizzly-framework/1.9.18-o/grizzly-framework-1.9.18-o.jar" sourcepath="M2_REPO/com/sun/grizzly/grizzly-framework/1.9.18-o/grizzly-framework-1.9.18-o-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/grizzly/grizzly-http/1.9.18-o/grizzly-http-1.9.18-o.jar" sourcepath="M2_REPO/com/sun/grizzly/grizzly-http/1.9.18-o/grizzly-http-1.9.18-o-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/grizzly/grizzly-http-servlet/1.9.18-o/grizzly-http-servlet-1.9.18-o.jar" sourcepath="M2_REPO/com/sun/grizzly/grizzly-http-servlet/1.9.18-o/grizzly-http-servlet-1.9.18-o-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/grizzly/grizzly-portunif/1.9.18-o/grizzly-portunif-1.9.18-o.jar" sourcepath="M2_REPO/com/sun/grizzly/grizzly-portunif/1.9.18-o/grizzly-portunif-1.9.18-o-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/grizzly/grizzly-rcm/1.9.18-o/grizzly-rcm-1.9.18-o.jar" sourcepath="M2_REPO/com/sun/grizzly/grizzly-rcm/1.9.18-o/grizzly-rcm-1.9.18-o-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/grizzly/grizzly-utils/1.9.18-o/grizzly-utils-1.9.18-o.jar" sourcepath="M2_REPO/com/sun/grizzly/grizzly-utils/1.9.18-o/grizzly-utils-1.9.18-o-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/guava/guava/r08/guava-r08.jar" sourcepath="M2_REPO/com/google/guava/guava/r08/guava-r08-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/hibernate/hibernate-annotations/3.5.0-Final/hibernate-annotations-3.5.0-Final.jar" sourcepath="M2_REPO/org/hibernate/hibernate-annotations/3.5.0-Final/hibernate-annotations-3.5.0-Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/hibernate/hibernate-commons-annotations/3.2.0.Final/hibernate-commons-annotations-3.2.0.Final.jar" sourcepath="M2_REPO/org/hibernate/hibernate-commons-annotations/3.2.0.Final/hibernate-commons-annotations-3.2.0.Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/hibernate/hibernate-core/3.5.0-Final/hibernate-core-3.5.0-Final.jar" sourcepath="M2_REPO/org/hibernate/hibernate-core/3.5.0-Final/hibernate-core-3.5.0-Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/hibernate/hibernate-entitymanager/3.5.0-Final/hibernate-entitymanager-3.5.0-Final.jar" sourcepath="M2_REPO/org/hibernate/hibernate-entitymanager/3.5.0-Final/hibernate-entitymanager-3.5.0-Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/hibernate/javax/persistence/hibernate-jpa-2.0-api/1.0.0.Final/hibernate-jpa-2.0-api-1.0.0.Final.jar" sourcepath="M2_REPO/org/hibernate/javax/persistence/hibernate-jpa-2.0-api/1.0.0.Final/hibernate-jpa-2.0-api-1.0.0.Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/hibernate/hibernate-validator/4.0.2.GA/hibernate-validator-4.0.2.GA.jar" sourcepath="M2_REPO/org/hibernate/hibernate-validator/4.0.2.GA/hibernate-validator-4.0.2.GA-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/enterprise/hk2/1.0.0/hk2-1.0.0.jar" sourcepath="M2_REPO/com/sun/enterprise/hk2/1.0.0/hk2-1.0.0-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/enterprise/hk2-core/1.0.0/hk2-core-1.0.0.jar" sourcepath="M2_REPO/com/sun/enterprise/hk2-core/1.0.0/hk2-core-1.0.0-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/hsqldb/hsqldb/1.8.0.10/hsqldb-1.8.0.10.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/common/internal-api/3.0.1/internal-api-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/common/internal-api/3.0.1/internal-api-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/javax/javaee-api/6.0/javaee-api-6.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/javassist/javassist/3.9.0.GA/javassist-3.9.0.GA.jar" sourcepath="M2_REPO/javassist/javassist/3.9.0.GA/javassist-3.9.0.GA-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/javax.annotation/3.0.1/javax.annotation-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/javax.annotation/3.0.1/javax.annotation-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/javax.ejb/3.0.1/javax.ejb-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/javax.ejb/3.0.1/javax.ejb-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/javax.enterprise.deploy/3.0.1/javax.enterprise.deploy-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/javax.enterprise.deploy/3.0.1/javax.enterprise.deploy-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/javax.jms/3.0.1/javax.jms-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/javax.jms/3.0.1/javax.jms-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/javax.management.j2ee/3.0.1/javax.management.j2ee-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/javax.management.j2ee/3.0.1/javax.management.j2ee-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/eclipse/persistence/javax.persistence/2.0.0/javax.persistence-2.0.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/javax.resource/3.0.1/javax.resource-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/javax.resource/3.0.1/javax.resource-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/javax.security.auth.message/3.0.1/javax.security.auth.message-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/javax.security.auth.message/3.0.1/javax.security.auth.message-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/javax.security.jacc/3.0.1/javax.security.jacc-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/javax.security.jacc/3.0.1/javax.security.jacc-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/javax.servlet/3.0.1/javax.servlet-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/javax.servlet/3.0.1/javax.servlet-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/javax.servlet.jsp/3.0.1/javax.servlet.jsp-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/javax.servlet.jsp/3.0.1/javax.servlet.jsp-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/javax.transaction/3.0.1/javax.transaction-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/javax.transaction/3.0.1/javax.transaction-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/xml/bind/jaxb-impl/2.1.3/jaxb-impl-2.1.3.jar" sourcepath="M2_REPO/com/sun/xml/bind/jaxb-impl/2.1.3/jaxb-impl-2.1.3-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/xml/bind/jaxb-osgi/2.2.1.1-promoted-b2/jaxb-osgi-2.2.1.1-promoted-b2.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/slf4j/jcl-over-slf4j/1.5.10/jcl-over-slf4j-1.5.10.jar" sourcepath="M2_REPO/org/slf4j/jcl-over-slf4j/1.5.10/jcl-over-slf4j-1.5.10-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/jms/jms-core/3.0.1/jms-core-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/jms/jms-core/3.0.1/jms-core-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/persistence/jpa-connector/3.0.1/jpa-connector-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/persistence/jpa-connector/3.0.1/jpa-connector-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/faces/jsf-api/2.0.3/jsf-api-2.0.3.jar" sourcepath="M2_REPO/com/sun/faces/jsf-api/2.0.3/jsf-api-2.0.3-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/faces/jsf-impl/2.0.3/jsf-impl-2.0.3.jar" sourcepath="M2_REPO/com/sun/faces/jsf-impl/2.0.3/jsf-impl-2.0.3-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/web/jsp-impl/2.2.1/jsp-impl-2.2.1.jar" sourcepath="M2_REPO/org/glassfish/web/jsp-impl/2.2.1/jsp-impl-2.2.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/webservices/jsr109-impl/3.0.1/jsr109-impl-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/webservices/jsr109-impl/3.0.1/jsr109-impl-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/transaction/jta/3.0.1/jta-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/transaction/jta/3.0.1/jta-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/transaction/jts/3.0.1/jts-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/transaction/jts/3.0.1/jts-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/junit/junit/3.8.2/junit-3.8.2.jar" sourcepath="M2_REPO/junit/junit/3.8.2/junit-3.8.2-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/core/kernel/3.0.1/kernel-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/core/kernel/3.0.1/kernel-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/external/ldapbp-repackaged/3.0.1/ldapbp-repackaged-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/external/ldapbp-repackaged/3.0.1/ldapbp-repackaged-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/log4j/log4j/1.2.15/log4j-1.2.15.jar" sourcepath="M2_REPO/log4j/log4j/1.2.15/log4j-1.2.15-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/external/management-api/3.0.0-b012/management-api-3.0.0-b012.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jvnet/mimepull/1.4/mimepull-1.4.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/admin/monitoring-core/3.0.1/monitoring-core-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/admin/monitoring-core/3.0.1/monitoring-core-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/orb/orb-connector/3.0.1/orb-connector-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/orb/orb-connector/3.0.1/orb-connector-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/orb/orb-iiop/3.0.1/orb-iiop-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/orb/orb-iiop/3.0.1/orb-iiop-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/eclipse/persistence/org.eclipse.persistence.antlr/2.0.1/org.eclipse.persistence.antlr-2.0.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/eclipse/persistence/org.eclipse.persistence.asm/2.0.1/org.eclipse.persistence.asm-2.0.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/eclipse/persistence/org.eclipse.persistence.core/2.0.1/org.eclipse.persistence.core-2.0.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/eclipse/persistence/org.eclipse.persistence.jpa/2.0.1/org.eclipse.persistence.jpa-2.0.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/eclipse/persistence/org.eclipse.persistence.jpa.modelgen/2.0.1/org.eclipse.persistence.jpa.modelgen-2.0.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/eclipse/persistence/org.eclipse.persistence.oracle/2.0.1/org.eclipse.persistence.oracle-2.0.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/enterprise/osgi-adapter/1.0.0/osgi-adapter-1.0.0.jar" sourcepath="M2_REPO/com/sun/enterprise/osgi-adapter/1.0.0/osgi-adapter-1.0.0-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/persistence/persistence-common/3.0.1/persistence-common-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/persistence/persistence-common/3.0.1/persistence-common-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/pkg/pkg-client/1.122-38.2791/pkg-client-1.122-38.2791.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/richfaces/ui/richfaces-components-api/4.0.0.Final/richfaces-components-api-4.0.0.Final.jar" sourcepath="M2_REPO/org/richfaces/ui/richfaces-components-api/4.0.0.Final/richfaces-components-api-4.0.0.Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/richfaces/ui/richfaces-components-ui/4.0.0.Final/richfaces-components-ui-4.0.0.Final.jar" sourcepath="M2_REPO/org/richfaces/ui/richfaces-components-ui/4.0.0.Final/richfaces-components-ui-4.0.0.Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/richfaces/core/richfaces-core-api/4.0.0.Final/richfaces-core-api-4.0.0.Final.jar" sourcepath="M2_REPO/org/richfaces/core/richfaces-core-api/4.0.0.Final/richfaces-core-api-4.0.0.Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/richfaces/core/richfaces-core-impl/4.0.0.Final/richfaces-core-impl-4.0.0.Final.jar" sourcepath="M2_REPO/org/richfaces/core/richfaces-core-impl/4.0.0.Final/richfaces-core-impl-4.0.0.Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/w3c/css/sac/1.3/sac-1.3.jar" sourcepath="M2_REPO/org/w3c/css/sac/1.3/sac-1.3-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/security/security/3.0.1/security-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/security/security/3.0.1/security-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-api/1.5.10/slf4j-api-1.5.10.jar" sourcepath="M2_REPO/org/slf4j/slf4j-api/1.5.10/slf4j-api-1.5.10-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-log4j12/1.5.10/slf4j-log4j12-1.5.10.jar" sourcepath="M2_REPO/org/slf4j/slf4j-log4j12/1.5.10/slf4j-log4j12-1.5.10-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/springframework/spring-aop/3.0.5.RELEASE/spring-aop-3.0.5.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-aop/3.0.5.RELEASE/spring-aop-3.0.5.RELEASE-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/springframework/spring-asm/3.0.5.RELEASE/spring-asm-3.0.5.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-asm/3.0.5.RELEASE/spring-asm-3.0.5.RELEASE-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/springframework/spring-beans/3.0.5.RELEASE/spring-beans-3.0.5.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-beans/3.0.5.RELEASE/spring-beans-3.0.5.RELEASE-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/springframework/webflow/spring-binding/2.3.0.RELEASE/spring-binding-2.3.0.RELEASE.jar" sourcepath="M2_REPO/org/springframework/webflow/spring-binding/2.3.0.RELEASE/spring-binding-2.3.0.RELEASE-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/springframework/spring-context/3.0.5.RELEASE/spring-context-3.0.5.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-context/3.0.5.RELEASE/spring-context-3.0.5.RELEASE-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/springframework/spring-context-support/3.0.5.RELEASE/spring-context-support-3.0.5.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-context-support/3.0.5.RELEASE/spring-context-support-3.0.5.RELEASE-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/springframework/spring-core/3.0.5.RELEASE/spring-core-3.0.5.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-core/3.0.5.RELEASE/spring-core-3.0.5.RELEASE-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/springframework/spring-expression/3.0.5.RELEASE/spring-expression-3.0.5.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-expression/3.0.5.RELEASE/spring-expression-3.0.5.RELEASE-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/springframework/webflow/spring-faces/2.3.0.RELEASE/spring-faces-2.3.0.RELEASE.jar" sourcepath="M2_REPO/org/springframework/webflow/spring-faces/2.3.0.RELEASE/spring-faces-2.3.0.RELEASE-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/springframework/spring-jdbc/3.0.5.RELEASE/spring-jdbc-3.0.5.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-jdbc/3.0.5.RELEASE/spring-jdbc-3.0.5.RELEASE-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/springframework/webflow/spring-js/2.3.0.RELEASE/spring-js-2.3.0.RELEASE.jar" sourcepath="M2_REPO/org/springframework/webflow/spring-js/2.3.0.RELEASE/spring-js-2.3.0.RELEASE-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/springframework/webflow/spring-js-resources/2.3.0.RELEASE/spring-js-resources-2.3.0.RELEASE.jar" sourcepath="M2_REPO/org/springframework/webflow/spring-js-resources/2.3.0.RELEASE/spring-js-resources-2.3.0.RELEASE-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/springframework/spring-orm/3.0.5.RELEASE/spring-orm-3.0.5.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-orm/3.0.5.RELEASE/spring-orm-3.0.5.RELEASE-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/springframework/security/spring-security-config/3.0.2.RELEASE/spring-security-config-3.0.2.RELEASE.jar" sourcepath="M2_REPO/org/springframework/security/spring-security-config/3.0.2.RELEASE/spring-security-config-3.0.2.RELEASE-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/springframework/security/spring-security-core/3.0.2.RELEASE/spring-security-core-3.0.2.RELEASE.jar" sourcepath="M2_REPO/org/springframework/security/spring-security-core/3.0.2.RELEASE/spring-security-core-3.0.2.RELEASE-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/springframework/security/spring-security-web/3.0.2.RELEASE/spring-security-web-3.0.2.RELEASE.jar" sourcepath="M2_REPO/org/springframework/security/spring-security-web/3.0.2.RELEASE/spring-security-web-3.0.2.RELEASE-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/springframework/spring-test/3.0.5.RELEASE/spring-test-3.0.5.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-test/3.0.5.RELEASE/spring-test-3.0.5.RELEASE-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/springframework/spring-tx/3.0.5.RELEASE/spring-tx-3.0.5.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-tx/3.0.5.RELEASE/spring-tx-3.0.5.RELEASE-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/springframework/spring-web/3.0.5.RELEASE/spring-web-3.0.5.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-web/3.0.5.RELEASE/spring-web-3.0.5.RELEASE-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/springframework/webflow/spring-webflow/2.3.0.RELEASE/spring-webflow-2.3.0.RELEASE.jar" sourcepath="M2_REPO/org/springframework/webflow/spring-webflow/2.3.0.RELEASE/spring-webflow-2.3.0.RELEASE-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/springframework/spring-webmvc/3.0.5.RELEASE/spring-webmvc-3.0.5.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-webmvc/3.0.5.RELEASE/spring-webmvc-3.0.5.RELEASE-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/common/stats77/3.0.1/stats77-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/common/stats77/3.0.1/stats77-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/sueArq/1.0-SNAPSHOT/sueArq-1.0-SNAPSHOT.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/sueArqWeb/1.0-SNAPSHOT/sueArqWeb-1.0-SNAPSHOT.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/sueJ2EEInterfaces/1.0-SNAPSHOT/sueJ2EEInterfaces-1.0-SNAPSHOT.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/sueJar/1.0-SNAPSHOT/sueJar-1.0-SNAPSHOT.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/enterprise/tiger-types-osgi/1.0.0/tiger-types-osgi-1.0.0.jar" sourcepath="M2_REPO/com/sun/enterprise/tiger-types-osgi/1.0.0/tiger-types-osgi-1.0.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.6.0_31/lib/tools.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/transaction/transaction-internal-api/3.0.1/transaction-internal-api-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/transaction/transaction-internal-api/3.0.1/transaction-internal-api-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/web/war-util/3.0.1/war-util-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/web/war-util/3.0.1/war-util-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/web/web-cli/3.0.1/web-cli-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/web/web-cli/3.0.1/web-cli-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/web/web-core/3.0.1/web-core-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/web/web-core/3.0.1/web-core-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/web/web-glue/3.0.1/web-glue-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/web/web-glue/3.0.1/web-glue-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/web/web-gui-plugin-common/3.0.1/web-gui-plugin-common-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/web/web-gui-plugin-common/3.0.1/web-gui-plugin-common-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/web/web-naming/3.0.1/web-naming-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/web/web-naming/3.0.1/web-naming-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/security/websecurity/3.0.1/websecurity-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/security/websecurity/3.0.1/websecurity-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/sun/xml/ws/webservices-osgi/2.0.1/webservices-osgi-2.0.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/security/webservices.security/3.0.1/webservices.security-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/security/webservices.security/3.0.1/webservices.security-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/ctc/wstx/woodstox-osgi/3.2.1/woodstox-osgi-3.2.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/glassfish/connectors/work-management/3.0.1/work-management-3.0.1.jar" sourcepath="M2_REPO/org/glassfish/connectors/work-management/3.0.1/work-management-3.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar" sourcepath="M2_REPO/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2-sources.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER"/>
+	<classpathentry kind="output" path="target/classes"/>
 </classpath>

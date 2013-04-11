@@ -306,7 +306,7 @@
 	</build>
 
 	<modules>
-		<module>sueJar</module>
+		<module>sueTutorialJar</module>
 		<module>sueWeb</module>
 		<module>sueJ2EEBeans</module>
 		<!-- <module>sueJ2EEInterfaces</module> -->

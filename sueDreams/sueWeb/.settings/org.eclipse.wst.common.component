@@ -7,7 +7,7 @@
         <dependent-module archiveName="sueArq-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/sueArq/sueArq">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="sueJar-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/sueJar/sueJar">
+        <dependent-module archiveName="sueTutorialJar-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/sueTutorialJar/sueTutorialJar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="sueJ2EEInterfaces-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/sueJ2EEInterfaces/sueJ2EEInterfaces">

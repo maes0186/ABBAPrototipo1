@@ -10,7 +10,7 @@
  -->
  <managed-bean>
   <managed-bean-name>menuBeans</managed-bean-name>
-  <managed-bean-class>org.beansFrame.MenuBeans</managed-bean-class>
+  <managed-bean-class>org.beanding.menu.MenuBeans</managed-bean-class>
   <managed-bean-scope>session</managed-bean-scope>
  </managed-bean>
  
