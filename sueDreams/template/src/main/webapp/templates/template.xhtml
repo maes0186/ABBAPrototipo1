@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	 xmlns:sue="http://java.sun.com/jsf/composite/componentes"
+	 xmlns:a4j="http://richfaces.org/a4j">
+<h:head>
+</h:head>
+
+<h:form prependId="false">
+	
+		<link href="#{request.contextPath}/estilos/css/estilos.css" rel="stylesheet"
+			type="text/css" />
+			
+		<f:loadBundle basename="propiedades.template" var="template" />
+		<h:head>
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+			<title><ui:insert name="title" /></title>
+
+		</h:head>
+
+		<h:body styleClass="cuerpo" style="background-image: url(#{request.contextPath}/#{template.colorFondo});">
+			<h:panelGrid columns="1" columnClasses="col100">
+				<h:panelGrid columns="1" id="titulo">
+					<img src="#{request.contextPath}/#{template.imagenBanner}" class="styleBanner" />
+				</h:panelGrid>
+				<p id="SaltoLinea1"/>			
+				<hr class="styleLine" style="background-color: #{request.contextPath}/#{template.colorLinea};"/>
+				<p id="SaltoLinea2"/>
+				<hr class="styleLine" style="background-color: #{request.contextPath}/#{template.colorLinea};"/>
+				<p id="SaltoLinea3"/>
+				<h:panelGrid columns="2" id="cuerpo" columnClasses="colTop,colTop">
+					<h:panelGrid columns="1" id="menu">
+						<sue:menu/>
+					</h:panelGrid>
+
+					<h:panelGrid columns="1" id="aplicacion">
+						<ui:insert name="aplicacion" />
+					</h:panelGrid>
+
+
+				</h:panelGrid>
+			</h:panelGrid>
+		</h:body>
+	
+</h:form>
+</html>

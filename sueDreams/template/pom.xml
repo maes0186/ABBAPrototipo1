@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<artifactId>sueDreams</artifactId>
+		<groupId>org</groupId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<groupId>org</groupId>
+	<artifactId>template</artifactId>
+	<name>template</name>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<url>http://jboss.org/richfaces</url>
+
+	<repositories>
+		<repository>
+			<id>glassfish</id>
+			<name>Glassfish</name>
+			<url>https://repository.jboss.org/nexus/content/repositories/glassfish</url>
+		</repository>
+		<!-- You should seriously consider using a repository manager or declare 
+			repositories in your settings.xml. See http://www.sonatype.com/people/2009/02/why-putting-repositories-in-your-poms-is-a-bad-idea/ -->
+		<repository>
+			<id>jboss-public-repository-group</id>
+			<name>JBoss Public Maven Repository Group</name>
+			<url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+			<layout>default</layout>
+			<releases>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<updatePolicy>never</updatePolicy>
+			</snapshots>
+		</repository>
+		<!-- <repository> <id>glassfish</id> <name>Glassfish</name> <url>https://repository.jboss.org/nexus/content/repositories/glassfish</url> 
+			</repository> -->
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>jboss-public-repository-group</id>
+			<name>JBoss Public Maven Repository Group</name>
+			<url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+			<layout>default</layout>
+			<releases>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<updatePolicy>never</updatePolicy>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+
+
+
+	<build>
+		<finalName>template</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1.1</version>
+			</plugin>
+		</plugins>
+	</build>
+
+
+
+	<dependencies>
+		<dependency>
+			<groupId>org</groupId>
+			<artifactId>sueArqWeb</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org</groupId>
+			<artifactId>sueTutorialJar</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org</groupId>
+			<artifactId>sueJ2EEBeans</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.appclient</groupId>
+			<artifactId>gf-client</artifactId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- <dependency> <groupId>org.glassfish.extras</groupId> <artifactId>glassfish-embedded-web</artifactId> 
+			<version>3.1-b32</version> </dependency> -->
+		<!-- <dependency> <groupId>org.glassfish.distributions</groupId> <artifactId>web-all</artifactId> 
+			<version>10.0-build-20080812</version> </dependency> <dependency> <groupId>org.glassfish.embedded</groupId> 
+			<artifactId>glassfish-embedded-all</artifactId> <version>3.0-b55</version> 
+			</dependency> -->
+
+	</dependencies>
+	<profiles>
+		<profile>
+			<id>jee6</id>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-war-plugin</artifactId>
+						<configuration>
+							<webappDirectory>${project.build.directory}/${project.build.finalName}-jee6</webappDirectory>
+							<classifier>jee6</classifier>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+
+			<dependencies>
+
+			</dependencies>
+		</profile>
+		<profile>
+			<id>release</id>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-war-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>jee6</id>
+								<phase>package</phase>
+								<goals>
+									<goal>war</goal>
+								</goals>
+								<configuration>
+									<webappDirectory>${project.build.directory}/${project.build.finalName}-jee6</webappDirectory>
+									<classifier>jee6</classifier>
+									<packagingExcludes>WEB-INF/lib/javax.faces*</packagingExcludes>
+									<warSourceExcludes>WEB-INF/lib/javax.faces*</warSourceExcludes>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+</project>

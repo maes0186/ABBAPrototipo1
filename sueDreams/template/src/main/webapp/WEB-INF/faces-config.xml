@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<faces-config version="2.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+ <!--
+ <managed-bean>
+  <managed-bean-name>ingresoDatos</managed-bean-name>
+  <managed-bean-class>org.paginas.criteria.IngresoDatos</managed-bean-class>
+  <managed-bean-scope>session</managed-bean-scope>
+ </managed-bean>
+ -->
+ <managed-bean>
+  <managed-bean-name>menuBeans</managed-bean-name>
+  <managed-bean-class>org.beanding.menu.MenuBeans</managed-bean-class>
+  <managed-bean-scope>session</managed-bean-scope>
+ </managed-bean>
+ 
+ 
+
+ <!--  
+ 
+ <navigation-rule>
+    <from-view-id>*</from-view-id>
+    <navigation-case>
+        <from-outcome>processInDatos</from-outcome>
+        <to-view-id>/paginas/ejemplos/formularios/datosPersonalesResults.xhtml</to-view-id>
+     <redirect/> 
+    </navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+    <from-view-id>*</from-view-id>
+    <navigation-case>
+        <from-outcome>datosPersonales</from-outcome>
+        <to-view-id>/paginas/ejemplos/formularios/datosPersonales.xhtml</to-view-id>
+     <redirect/> 
+    </navigation-case>
+</navigation-rule>
+ -->
+ <application>
+		<message-bundle>JsfMessageResources</message-bundle>
+	</application>
+	    
+</faces-config>

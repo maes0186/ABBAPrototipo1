@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config id="idConfig1">
+ 
+	<item1 name="Item1" id="idgroup1">
+		<item2 name="Item1_1" id="idgroup2">
+		<item3 name="Item1_1_1" id="idgroup3">
+		<item4 name="Item1_1_1_1" action="proximo" id="idTest1">
+		</item4>
+		</item3>
+		</item2>
+	</item1>
+
+	<item1 name="Item2" id="idgroup4">
+		
+		<item2 name="Item2_1_1" action="proximo2" id="idTest2">
+		</item2>
+		
+	</item1>
+</config>

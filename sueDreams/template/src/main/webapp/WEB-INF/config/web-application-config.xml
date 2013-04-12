@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Scans for application @Components to deploy -->
+	<context:component-scan base-package="org.springframework.webflow.samples.booking" />
+
+	<bean name="richfacesResourceHandler" class="org.springframework.faces.webflow.JsfResourceRequestHandler" />
+<bean id="flowController" class="org.springframework.webflow.mvc.servlet.FlowController">
+<property name="flowExecutor" ref="flowExecutor" />
+</bean>
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	    <property name="order" value="0" />
+	    <property name="mappings">
+	        <value>
+	            /rfRes/**=richfacesResourceHandler
+	        </value>
+	    </property>
+	</bean>
+	
+	<!-- Imports the configurations of the different infrastructure systems of the application -->
+	<import resource="webmvc-config.xml" />
+	<import resource="webflow-config.xml" />
+	<!-- <import resource="data-access-config.xml" /> -->
+	<import resource="security-config.xml" />
+	
+	
+	
+	
+
+</beans>

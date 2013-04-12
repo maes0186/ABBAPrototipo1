@@ -306,12 +306,14 @@
 	</build>
 
 	<modules>
-		<module>sueTutorialJar</module>
-		<module>sueWeb</module>
-		<module>sueJ2EEBeans</module>
 		<!-- <module>sueJ2EEInterfaces</module> -->
-		<module>sueEntidades</module>
+		
 		<module>sueArq</module>
 		<module>sueArqWeb</module>
+		<module>sueTutorialJar</module>
+		<module>sueJ2EEBeans</module>
+		<module>sueEntidades</module>
+		<module>sueWeb</module>
+		<module>template</module>
 	</modules>
 </project>
