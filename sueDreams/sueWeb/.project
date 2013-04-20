@@ -1,7 +1,13 @@
 <projectDescription>
   <name>sueWeb</name>
   <comment>NO_M2ECLIPSE_SUPPORT: Project files created with the maven-eclipse-plugin are not supported in M2Eclipse.</comment>
-  <projects/>
+  <projects>
+    <project>sueArq</project>
+    <project>sueArqWeb</project>
+    <project>sueEntidades</project>
+    <project>sueJ2EEBeans</project>
+    <project>sueTutorialJar</project>
+  </projects>
   <buildSpec>
     <buildCommand>
       <name>org.eclipse.wst.jsdt.core.javascriptValidator</name>

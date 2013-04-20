@@ -1,4 +1,4 @@
-package org.entidades.framework;
+package org.ejb.beans.tutorial;
 
 import javax.persistence.*;
 import javax.persistence.Entity;
