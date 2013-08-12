@@ -3,6 +3,7 @@ package org.empresa.controller;
 import java.util.logging.Logger;
 
 import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
 import javax.ejb.Stateful;
 import javax.enterprise.event.Event;
 import javax.enterprise.inject.Model;
@@ -30,6 +31,9 @@ public class MemberRegistration {
 
    @Inject
    private Event<Member> memberEventSrc;
+   @EJB
+   BeanPrueba prueba;
+   
 
    private Member newMember;
 
@@ -40,7 +44,7 @@ public class MemberRegistration {
    }
 
    public void register() throws Exception {
-      log.info("Registering " + newMember.getName());
+      log.info("Registering " +prueba.returnTest()+ newMember.getName());
       em.persist(newMember);
       memberEventSrc.fire(newMember);
       initNewMember();

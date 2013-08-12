@@ -1,12 +1,12 @@
 package org.empresa.data;
 
-import org.empresa.model.Member;
 import java.util.List;
+
 import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.event.Observes;
 import javax.enterprise.event.Reception;
-
 import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -15,10 +15,15 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
+import org.empresa.controller.MemberRegistration;
+import org.empresa.model.Member;
+
 @RequestScoped
 public class MemberListProducer {
    @Inject
    private EntityManager em;
+   @EJB
+   MemberRegistration f;
 
    private List<Member> members;
 
