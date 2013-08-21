@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:sue="http://java.sun.com/jsf/composite/componentes"
+	xmlns:a4j="http://richfaces.org/a4j" xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+
+<h:form prependId="false">
+	<h:head>
+   <title>Java EE 6 Starter Application</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <h:outputStylesheet name="css/screen.css" />
+</h:head>
+
+	<h:body styleClass="cuerpo">
+		<h:panelGroup id="menuItem">
+			<h:panelGrid columns="2">
+				<h:panelGroup>
+					<p:panelMenu style="width:200px">
+						<p:submenu label="Ajax Menuitems">
+							<p:menuitem value="Save" actionListener="#{buttonBean.save}"
+								icon="ui-icon-disk" />
+							<p:menuitem value="Update" actionListener="#{buttonBean.update}"
+								icon="ui-icon-arrowrefresh-1-w" />
+						</p:submenu>
+						<p:submenu label="Non-Ajax Menuitem">
+							<p:menuitem value="Delete" actionListener="#{buttonBean.delete}"
+								ajax="false" icon="ui-icon-close" />
+						</p:submenu>
+						<p:separator />
+						<p:submenu label="Navigations">
+							<p:submenu label="Links" icon="ui-icon-extlink">
+								<p:submenu label="PrimeFaces" icon="ui-icon-heart">
+									<p:menuitem value="Home" url="http://www.primefaces.org"
+										icon="ui-icon-home" />
+									<p:menuitem value="Docs"
+										url="http://www.primefaces.org/documentation.html"
+										icon="ui-icon-document" />
+									<p:menuitem value="Download"
+										url="http://www.primefaces.org/downloads.html"
+										icon="ui-icon-arrowthick-1-s" />
+									<p:menuitem value="Support"
+										url="http://www.primefaces.org/support.html"
+										icon="ui-icon-wrench" />
+								</p:submenu>
+							</p:submenu>
+
+						</p:submenu>
+					</p:panelMenu>
+				</h:panelGroup>
+				<h:panelGroup columns="1" id="aplicacion" styleClass="foo">
+					<ui:insert name="aplicacion" />
+				</h:panelGroup>
+			</h:panelGrid>
+
+		</h:panelGroup>
+
+	</h:body>
+
+</h:form>
+</html>

@@ -38,3 +38,6 @@ span.invalid {
     padding-left: 3px;
     color: red;
 }
+.foo td {
+    vertical-align: top;
+}
