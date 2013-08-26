@@ -1,4 +1,5 @@
 Manifest-Version: 1.0
+Class-Path: lib/primefaces-3.5.jar
 Build-Jdk: 1.7.0_25
 Built-By: mario
 Created-By: Maven Integration for Eclipse
