@@ -12,10 +12,10 @@
 					required="true" autoResize="false" />
 				<h:outputText value="&lt;br/&gt;" escape="false" />
 				<h:outputText id="counter" />
-				<h:panelGroup id="mensajes">
+				<h:panelGroup id="mensajesParticulares">
 					<p:commandButton value="Press"
 						action="#{testController.procesarMensaje()}"
-						update="form:mensajes" />
+						update="form:mensajesParticulares,form:mensajes" />
 					<h:outputText id="out" value="#{testModelo.texto}"
 						styleClass="ui-widget display" />
 

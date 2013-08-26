@@ -2,9 +2,11 @@ package org.empresa.controladores.test;
 
 import java.io.Serializable;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import org.empresa.fachada.test.TestFachada;
 import org.empresa.modelo.test.TestModelo;
@@ -24,6 +26,7 @@ public class TestController implements Serializable {
 	public String procesarMensaje() {
 		String mensaje=testFachada.mensaje();
 		testModelo.setTexto(mensaje);
+		addMessage("Mensaje Procesado");
 		return mensaje;
 	}
 
@@ -42,5 +45,9 @@ public class TestController implements Serializable {
 	public void setTestModelo(TestModelo testModelo) {
 		this.testModelo = testModelo;
 	}
+	 public void addMessage(String summary) {  
+	        FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, summary,  null);  
+	        FacesContext.getCurrentInstance().addMessage(null, message);  
+	    }  
 
 }
