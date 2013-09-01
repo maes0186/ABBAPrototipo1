@@ -7,8 +7,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	 xmlns:a4j="http://richfaces.org/a4j"
-	 xmlns:p="http://primefaces.org/ui"
-	 >
+	 xmlns:p="http://primefaces.org/ui"	>
 <h:head>
 </h:head>
 
@@ -34,13 +33,15 @@
 				<p id="SaltoLinea3"/>
 				<h:panelGrid columns="2" id="cuerpo" columnClasses="colTop,colTop">
 					<h:panelGrid columns="1" id="menu">
-					 <p:panelMenu style="width:200px">  
-        <p:submenu label="Ajax Menuitems">  
-            <p:menuitem value="Save" actionListener="#{menuBeans.save}"  icon="ui-icon-disk" update="aplicacion,mensajes" />  
-            <p:menuitem value="Update" actionListener="#{menuBeans.update}"  icon="ui-icon-arrowrefresh-1-w" update="aplicacion,mensajes" />  
-        </p:submenu>  
-        <p:submenu label="Non-Ajax Menuitem">  
-            <p:menuitem value="Delete" actionListener="#{menuBeans.delete}"  ajax="false" icon="ui-icon-close"/>  
+					 <p:panelMenu style="width:200px">
+						<p:submenu label="Administración">
+							<p:menuitem value="Creación de estudiantes" 
+								ajax="false" icon="ui-icon-disk" action="/administracionEstudiantes" immediate="true" />
+							<p:menuitem value="Pruebas" 
+								ajax="false" icon="ui-icon-disk" action="/pruebas" immediate="true"  />
+						</p:submenu>
+						<p:submenu label="Opcion2">  
+            <p:menuitem value="Eliminar" actionListener="#{menuBeans.delete}"  ajax="false" icon="ui-icon-close" update="aplicacionPart,mensajes"/>  
         </p:submenu>  
         <p:separator />  
         <p:submenu label="Navigations" >  
@@ -57,7 +58,7 @@
     </p:panelMenu>
 					</h:panelGrid>
 
-					<h:panelGrid columns="1" id="aplicacion">
+					<h:panelGrid columns="1" id="aplicacionPart">
 						<ui:insert name="aplicacion" />
 					</h:panelGrid>
 
