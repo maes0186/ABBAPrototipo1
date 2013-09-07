@@ -8,6 +8,7 @@
    <name>principal application</name>
 
    <modules>
+   	  <module>principal-commun</module>
       <module>principal-ejb</module>
       <module>principal-online</module>
       <module>principal-web</module>

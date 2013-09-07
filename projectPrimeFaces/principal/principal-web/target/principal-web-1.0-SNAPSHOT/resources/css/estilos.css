@@ -1,0 +1,39 @@
+.cuerpo {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 0;
+}
+
+.colTop {
+	vertical-align: top;
+}
+
+.col100 {
+	width: 100%;
+}
+
+.styleBuilding {
+	height: 50%;
+	width: 30%;
+	position: absolute;
+}
+
+.styleBanner {
+	height: 140%;
+	width: 120%;
+	position: relative;
+}
+
+.styleMenu {
+	width: 200px;
+	
+}
+
+.styleLine {
+	height: 1px;
+	width: 250%;
+}
+

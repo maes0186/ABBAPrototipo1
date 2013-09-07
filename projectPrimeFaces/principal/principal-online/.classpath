@@ -35,5 +35,6 @@
   <classpathentry kind="var" path="M2_REPO/org/jboss/shrinkwrap/shrinkwrap-impl-base/1.0.0-beta-5/shrinkwrap-impl-base-1.0.0-beta-5.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/jboss/shrinkwrap/shrinkwrap-spi/1.0.0-beta-5/shrinkwrap-spi-1.0.0-beta-5.jar"/>
   <classpathentry kind="src" path="/principal-ejb"/>
+  <classpathentry kind="src" path="/principal-commun"/>
   <classpathentry kind="var" path="M2_REPO/javax/javaee-api/6.0/javaee-api-6.0.jar"/>
 </classpath>

@@ -1,0 +1,23 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:p="http://primefaces.org/ui" template="/WEB-INF/templates/template.xhtml">
+	<ui:define name="aplicacion">
+	<f:event type="preRenderView" listener="#{administrarPersonasController.init()}" />
+			<h:form id="form">
+			<p:growl id="mensajes"/>
+	
+				<h:panelGroup  id="criteriapersona">
+			<h:inputText value="#{administrarPersonasModel.personaDTO.nombre1}"></h:inputText>
+			<h:inputText value="#{administrarPersonasModel.personaDTO.nombre2}"></h:inputText>
+			<h:inputText value="#{administrarPersonasModel.personaDTO.apellido1}"></h:inputText>
+			<h:inputText value="#{administrarPersonasModel.personaDTO.apellido2}"></h:inputText>
+			<p:commandButton value="Guardar"
+						actionListener="#{administrarPersonasController.guardarPersona()}"
+						update="form:mensajes,form:criteriapersona" />
+				</h:panelGroup>
+			</h:form>
+</ui:define>
+</ui:composition>
