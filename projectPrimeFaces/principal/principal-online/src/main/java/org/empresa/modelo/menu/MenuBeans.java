@@ -1,4 +1,4 @@
-package org.beanding.menu;
+package org.empresa.modelo.menu;
 
 import java.io.Serializable;
 
@@ -6,9 +6,11 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpSession;
 
-import org.primefaces.component.menuitem.MenuItem;
-import org.primefaces.component.panelmenu.PanelMenu;
+import org.empresa.constantes.enumeraciones.HttpVariables;
+import org.empresa.constantes.variables.Generales;
+import org.empresa.util.FacesUtil;
 
 /**
  * Clase encargada de la logica del Menu Dinamico
@@ -29,36 +31,21 @@ public class MenuBeans implements Serializable {
 	 * 
 	 */
 
-	 private PanelMenu model;  
-	  
-	    public MenuBeans() {  
-	        model = new PanelMenu();
-	      
-	          
-	          
-	        MenuItem item = new MenuItem();  
-	        item.setValue("Dynamic Menuitem 1.1");  
-	        item.setUrl("#");  
-	        model.getChildren().add(item);  
-	       
-	       
-	          
-	        item = new MenuItem();  
-	        item.setValue("Dynamic Menuitem 2.1");  
-	        item.setUrl("#");  
-	        model.getChildren().add(item);  
-	          
-	        item = new MenuItem();  
-	        item.setValue("Dynamic Menuitem 2.2");  
-	        item.setUrl("#");  
-	        model.getChildren().add(item);  
-	          
-	        
-	    }  
-	  
-	    public PanelMenu getModel() {  
-	        return model;  
-	    }     
+	 
+	public void inicializar() {
+		try {
+			
+			FacesContext context = FacesContext.getCurrentInstance();
+			HttpSession session = (HttpSession) context.getExternalContext()
+					.getSession(true);
+			session.setAttribute(Generales.RENDERIZACION_ANTERIOR, HttpVariables.PRINCIPAL);
+		} catch (Throwable e) {
+			e.printStackTrace();
+			FacesUtil.addMessage(FacesMessage.SEVERITY_ERROR,
+					"Error Inesperado" + e.getMessage());
+		}
+
+	}
 	      
 	    public void save() {  
 	        addMessage("Data saved");  

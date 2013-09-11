@@ -3,21 +3,59 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:c="http://java.sun.com/jstl/core"
-	xmlns:p="http://primefaces.org/ui" template="/WEB-INF/templates/template.xhtml">
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/templates/template.xhtml">
 	<ui:define name="aplicacion">
-	<f:event type="preRenderView" listener="#{administrarPersonasController.init()}" />
-			<h:form id="form">
-			<p:growl id="mensajes"/>
-	
-				<h:panelGroup  id="criteriapersona">
-			<h:inputText value="#{administrarPersonasModel.personaDTO.nombre1}"></h:inputText>
-			<h:inputText value="#{administrarPersonasModel.personaDTO.nombre2}"></h:inputText>
-			<h:inputText value="#{administrarPersonasModel.personaDTO.apellido1}"></h:inputText>
-			<h:inputText value="#{administrarPersonasModel.personaDTO.apellido2}"></h:inputText>
-			<p:commandButton value="Guardar"
-						actionListener="#{administrarPersonasController.guardarPersona()}"
-						update="form:mensajes,form:criteriapersona" />
-				</h:panelGroup>
-			</h:form>
-</ui:define>
+		<f:event type="preRenderView"
+			listener="#{administrarPersonasController.init}" />
+		<h:form id="form">
+			<p:growl id="mensajes" />
+			<h:panelGroup id="listPersonas">
+				<p:dataTable id="dataTable" var="var" value="#{administrarPersonasModel.todasPersonas}"
+					paginator="true" rows="10"
+					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+					rowsPerPageTemplate="5,10,15">
+					<f:facet name="header">Personas</f:facet>
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Nombre1" />
+						</f:facet>
+						<h:outputText value="#{var.nombre1}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Nombre2" />
+						</f:facet>
+						<h:outputText value="#{var.nombre2}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Apellido1" />
+						</f:facet>
+						<h:outputText value="#{var.apellido1}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Apellido2" />
+						</f:facet>
+						<h:outputText value="#{var.apellido2}" />
+					</p:column>
+				</p:dataTable>
+			</h:panelGroup>
+			<h:panelGroup id="criteriapersona">
+				<h:inputText value="#{administrarPersonasModel.personaDTO.nombre1}"></h:inputText>
+				<h:inputText value="#{administrarPersonasModel.personaDTO.nombre2}"></h:inputText>
+				<h:inputText
+					value="#{administrarPersonasModel.personaDTO.apellido1}"></h:inputText>
+				<h:inputText
+					value="#{administrarPersonasModel.personaDTO.apellido2}"></h:inputText>
+				<p:commandButton value="Guardar"
+					actionListener="#{administrarPersonasController.guardarPersona()}"
+					update="form:mensajes,form:criteriapersona" />
+			</h:panelGroup>
+		</h:form>
+	</ui:define>
 </ui:composition>

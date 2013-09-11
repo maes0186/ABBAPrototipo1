@@ -36,7 +36,7 @@
 					 <p:panelMenu style="width:200px">
 						<p:submenu label="Administración">
 							<p:menuitem value="Creación de personas" 
-								ajax="false" icon="ui-icon-disk" action="/administracionPersonas" immediate="true" />
+								ajax="false" icon="ui-icon-disk" action="/administracionPersonas" actionListener="#{menuBeans.inicializar()}" immediate="true" />
 							<p:menuitem value="Pruebas" 
 								ajax="false" icon="ui-icon-disk" action="/pruebas" immediate="true"  />
 						</p:submenu>
