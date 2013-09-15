@@ -3,21 +3,122 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:c="http://java.sun.com/jstl/core"
-	xmlns:p="http://primefaces.org/ui" template="/WEB-INF/templates/template.xhtml">
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/templates/template.xhtml">
 	<ui:define name="aplicacion">
-	<f:event type="preRenderView" listener="#{administrarPersonasController.init()}" />
-			<h:form id="form">
-			<p:growl id="mensajes"/>
-	
-				<h:panelGroup  id="criteriapersona">
-			<h:inputText value="#{administrarPersonasModel.personaDTO.nombre1}"></h:inputText>
-			<h:inputText value="#{administrarPersonasModel.personaDTO.nombre2}"></h:inputText>
-			<h:inputText value="#{administrarPersonasModel.personaDTO.apellido1}"></h:inputText>
-			<h:inputText value="#{administrarPersonasModel.personaDTO.apellido2}"></h:inputText>
-			<p:commandButton value="Guardar"
-						actionListener="#{administrarPersonasController.guardarPersona()}"
-						update="form:mensajes,form:criteriapersona" />
-				</h:panelGroup>
-			</h:form>
-</ui:define>
+		<f:event type="preRenderView"
+			listener="#{administrarPersonasController.init}" />
+		<h:form id="form">
+			<p:growl id="mensajes" />
+			<h:panelGroup id="titulo">
+			<h:title align="center">Administración de Personas</h:title>
+			</h:panelGroup>
+			<h:panelGroup id="toolBarPersonas">
+				<p:toolbar>
+					<p:toolbarGroup align="left">
+						<p:commandButton type="button" title="Nuevo" icon="ui-icon-plus" />
+						<p:commandButton type="button" title="Editar" icon="ui-icon-pencil" />
+						<p:commandButton type="button" title="Eliminar" icon="ui-icon-minus" />
+					</p:toolbarGroup>
+					
+					<p:toolbarGroup align="right">
+			
+					</p:toolbarGroup>
+				</p:toolbar>
+
+			</h:panelGroup>
+
+			<p:spacer width="20" height="20" />
+
+
+<p:dataTable id="tablaPersonas" var="var" value="#{administrarPersonasModel.todasPersonas}" paginator="true" rows="10">  
+   <p:column>
+						<f:facet name="header1">
+							<h:outputText value="Nombre1" />
+						</f:facet>
+						<h:outputText value="#{var.nombre1}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header2">
+							<h:outputText value="Nombre2" />
+						</f:facet>
+						<h:outputText value="#{var.nombre2}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header3">
+							<h:outputText value="Apellido1" />
+						</f:facet>
+						<h:outputText value="#{var.apellido1}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header4">
+							<h:outputText value="Apellido2" />
+						</f:facet>
+						<h:outputText value="#{var.apellido2}" />
+					</p:column>
+</p:dataTable> 
+
+
+							<h:panelGrid columns="2">  
+    <p:panel header="Export All Data">  
+        <h:commandLink>  
+            <p:graphicImage value="/resources/excel.png" />  
+            <p:dataExporter type="xls" target="tablaPersonas" fileName="cars" />  
+        </h:commandLink>  
+  
+        <h:commandLink>  
+            <p:graphicImage value="/resources/pdf.png" />  
+            <p:dataExporter type="pdf" target="tablaPersonas" fileName="cars"/>  
+        </h:commandLink>  
+          
+        <h:commandLink>  
+            <p:graphicImage value="/resources/csv.png" />  
+            <p:dataExporter type="csv" target="tablaPersonas" fileName="cars" />  
+        </h:commandLink>  
+          
+        <h:commandLink>  
+            <p:graphicImage value="/resources/xml.png" />  
+            <p:dataExporter type="xml" target="tablaPersonas" fileName="cars" />  
+        </h:commandLink>  
+    </p:panel>  
+      
+    <p:panel header="Export Page Data">  
+        <h:commandLink>  
+            <p:graphicImage value="/resources/excel.png" />  
+            <p:dataExporter type="xls" target="tablaPersonas" fileName="cars" pageOnly="true"/>  
+        </h:commandLink>  
+  
+        <h:commandLink>  
+            <p:graphicImage value="/resources/pdf.png" />  
+            <p:dataExporter type="pdf" target="tablaPersonas" fileName="cars" pageOnly="true"/>  
+        </h:commandLink>  
+          
+        <h:commandLink>  
+            <p:graphicImage value="/resources/csv.png" />  
+            <p:dataExporter type="csv" target="tablaPersonas" fileName="cars" pageOnly="true"/>  
+        </h:commandLink>  
+          
+        <h:commandLink>  
+            <p:graphicImage value="/resources/xml.png" />  
+            <p:dataExporter type="xml" target="tablaPersonas" fileName="cars" pageOnly="true"/>  
+        </h:commandLink>  
+    </p:panel>  
+</h:panelGrid>  
+
+			<h:panelGroup id="criteriapersona">
+				<h:inputText value="#{administrarPersonasModel.personaDTO.nombre1}"></h:inputText>
+				<h:inputText value="#{administrarPersonasModel.personaDTO.nombre2}"></h:inputText>
+				<h:inputText
+					value="#{administrarPersonasModel.personaDTO.apellido1}"></h:inputText>
+				<h:inputText
+					value="#{administrarPersonasModel.personaDTO.apellido2}"></h:inputText>
+				<p:commandButton value="Guardar"
+					actionListener="#{administrarPersonasController.guardarPersona()}"
+					update="form:tablaPersonas,form:mensajes" />
+			</h:panelGroup>
+		</h:form>
+	</ui:define>
 </ui:composition>

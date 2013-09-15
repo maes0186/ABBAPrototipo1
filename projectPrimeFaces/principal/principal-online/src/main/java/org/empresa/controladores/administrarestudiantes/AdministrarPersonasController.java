@@ -60,6 +60,9 @@ public class AdministrarPersonasController implements Serializable {
 		try {
 			if (administrarPersonasFachada
 					.creacionPersona(administrarPersonasModel.getPersonaDTO())) {
+				administrarPersonasModel
+				.setTodasPersonas(administrarPersonasFachada
+							.obtenerTodasPersonas());
 				FacesUtil.addMessage(FacesMessage.SEVERITY_INFO,
 						"Persona Creado Correctamente");
 			} else {

@@ -8,17 +8,17 @@ public class PersonaDTO implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private Integer id;
+	private long id;
 	private String nombre1;
 	private String nombre2;
 	private String apellido1;
 	private String apellido2;
 
-	public Integer getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
