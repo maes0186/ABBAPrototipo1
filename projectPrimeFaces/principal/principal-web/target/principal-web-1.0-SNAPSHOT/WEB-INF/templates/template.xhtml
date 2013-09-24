@@ -9,6 +9,7 @@
 	 xmlns:a4j="http://richfaces.org/a4j"
 	 xmlns:p="http://primefaces.org/ui"	>
 <h:head>
+
 </h:head>
 
 <h:form prependId="false">
@@ -22,10 +23,10 @@
 	</h:head>
 
 	<h:body styleClass="cuerpo" style="background-image: url(#{request.contextPath}/#{template.colorFondo});">
-			<h:panelGrid columns="1" columnClasses="col100">
-				<h:panelGrid columns="1" id="titulo">
+			<div class="col100">
+				<div class="1" id="titulo">
 					<img src="#{request.contextPath}/#{template.imagenBanner}" class="styleBanner" />
-				</h:panelGrid>
+				</div>
 				<p id="SaltoLinea1"/>			
 				<hr class="styleLine" style="background-color: #{request.contextPath}/#{template.colorLinea};"/>
 				<p id="SaltoLinea2"/>
@@ -64,10 +65,11 @@
 
 
 				</h:panelGrid>
-			</h:panelGrid>
+			</div>
 		</h:body>
 	
 </h:form>
+
 </html>
 
 
