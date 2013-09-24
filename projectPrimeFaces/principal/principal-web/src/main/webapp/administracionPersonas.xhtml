@@ -8,106 +8,70 @@
 	<ui:define name="aplicacion">
 		<f:event type="preRenderView"
 			listener="#{administrarPersonasController.init}" />
-		<h:form id="form">
-			<p:growl id="mensajes" />
-			<h:panelGroup id="titulo">
-			<h:title align="center">Administración de Personas</h:title>
-			</h:panelGroup>
-			<h:panelGroup id="toolBarPersonas">
-				<p:toolbar>
-					<p:toolbarGroup align="left">
-						<p:commandButton type="button" title="Nuevo" icon="ui-icon-plus" />
-						<p:commandButton type="button" title="Editar" icon="ui-icon-pencil" />
-						<p:commandButton type="button" title="Eliminar" icon="ui-icon-minus" />
-					</p:toolbarGroup>
-					
-					<p:toolbarGroup align="right">
+		
+			<p:growl id="mensajes1" />
+			<h:panelGroup id="listPersonas">
 			
-					</p:toolbarGroup>
-				</p:toolbar>
-
-			</h:panelGroup>
-
-			<p:spacer width="20" height="20" />
-
-
-<p:dataTable id="tablaPersonas" var="var" value="#{administrarPersonasModel.todasPersonas}" paginator="true" rows="10">  
-   <p:column>
-						<f:facet name="header1">
+			
+				<p:dataTable id="tabla" var="var" value="#{administrarPersonasModel.todasPersonas}"
+					paginator="true" rows="10"
+					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+					rowsPerPageTemplate="5,10,15">
+					<f:facet name="header">Personas</f:facet>
+					<p:column>
+						<f:facet name="header">
 							<h:outputText value="Nombre1" />
 						</f:facet>
 						<h:outputText value="#{var.nombre1}" />
 					</p:column>
 
 					<p:column>
-						<f:facet name="header2">
+						<f:facet name="header">
 							<h:outputText value="Nombre2" />
 						</f:facet>
 						<h:outputText value="#{var.nombre2}" />
 					</p:column>
 
 					<p:column>
-						<f:facet name="header3">
+						<f:facet name="header">
 							<h:outputText value="Apellido1" />
 						</f:facet>
 						<h:outputText value="#{var.apellido1}" />
 					</p:column>
 
 					<p:column>
-						<f:facet name="header4">
+						<f:facet name="header">
 							<h:outputText value="Apellido2" />
 						</f:facet>
 						<h:outputText value="#{var.apellido2}" />
 					</p:column>
-</p:dataTable> 
-
-
-							<h:panelGrid columns="2">  
-    <p:panel header="Export All Data">  
+					
+				</p:dataTable>
+				
+				
+				<p:panel header="Export All Data">  
         <h:commandLink>  
-            <p:graphicImage value="/resources/excel.png" />  
-            <p:dataExporter type="xls" target="tablaPersonas" fileName="cars" />  
+            <p:graphicImage value="/resources/images/excel.png" />  
+            <p:dataExporter type="xls" target="tabla" fileName="cars" />  
         </h:commandLink>  
   
         <h:commandLink>  
-            <p:graphicImage value="/resources/pdf.png" />  
-            <p:dataExporter type="pdf" target="tablaPersonas" fileName="cars"/>  
+            <p:graphicImage value="/resources/images/pdf.png" />  
+            <p:dataExporter type="pdf" target="tabla" fileName="cars"/>  
         </h:commandLink>  
           
         <h:commandLink>  
-            <p:graphicImage value="/resources/csv.png" />  
-            <p:dataExporter type="csv" target="tablaPersonas" fileName="cars" />  
+            <p:graphicImage value="/resources/images/csv.png" />  
+            <p:dataExporter type="csv" target="tabla" fileName="cars" />  
         </h:commandLink>  
           
         <h:commandLink>  
-            <p:graphicImage value="/resources/xml.png" />  
-            <p:dataExporter type="xml" target="tablaPersonas" fileName="cars" />  
+            <p:graphicImage value="/resources/images/xml.png" />  
+            <p:dataExporter type="xml" target="tabla" fileName="cars" />  
         </h:commandLink>  
-    </p:panel>  
-      
-    <p:panel header="Export Page Data">  
-        <h:commandLink>  
-            <p:graphicImage value="/resources/excel.png" />  
-            <p:dataExporter type="xls" target="tablaPersonas" fileName="cars" pageOnly="true"/>  
-        </h:commandLink>  
-  
-        <h:commandLink>  
-            <p:graphicImage value="/resources/pdf.png" />  
-            <p:dataExporter type="pdf" target="tablaPersonas" fileName="cars" pageOnly="true"/>  
-        </h:commandLink>  
-          
-        <h:commandLink>  
-            <p:graphicImage value="/resources/csv.png" />  
-            <p:dataExporter type="csv" target="tablaPersonas" fileName="cars" pageOnly="true"/>  
-        </h:commandLink>  
-          
-        <h:commandLink>  
-            <p:graphicImage value="/resources/xml.png" />  
-            <p:dataExporter type="xml" target="tablaPersonas" fileName="cars" pageOnly="true"/>  
-        </h:commandLink>  
-    </p:panel>  
-</h:panelGrid>  
-
+    </p:panel> 
+				 
+			</h:panelGroup>
 			<h:panelGroup id="criteriapersona">
 				<h:inputText value="#{administrarPersonasModel.personaDTO.nombre1}"></h:inputText>
 				<h:inputText value="#{administrarPersonasModel.personaDTO.nombre2}"></h:inputText>
@@ -117,8 +81,8 @@
 					value="#{administrarPersonasModel.personaDTO.apellido2}"></h:inputText>
 				<p:commandButton value="Guardar"
 					actionListener="#{administrarPersonasController.guardarPersona()}"
-					update="form:tablaPersonas,form:mensajes" />
+					update="mensajes1,criteriapersona" />
 			</h:panelGroup>
-		</h:form>
+
 	</ui:define>
 </ui:composition>
