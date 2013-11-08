@@ -8,6 +8,12 @@
 	<!-- 
 	<jsp:include page="./ejemploGrilla.jsp" />
 	 -->
-	<jsp:include page="./ejemploEstilos.jsp" />		
+	 <!-- 
+	<jsp:include page="./ejemploEstilos.jsp" />
+	 -->		
+	 <!-- 
+	 <jsp:include page="./ejemploTablas.jsp" />
+	  -->
+	  <jsp:include page="./ejemploImagenes.jsp" />
 </body>
 </html>
