@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	
+	<!-- Appender General por CONSOLA -->
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{dd-MM-yyyy HH:mm:ss} %-5p  %C:%L %m%n" />
+		</layout>
+	</appender>
+	
+	<!-- Appender General por ARCHIVO -->
+	<appender name="file" class="org.apache.log4j.FileAppender">
+		<param name="File" value="/logs/saludcoop-web.log" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{dd-MM-yyyy HH:mm:ss} %-5p  %m%n" />
+		</layout>
+	</appender>
+	
+	
+	<!-- Loggers (Categories) -->
+	<!-- APP SALUDCOOP -->
+	<logger name="com.conexia.saludcoop" >
+		<level value="info" />
+		<appender-ref ref="console" />
+	</logger>
+	
+	<logger name="com.conexia.saludcoop.web.controller" additivity="false">
+		<level value="info" />
+		<appender-ref ref="console" />
+	</logger>
+	
+	<logger name="com.conexia.saludcoop.manager" additivity="false">
+		<level value="info" />
+		<appender-ref ref="console" />
+	</logger>
+	
+	<logger name="com.conexia.saludcoop.clasesws" additivity="false">
+		<level value="info" />
+		<appender-ref ref="console" />
+	</logger>
+	
+	<logger name="com.conexia.saludcoop.security" additivity="false">
+		<level value="info" />
+		<appender-ref ref="console" />
+	</logger>
+	
+	<logger name="com.conexia.saludcoop.jasperreport" additivity="false">
+		<level value="info" />
+		<appender-ref ref="console" />
+	</logger>
+	
+	<logger name="com.conexia.saludcoop.listener" additivity="false">
+		<level value="info" />
+		<appender-ref ref="console" />
+	</logger>	
+	
+	<!-- APACHE -->
+	<logger name="org.apache">
+		<level value="info" />
+		<appender-ref ref="console" />
+	</logger>
+	
+	
+	<!-- SPRING -->
+	<logger name="org.springframework">
+		<level value="error" />
+		<appender-ref ref="console" />
+	</logger>
+	<logger name="org.springframework.aop" additivity="false">
+		<level value="info" />
+		<appender-ref ref="console" />
+	</logger>
+	<logger name="org.springframework.core" additivity="false">
+		<level value="info" />
+		<appender-ref ref="console" />
+	</logger>
+	<logger name="org.springframework.core.io" additivity="false">
+		<level value="info" />
+		<appender-ref ref="console" />
+	</logger>
+	<logger name="org.springframework.context" additivity="false">
+		<level value="info" />
+		<appender-ref ref="console" />
+	</logger>
+	<logger name="org.springframework.context.annotation" additivity="false">
+		<level value="info" />
+		<appender-ref ref="console" />
+	</logger>
+	<logger name="org.springframework.beans" additivity="false">
+		<level value="error" />
+		<appender-ref ref="console" />
+	</logger>
+	<logger name="org.springframework.beans.factory" additivity="false">
+		<level value="info" />
+		<appender-ref ref="console" />
+	</logger>
+	<logger name="org.springframework.web" additivity="false">
+		<level value="info" />
+		<appender-ref ref="console" />
+	</logger>
+	
+	
+	
+	<!-- HIBERNATE -->
+	<!--
+	Opciones para loguear hibernate
+	org.hibernate.SQL           Log all SQL DML statements as they are executed
+	org.hibernate.type          Log all JDBC parameters
+	org.hibernate.tool.hbm2ddl  Log all SQL DDL statements as they are executed
+	org.hibernate.pretty        Log the state of all entities (max 20 entities) associated with the session at flush time
+	org.hibernate.cache         Log all second-level cache activity
+	org.hibernate.transaction   Log transaction related activity
+	org.hibernate.jdbc          Log all JDBC resource acquisition
+	org.hibernate.hql.ast.AST   Log HQL and SQL ASTs during query parsing
+	org.hibernate.secure        Log all JAAS authorization requests
+	org.hibernate.annotations   Log Annotation related info
+	org.hibernate.cfg			Log hibernate configuration info 
+	org.hibernate               Log everything (a lot of debugrmation, but very useful  
+	 -->
+	<logger name="org.hibernate">
+		<level value="error" />
+	<appender-ref ref="console" />
+	</logger>
+	<!-- esto es lo mismo que show_sql=true (que ya no se usa mas) -->
+	<logger name="org.hibernate.SQL" additivity="false">
+		<level value="info" />
+		<appender-ref ref="console" />
+	</logger>
+	
+	<logger name="org.hibernate.type" additivity="false">
+		<level value="info" />
+		<appender-ref ref="console" />
+	</logger>
+	
+	<logger name="org.hibernate.annotations" additivity="false">
+		<level value="info" />
+		<appender-ref ref="console" />
+	</logger>
+	<logger name="org.hibernate.cfg" additivity="false">
+		<level value="info" />
+		<appender-ref ref="console" />
+	</logger>
+	
+	<!-- EHCACHE -->
+	<logger name="net.sf.ehcache">
+		<level value="error" />
+		<appender-ref ref="console" />
+	</logger>
+
+
+	<!-- C3P0 -->
+	<logger name="com.mchange">
+		<level value="error" />
+		<appender-ref ref="console" />
+	</logger>
+
+
+	<!-- Logger de JDBC - solo para DEBUG -->
+	<logger name="org.jdbcdslog.StatementLogger">
+		<level value="info" />
+		<appender-ref ref="console" />
+	</logger>
+	<logger name="org.jdbcdslog.DataSourceProxyBase">
+		<level value="off" />
+		<appender-ref ref="console" />
+	</logger>
+	<logger name="org.jdbcdslog.ConnectionLogger">
+		<level value="off" />
+		<appender-ref ref="console" />
+	</logger>
+	
+	
+	
+</log4j:configuration>

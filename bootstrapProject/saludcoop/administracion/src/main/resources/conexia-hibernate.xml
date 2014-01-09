@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+         http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.0.xsd">
+
+	<!-- External properties -->
+	<context:property-placeholder location="classpath:db.properties" />
+	<jpa:repositories base-package="com.conexia.saludcoop.**" />
+
+	<bean class="org.springframework.orm.jpa.JpaTransactionManager"
+		id="transactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+		<property name="jpaDialect">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaDialect" />
+		</property>
+	</bean>
+	<!-- Pool de C3P0 -->
+	<bean id="c3p0DataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${db.driverClass}"></property>
+		<property name="jdbcUrl" value="${db.url}" />
+		<property name="user" value="${db.user}" />
+		<property name="password" value="${db.password}" />
+		<property name="initialPoolSize" value="${pool.initialPoolSize}"></property>
+		<property name="minPoolSize" value="${pool.minPoolSize}"></property>
+		<property name="maxPoolSize" value="${pool.maxPoolSize}" />
+		<property name="checkoutTimeout" value="${pool.checkoutTimeout}" />
+		<property name="maxStatements" value="${pool.maxStatements}"></property>
+		<property name="automaticTestTable" value="${pool.automaticTestTable}"></property>
+		<property name="testConnectionOnCheckin" value="${pool.testConnectionOnCheckin}"></property>
+		<property name="idleConnectionTestPeriod" value="${pool.idleConnectionTestPeriod}"></property>
+	</bean>
+
+	<!-- Hibernate config -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="c3p0DataSource" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.connection.dialect}</prop>
+				<prop key="hibernate.connection.dialect">${hibernate.connection.dialect}</prop>
+				<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+				<prop key="hibernate.cache.use_second_level_cache">${hibernate.cache.use_second_level_cache}</prop>
+				<prop key="hibernate.cache.provider_class">${hibernate.cache.provider_class}</prop>
+				<prop key="hibernate.cache.region.factory_class">${hibernate.cache.region.factory_class}</prop>
+<!-- 				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop> -->
+			</props>
+		</property>
+		<property name="packagesToScan" value="com.conexia.**">
+		</property>
+	</bean>
+
+<!-- 	<bean id="backendEmf" -->
+<!-- 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"> -->
+<!-- 		<property name="dataSource" ref="c3p0DataSource" /> -->
+<!-- 		<property name="persistenceProviderClass" value="org.hibernate.ejb.HibernatePersistence" /> -->
+<!-- 		<property name="jpaVendorAdapter"> -->
+<!-- 		            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"> -->
+<!--                 <property name="generateDdl" value="true" /> -->
+<!--                 <property name="showSql" value="false"/> -->
+<!--             </bean> -->
+<!-- 		</property> -->
+<!-- 		<property name="loadTimeWeaver"> -->
+<!-- 			<bean -->
+<!-- 				class="org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver" /> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+    <bean id="entityManagerFactory"
+          class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="c3p0DataSource" />
+        <property name="packagesToScan" value="com.conexia.saludcoop.**"/>
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <property name="generateDdl" value="true" />
+                <property name="showSql" value="false"/>
+            </bean>
+        </property>
+
+    </bean>
+
+
+</beans>

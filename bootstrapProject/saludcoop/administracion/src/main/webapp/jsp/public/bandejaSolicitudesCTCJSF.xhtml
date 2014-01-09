@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"   
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="/jsp/includes/template.xhtml"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <ui:define name="head">
+        <script type="text/javascript" language="javascript">
+            $(document).ready(
+                    function() {
+                        update();
+                    });
+            function update() {
+                $('#numeroSolicitudSearch').attr('placeholder', '#{msg['label.solicitud.numero']}');
+                $('#numeroDocumentoSearch').attr('placeholder', '#{msg['label.id.number']}');
+                $('#tablaSolicitudes').removeClass("ui-datatable ui-widget");
+                $('#tablaSolicitudes_data').parent().addClass("table table-striped table-bordered table-hover");
+            }
+        </script>
+    </ui:define>
+    <ui:define name="body">
+        <div class="row">
+            <div class="col-lg-10">
+                <div class="well">
+                    <h:form class="form-horizontal" id="formFiltroPrincipal" prependId="false">
+                        <fieldset>
+                            <legend>Consulta Solicitudes</legend>
+                            <div id="bandejaTabContent" class="tab-content">
+                                <div class="tab-pane fade active in" id="filtroPrincipal">
+                                    <div class="form-group">
+                                        <p:outputLabel for="numeroSolicitudSearch"
+                                                       styleClass="col-lg-2 control-label"
+                                                       value="#{msg['label.solicitud.numero']}"/>
+                                        <div class="col-lg-5">
+                                            <p:inputText 
+                                                id="numeroSolicitudSearch"
+                                                styleClass="form-control"
+                                                value="#{auditorCTCControllerJSF.numeroSolicitudFiltro}"/>
+                                            <p:message for="numeroSolicitudSearch" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <p:outputLabel for="tipoDocumentoSearch"
+                                                       styleClass="col-lg-2 control-label"
+                                                       value="#{msg['label.id.type']}"/>
+                                        <div class="col-lg-3">
+                                            <h:selectOneMenu id="tipoDocumentoSearch"
+                                                             styleClass="form-control">
+                                                <f:selectItem itemLabel="#{msg['label.id.type']}" itemValue="#{null}" />
+                                                <f:selectItem itemLabel="Cédula ciudadanía" itemValue="1" />
+                                                <f:selectItem itemLabel="Cédula de extranjería" itemValue="2" />
+                                                <f:selectItem itemLabel="Pasaporte" itemValue="3" />
+                                                <f:selectItem itemLabel="Registro civil" itemValue="4" />
+                                                <f:selectItem itemLabel="Tarjeta de identidad" itemValue="5" />
+                                                <f:selectItem itemLabel="Adulto sin identificación" itemValue="6" />
+                                                <f:selectItem itemLabel="Menor sin identificación" itemValue="7" />
+                                                <f:selectItem itemLabel="Número único de identificación" itemValue="8" />
+                                            </h:selectOneMenu>
+                                        </div>
+                                        <p:outputLabel for="numeroDocumentoSearch"
+                                                       styleClass="col-lg-2 control-label"
+                                                       value="#{msg['label.id.number']}"/>
+                                        <div class="col-lg-5">
+                                            <p:inputText id="numeroDocumentoSearch"
+                                                         styleClass="form-control" />
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group">
+                                        <p:outputLabel for="epsFiltroSearch"
+                                                       styleClass="col-lg-2 control-label"
+                                                       value="#{msg['label.EPS']}"/>
+                                        <div class="col-lg-3">
+                                            <h:selectOneMenu id="epsFiltroSearch"
+                                                             styleClass="form-control">
+                                                <f:selectItem itemLabel="#{msg['label.EPS']}" itemValue="#{null}" />
+                                                <f:selectItem itemLabel="Saludcoop" itemValue="1" />
+                                            </h:selectOneMenu>
+                                        </div>                                        
+                                        <p:outputLabel for="regionalFiltroSearch"
+                                                       styleClass="col-lg-2 control-label"
+                                                       value="#{msg['label.regional']}"/>
+                                        <div class=" col-lg-3">
+                                            <h:selectOneMenu id="regionalFiltroSearch"
+                                                             styleClass="form-control">
+                                                <f:selectItem itemLabel="#{msg['label.regional']}" itemValue="#{null}" />
+                                                <f:selectItems value="#{departamentoManager.findAll()}" var="_regional"
+                                                               itemLabel="#{_regional.descripcion}" itemValue="#{_regional.id}" />
+                                            </h:selectOneMenu>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+
+                                        <p:outputLabel for="estadoFiltroSearch"
+                                                       styleClass="col-lg-2 control-label"
+                                                       value="#{msg['label.address.state']}"/>
+                                        <div class="col-lg-3">
+                                            <h:selectOneMenu id="estadoFiltroSearch"
+                                                             styleClass="form-control">
+                                                <f:selectItem itemLabel="#{msg['label.address.state']}" itemValue="#{null}" />
+                                                <f:selectItem itemLabel="Estado 1" itemValue="1" />
+                                            </h:selectOneMenu>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group text-right" style="padding-right: 20px">
+                                        <p:commandButton id="search" styleClass="btn btn-success" value="Buscar" update="formFiltroPrincipal"
+                                                         action="#{auditorCTCControllerJSF.filtrar()}" process="@form"
+                                                         oncomplete="update()"/>
+                                        <p:spacer width="3" />
+                                        <p:commandButton id="clean" styleClass="btn btn-default" value="Limpiar" />
+                                        <p:spacer width="3" />
+                                        <p:commandButton id="cancel" styleClass="btn btn-danger" value="Cancelar"/>
+                                    </div>
+
+                                    <div>
+                                        <p:dataTable id="tablaSolicitudes"
+                                                     value="#{auditorCTCControllerJSF.lista}" var="_solicitud"
+                                                     paginator="true" rows="3" paginatorPosition="bottom"
+                                                     paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}">
+                                            <p:column headerText="Identificador">
+                                                <h:outputText value="#{_solicitud.numeroSolicitud}" />
+                                            </p:column>
+                                            <p:column headerText="Nombre">
+                                                <h:outputText value="#{_solicitud.afiliado}" />
+                                            </p:column>
+                                        </p:dataTable>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </h:form>
+                </div>
+            </div>
+        </div>
+    </ui:define>
+
+</ui:composition>

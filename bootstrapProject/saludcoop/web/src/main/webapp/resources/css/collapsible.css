@@ -1,0 +1,42 @@
+.collapsible-header {
+	cursor: pointer;
+}
+
+.collapsible-header:after {
+	font-family: FontAwesome;
+	content: "\f077";
+	float: right;
+	margin-right: 5px;
+	border-left: 2px solid #0F9588;
+	padding-left: 10px;
+}
+
+.collapsible-header.collapsed:after {
+	content: "\f078";
+	margin-right: 5px;
+}
+
+.collapse-button {
+	position: fixed;
+	top: 99px;
+	right: 15px;
+	z-index: 1049;
+	background-color: white;	
+	opacity: 0.25;
+	width: 35px;
+}
+.collapse-button:after {
+	font-family: FontAwesome;
+	content: "\f077";
+	float: right;
+	margin-right: 2px;
+	text-align: center;
+}
+.collapse-button.collapsed:after {
+	content: "\f078";
+	margin-right: 2px;
+}
+.collapse-button:hover {	
+	opacity: 1;
+	background-color: white;
+}

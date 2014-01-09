@@ -1,0 +1,201 @@
+
+.rf-ds {
+    color: #ecf0f1;
+    cursor: not-allowed;
+    background-color: #18bc9c;
+    border-color: transparent;
+    z-index: 2;
+    color: #ffffff;
+    cursor: default;
+    font-weight: normal;
+    text-align: center;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 15px;
+}
+
+.rf-ds-btn {
+    color: #ecf0f1;
+    cursor: not-allowed;
+    background-color: #18bc9c;
+    border-color: transparent;
+    z-index: 2;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: normal;
+    padding: 8px 15px;
+    text-align: center;
+    margin: 0px;
+}
+
+.rf-ds-dis {
+    background-color: #3be6c4 !important;
+    border-color: #3be6c4 !important;
+    color: #ffffff !important;
+}
+
+.rf-ds-dis:hover {
+    cursor: not-allowed;
+    color: #ffffff !important;
+}
+
+.rf-ds-nmb-btn {
+    color: #ffffff;
+    padding: 8px 15px;
+    text-align: center;
+    padding-right: 20px !important;
+    margin: 0px;
+}
+
+.rf-ds-nmb-btn:hover,.rf-ds-btn:hover {
+    background-color: #ffffff;
+    color: #18bc9c;
+}
+
+.rf-ds-act {
+    background-color: #0f7864;
+    border-color: #0f7864;
+    font-weight: normal;
+}
+
+.rf-ds-act:hover {
+    background-color: #0f7864;
+    border-color: #0f7864;
+    color: #ffffff !important;
+    font-weight: normal;
+}
+
+.rf-msg-err {
+    background-image: none;
+    font-weight: bold;
+}
+
+.rf-plhdr {
+    color: #acb6c0 !important;
+}
+
+.rf-sel, .rf-sel-cntr {
+    background-color: #ffffff !important;
+    border: 1px solid #dce4ec !important;
+}
+
+.rf-sel-inp {
+    display: block !important;
+    width: 100% !important;
+    height: 43px !important;
+    padding: 10px 15px !important;
+    font-size: 15px !important;
+    line-height: 1.428571429 !important;
+    color: #2c3e50;
+    vertical-align: middle !important;
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #dce4ec !important;
+    /* border-radius: 4px;*/
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075) !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075) !important;
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s !important;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s !important;
+    padding-right: 25px !important;
+    width: 100% !important;
+}
+
+.rf-sel-inp:focus, .rf-sel-cntr:focus, .rf-sel-shdw:focus, .rf-sel:focus {
+    border: 2px solid #1abc9c !important;
+    outline: 0 !important;
+}
+
+.rf-sel-lst-scrl {
+    background-color: #ffffff !important;
+}
+
+.rf-sel-btn {
+    border: 1px solid #707070 !important;
+    background-color: #ffffff !important;
+    float: right !important;
+    margin-top: -30px !important;
+    margin-right: 5px !important;
+    cursor: pointer !important;
+}
+
+.rf-sel-btn-arrow {
+    cursor: pointer !important;
+}
+
+.rf-sel-fld-err {
+    color: #543543 !important;
+}
+
+.rf-sel-dflt-lbl {
+    color: #acb6c0 !important;	
+}
+
+.rf-sel-sel {
+    /* 	background-color: #3399FF !important; */
+    /* 	color: #ffffff; */
+    cursor: pointer !important;
+}
+
+.rf-pp-cntr {
+    left: 50%;
+    bottom: auto !important;
+    right: auto !important;
+    padding: 0;
+    background-color: #ffffff;
+    border: 1px solid #999999;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px !important;
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+    background-clip: padding-box;
+}
+
+.rf-pp-cnt {
+    background-color: #ffffff !important;
+    border: 0px solid #999999;
+    width: auto !important;
+}
+
+.rf-pp-hndlr {
+    left: 50%;
+    bottom: auto;
+    right: auto;
+    padding: 0;
+    width: auto !important;
+    margin-left: -250px;
+    border: 0px solid !important;
+    border-radius: 6px;
+}
+
+.rf-pp-cnt-scrlr {
+    border: 0px solid !important;  
+    width: auto !important;  
+}
+
+.rf-pp-hdr {
+    width: auto !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    padding-right: 30px !important;
+}
+
+.modal-close {
+    border: 0px solid !important; 
+    float: right;
+    font-size: 22.5px;
+    font-weight: bold;
+    line-height: 1;
+    color: #000000;
+    text-shadow: 0 1px 0 #ffffff;
+    opacity: 0.2;
+    filter: alpha(opacity=20);
+}
+.modal-close:hover, .modal-close:focus {
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.rf-pp-shade {
+    background-color: #ffffff !important;    
+}

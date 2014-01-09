@@ -1,0 +1,20 @@
+.bandejaTable thead td {
+	font-weight:bold;
+}
+
+
+
+.Autorizada {
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+}
+
+.Pendiente {
+	background-color: #fcf8e3;
+	border-color: #fbeed5;
+}
+
+.PendienteAmpliacion {
+	background-color: #CEECF5;
+}
+

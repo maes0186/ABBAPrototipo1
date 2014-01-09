@@ -1,0 +1,17 @@
+.collapsible-header {
+	cursor: pointer;
+}
+
+.collapsible-header:after {
+	font-family: FontAwesome;
+	content: "\f077";
+	float: right;
+	margin-right: 5px;
+	border-left: 2px solid #0F9588;
+	padding-left: 10px;
+}
+
+.collapsible-header.collapsed:after {
+	content: "\f078";
+	margin-right: 5px;
+}

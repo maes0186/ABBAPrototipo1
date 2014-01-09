@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:a4j="http://richfaces.org/a4j" xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:rich="http://richfaces.org/rich">
+    <h:head>
+        <title>SaludCoop EPS - by Conexia S.A.</title>
+        <link rel="icon" href="${facesContext.externalContext.requestContextPath}/resources/images/favicon.ico" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="${facesContext.externalContext.requestContextPath}/resources/css/font-awesome.css" />
+        <link rel="stylesheet" href="${facesContext.externalContext.requestContextPath}/resources/css/doc.css" />
+        <link rel="stylesheet" href="${facesContext.externalContext.requestContextPath}/resources/css/styles.css" />
+        <link rel="stylesheet" href="${facesContext.externalContext.requestContextPath}/resources/css/rfStyles.css" />
+        <link rel="stylesheet" href="${facesContext.externalContext.requestContextPath}/resources/css/collapsible.css" />
+        <link rel="stylesheet" href="http://jschr.github.io/bootstrap-modal/css/bootstrap-modal-bs3patch.css" />
+        <link rel="stylesheet" href="http://jschr.github.io/bootstrap-modal/css/bootstrap-modal.css" />
+        <script src="${facesContext.externalContext.requestContextPath}/resources/js/jquery/jquery-1.7.2.min.js"></script>
+        <script src="${facesContext.externalContext.requestContextPath}/resources/js/jquery-ui/jquery-ui-1.8.18.custom.min.js"></script>
+        <script src="${facesContext.externalContext.requestContextPath}/resources/js/jquery/jquery.validate.min.js"></script>
+        <script src="${facesContext.externalContext.requestContextPath}/resources/js/jquery/jquery.alphanumeric.pack.js"></script>
+        <script src="${facesContext.externalContext.requestContextPath}/resources/js/jquery/additional-methods.js"></script>
+        <script src="${facesContext.externalContext.requestContextPath}/resources/js/jdatatable/jquery.dataTables.js"></script>
+        <ui:insert name="head" />
+    </h:head>
+    <h:body>
+        <!-- HEADER -->
+        <div class="navbar navbar-default navbar-fixed-top"
+             style="background: url(${facesContext.externalContext.requestContextPath}/resources/images/bg.jpg) no-repeat; background-color: white">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="${facesContext.externalContext.requestContextPath}/" style="padding: 0"><img
+                            src="${facesContext.externalContext.requestContextPath}/resources/images/Saludcoop-logo.png" /></a>
+                </div>
+            </div>
+            <!-- div class="user-info"><strong>IPS</strong> - <a href="${webContext}/logout"> Salir </a></div-->
+        </div>
+        <div class="container" style="margin-top: 60px">
+
+            <div class="row">
+
+                <div class="col-lg-2 col-md-2 col-sm-2 menu-collapsible">
+                    <div class="bs-sidebar hidden-print affix" style="margin-top: 50px">
+                        <ul class="nav bs-sidenav">
+                            <ui:repeat value="#{menu.rootNodes}" var="parentMenu">
+                                <li id="menu_${parentMenu.idMenu}"><a
+                                        href="#{facesContext.externalContext.requestContextPath}/#{parentMenu.link}"><h:panelGroup
+                                            rendered="#{parentMenu.icon != null}">
+                                            <i class="#{parentMenu.icon}"></i>
+                                        </h:panelGroup> <span> #{parentMenu.titulo}</span></a> <h:panelGroup rendered="#{not empty parentMenu.children}">
+                                        <ul>
+                                            <ui:repeat value="#{parentMenu.children}" var="child">
+                                                <li id="menu_#{child.idMenu}"><a
+                                                        href="#{facesContext.externalContext.requestContextPath}/#{child.link}"><h:panelGroup
+                                                            rendered="#{child.icon != null}">
+                                                            <i class="#{child.icon}"></i>
+                                                        </h:panelGroup> <span> #{child.titulo}</span></a></li>
+                                            </ui:repeat>
+                                        </ul>
+                                    </h:panelGroup></li>
+                            </ui:repeat>
+                            <li><a href="${facesContext.externalContext.requestContextPath}/logout"> <i class="icon-off"></i> Salir
+                                </a></li>
+                            <div class="text-center">
+                                <img src="${facesContext.externalContext.requestContextPath}/resources/images/conexia_logo.png" />
+                            </div>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-lg-offset-1 col-lg-9 col-md-offset-1 col-md-9 col-sm-offset-1 col-sm-9 " role="main">
+                    <div style="height: 20px;">
+                        <a4j:status>
+                            <f:facet name="start">
+                                Cargando..
+                            </f:facet>
+                        </a4j:status>
+                    </div>
+                    <ui:insert name="body" />
+                </div>
+            </div>
+        </div>
+
+    </h:body>
+
+</html>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:rich="http://richfaces.org/rich"
+  xmlns:a4j="http://richfaces.org/a4j"
+  xmlns:ui="http://java.sun.com/jsf/facelets"
+  template="/jsp/includes/template.xhtml"
+  xmlns:f="http://java.sun.com/jsf/core">
+  <ui:define name="head">
+  </ui:define>
+  <ui:define name="body">
+    <div class="row">
+      <div class="col-lg-10">
+        <div class="well">
+          <h:form class="form-horizontal" id="formFiltroPrincipal">
+            <fieldset>
+            <blockquote class="col-lg-12" style="padding:2px; font-size:20px;"> 
+            <strong>Formulario Basico de IPS</strong>
+          </blockquote>
+            <div class="tab-pane fade active in" id="filtroPrincipal">
+                <div class="form-group">
+                <div class="col-lg-4 text-left">
+                  <h:outputLabel value="#{msg['label.IPS.seleccion']}" />
+                    </div>
+                  <div class="col-lg-5 text-left">
+                    <rich:select enableManualInput="true" id="ipsVals"
+                      defaultLabel="Ips" required="true"
+                      requiredMessage="El valor de la IPS es requerido" value="#{contratosModel.sedeIpsDto.ips.id}">
+                      <a4j:ajax event="selectitem" render="sedesVals" execute="@this" />
+                      <f:selectItems
+                        value="#{contratosModel.getListaIps()}"
+                        var="_ips" itemLabel="#{_ips.razonSocial}"
+                        itemValue="#{_ips.id}" />
+                    </rich:select>
+                    <rich:message for="ipsVals" styleClass="error" />
+                  </div>
+                </div>
+                <div class="form-group">
+                <div class="col-lg-4 text-left">
+                  <h:outputLabel value="#{msg['label.IPS.sede']}" />
+                    </div>
+                  <div class="col-lg-5 text-left">
+                    <rich:select enableManualInput="true" id="sedesVals"
+                      defaultLabel="Sede" styleClass="" required="true"
+                      requiredMessage="El valor de la Sede es requerido" value="#{contratosModel.sedeIpsDto.id}">
+                      <f:selectItems
+                        value="#{contratosModel.getListaSedeIps()}"
+                        var="_sede" itemLabel="#{_sede.nombre}"
+                        itemValue="#{_sede.id}" />
+                    </rich:select>
+                    <rich:message for="sedesVals" styleClass="error" />
+                  </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-2 text-left">
+                        <h:outputLabel value="#{msg['label.IPS.fechaIniDiasPlazo']} " />
+                    </div>
+                  <div class="col-lg-3 text-left">
+                      <rich:calendar 
+                          value="#{contratosModel.contratoDto.fechaInicioContrato}"
+                        id="fechaAprobadoIni">
+                      </rich:calendar>
+                  </div>
+                    <div class="col-lg-2 text-left">
+                        <h:outputLabel value="#{msg['label.IPS.fechaFinDiasPlazo']}" />
+                    </div>
+                    <div class="col-lg-2 text-left">
+                         <rich:calendar 
+                             value="#{contratosModel.contratoDto.fechaFinContrato}"
+                        id="fechaAprobadoFin">
+                      </rich:calendar>
+                  </div>
+
+                </div>
+                <div class="form-group">
+                     <div class="col-lg-2 text-left">
+                        <h:outputLabel value="#{msg['label.IPS.plazoDiasPago']}" />
+                    </div>
+                    <div class="col-lg-3 text-left">
+                        <h:inputText value="#{contratosModel.contratoDto.plazoDiasPago}" styleClass="form-control"/>
+                    </div>
+                  <div class="col-lg-2 text-left">
+                    <h:outputLabel value="#{msg['label.IPS.aprobado']}" />
+                  </div>
+                  <div class="col-lg-1 text-left">
+                    <h:selectBooleanCheckbox id="aprobacionAbogogado"
+                                             value="#{contratosModel.contratoDto.aprAbogado}">
+                    </h:selectBooleanCheckbox>
+                  </div>
+                </div>     
+                <div class="form-group">
+                     <div class="col-lg-2 text-left">
+                        <h:outputLabel value="#{msg['label.IPS.nombreContrato']}" />
+                    </div>
+                    <div class="col-lg-3 text-left">
+                        <h:inputText value="#{contratosModel.contratoDto.nombreContrato}" styleClass="form-control"/>
+                    </div>
+                    <div class="col-lg-2 text-left">
+                    
+                  <h:outputLabel value="#{msg['label.IPS.tipoPlan']}" />
+                    </div>
+                  <div class="col-lg-3 text-left">
+                    <rich:select enableManualInput="true" id="tipoPlan"
+                      defaultLabel="Tipo de Plan" styleClass="" required="true"
+                      requiredMessage="El valor del tipo de plan es requerido" value="#{contratosModel.contratoDto.tipoPlanContrato.id}">
+                      <f:selectItems
+                          value="#{contratosModel.tiposPlanContrato}"
+                        var="_tipoPlanContrato" itemLabel="#{_tipoPlanContrato.descripcion}"
+                        itemValue="#{_tipoPlanContrato.id}" />
+                    </rich:select>
+                    <rich:message for="tipoPlan" styleClass="error" />
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="col-lg-2 text-left">
+                        <h:outputLabel value="#{msg['label.IPS.tarifario']}" />
+                    </div>
+                    <div class="col-lg-3 text-left">
+                    <rich:select enableManualInput="true" id="tarifario"
+                      defaultLabel="Tarifario" styleClass="" required="true"
+                      requiredMessage="El valor de la tarifa es requerido" value="#{contratosModel.contratoDto.tarifario.id}">
+                      <f:selectItems
+                          value="#{contratosModel.tarifariosDto}"
+                        var="_tarifario" itemLabel="#{_tarifario.id}"
+                        itemValue="#{_tarifario.id}" />
+                    </rich:select>
+                    <rich:message for="tarifario" styleClass="error" />
+                    </div>
+                    <div class="col-lg-2 text-left">
+                        <h:outputLabel value="#{msg['label.IPS.porcentajeNegociado']}" />
+                    </div>
+                    <div class="col-lg-3 text-left">
+                        <h:inputText value="#{contratosModel.contratoDto.porcentajeNegociado}" styleClass="form-control"/>
+                    </div>
+                </div>
+                
+                 <div class="form-group">
+                    <div class="col-lg-2 text-left">
+                        <h:outputLabel value="#{msg['label.IPS.estado']}" />
+                    </div>
+                    <div class="col-lg-3 text-left">
+                        <h:inputText value="#{contratosModel.contratoDto.estado}" styleClass="form-control"/>
+                    </div>
+                </div>
+                
+              </div>
+              <div class="form-group">
+              <h:commandButton id="test" reRender="@form">
+              </h:commandButton>
+              </div>
+            </fieldset>
+            
+          </h:form>
+        </div>
+      </div>
+    </div>
+  </ui:define>
+
+</ui:composition>

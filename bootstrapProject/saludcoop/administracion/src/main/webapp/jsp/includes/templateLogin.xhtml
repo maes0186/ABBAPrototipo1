@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>SaludCoop EPS - by Conexia S.A.</title>
+        <link rel="icon" href="${facesContext.externalContext.requestContextPath}/resources/images/favicon.ico" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="${facesContext.externalContext.requestContextPath}/resources/css/font-awesome.css" />
+        <link rel="stylesheet" href="${facesContext.externalContext.requestContextPath}/resources/css/doc.css" />
+        <link rel="stylesheet" href="${facesContext.externalContext.requestContextPath}/resources/css/styles.css" />
+        <link rel="stylesheet" href="${facesContext.externalContext.requestContextPath}/resources/css/collapsible.css" />
+        <link rel="stylesheet" href="http://jschr.github.io/bootstrap-modal/css/bootstrap-modal-bs3patch.css" />
+        <link rel="stylesheet" href="http://jschr.github.io/bootstrap-modal/css/bootstrap-modal.css" />
+        <script src="${facesContext.externalContext.requestContextPath}/resources/js/jquery/jquery-1.7.2.min.js"></script> 
+        <script src="${facesContext.externalContext.requestContextPath}/resources/js/jquery-ui/jquery-ui-1.8.18.custom.min.js"></script>
+        <script src="${facesContext.externalContext.requestContextPath}/resources/js/jquery/jquery.validate.min.js"></script> 
+        <script src="${facesContext.externalContext.requestContextPath}/resources/js/jquery/jquery.alphanumeric.pack.js"></script>
+        <script src="${facesContext.externalContext.requestContextPath}/resources/js/jquery/additional-methods.js"></script>
+        <script src="${facesContext.externalContext.requestContextPath}/resources/js/jdatatable/jquery.dataTables.js"></script>
+        <ui:insert name="head" />
+    </h:head>
+    <h:body>
+        <!-- HEADER -->
+        <div class="navbar navbar-default navbar-fixed-top" style="background:url(${facesContext.externalContext.requestContextPath}/resources/images/bg.jpg) no-repeat; background-color:white">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="${facesContext.externalContext.requestContextPath}/" style="padding:0"><img src="${facesContext.externalContext.requestContextPath}/resources/images/Saludcoop-logo.png"/></a>
+                </div>
+            </div>
+            <!-- div class="user-info"><strong>IPS</strong> - <a href="${webContext}/logout"> Salir </a></div-->
+        </div>
+        <div class="container" style="margin-top:80px"> 
+            <div class="row">                
+                <div class="col-lg-12 col-md-12 col-sm-12 " role="main" />
+                <ui:insert name="body" />
+            </div>
+        </div>
+
+    </h:body>
+
+</html>

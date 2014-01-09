@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:rich="http://richfaces.org/rich"
+                xmlns:a4j="http://richfaces.org/a4j" xmlns:ui="http://java.sun.com/jsf/facelets" template="/jsp/includes/template.xhtml"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <ui:define name="head">
+    </ui:define>
+    <ui:define name="body">
+        <div class="row">
+            <div class="col-lg-10">
+                <div class="well">
+                    <h:form class="form-horizontal" id="formFiltroPrincipal">
+                        <fieldset>
+                            <legend>#{msg['label.contrato.listaEspecialidades']}</legend>
+                            <div id="bandejaTabContent" class="tab-content">
+                                <div class="tab-pane fade active in" id="filtroPrincipal">
+
+                                    <div class="form-group text-right" style="padding-right: 20px">
+                                        <a4j:commandButton id="search" styleClass="btn btn-success" value="Buscar"
+                                                           render="formFiltroPrincipal" action="#{serviciosContratadosController.probar()}" execute="@form" />
+                                    </div>
+
+                                    <div>
+                                        <rich:dataTable  id="tablaSolicitudes" value="#{contratosModel.especialidadesDisponibles}" var="_especialidad"
+                                                        styleClass="table table-striped table-bordered table-hover" rows="10"
+                                                        noDataLabel="No hay registros">
+                                            <rich:column rendered="true">
+                                                <f:facet name="header">#{msg['label.id.idNumber']}</f:facet>
+                                                <h:outputText value="#{_especialidad.id}" />
+                                            </rich:column>
+                                            
+                                            <rich:column style="text-align: center">
+                                                <f:facet name="header">
+                                                    <h:selectBooleanCheckbox id="selectAll" value="#{contratosModel.checkAllServices}">
+                                                        <a4j:ajax event="change" execute="selectAll" render="tablaSolicitudes" />
+                                                    </h:selectBooleanCheckbox>
+                                                </f:facet>
+                                                <h:selectBooleanCheckbox id="selectRow" value="#{_especialidad.checked}">
+                                                    <a4j:ajax event="change" execute="selectRow" render="tablaSolicitudes" />
+                                                </h:selectBooleanCheckbox>
+                                            </rich:column>
+                                            
+                                            <rich:column>
+                                                <f:facet name="header">#{msg['label.description']}</f:facet>
+                                                <h:outputText value="#{_especialidad.descripcion}" />
+                                            </rich:column>
+                                            <rich:column>
+                                                <f:facet name="header">#{msg['label.contrato.tarifario']}</f:facet>
+                                                <h:selectOneMenu styleClass="form-control" disabled="#{not _especialidad.checked}" value="#{contratosModel.tarifarioSeleccionado}">
+                                                    <f:selectItem itemValue="#{null}" itemLabel="#{msg['label.seleccione']}" />
+                                                    <f:selectItems value="#{contratosModel.tarifariosDisponibles}" var="_tarifario"
+                                                                   itemLabel="#{_tarifario.id}" itemValue="#{_tarifario}" />
+                                                </h:selectOneMenu>
+                                            </rich:column>
+                                            <rich:column>
+                                                <f:facet name="header">#{msg['label.contrato.tarifaExcepcion']}</f:facet>
+                                                <h:inputText styleClass="form-control" value="#{_especialidad.tarifaExcepcion}" disabled="#{not _especialidad.checked}" />
+                                            </rich:column>
+                                        </rich:dataTable>
+                                        <div align="center" style="text-align: center">
+                                            <rich:dataScroller for="tablaSolicitudes" fastControls="hide" renderIfSinglePage="true">
+                                                <f:facet name="first">
+                                                    <h:outputText value="««" />
+                                                </f:facet>
+                                                <f:facet name="last">
+                                                    <h:outputText value="»»" />
+                                                </f:facet>
+                                            </rich:dataScroller>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </h:form>
+                </div>
+            </div>
+        </div>
+    </ui:define>
+
+</ui:composition>

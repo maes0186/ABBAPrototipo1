@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:rich="http://richfaces.org/rich"
+                xmlns:a4j="http://richfaces.org/a4j" xmlns:ui="http://java.sun.com/jsf/facelets" template="/jsp/includes/template.xhtml"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+    <ui:define name="head">
+    </ui:define>
+    <ui:define name="body">
+        <div class="row">
+            <div class="col-lg-10">
+                <div class="well">
+                    <h:form class="form-horizontal" id="formServicios">
+                        <fieldset>
+                            <legend>#{msg['label.contrato.serviciosContratados']}</legend>
+                            <div id="bandejaTabContent" class="tab-content">
+                                <div class="tab-pane fade active in" id="filtroPrincipal">
+
+                                    <div class="form-group text-right" style="padding-right: 20px">
+                                        <a4j:commandButton id="search" styleClass="btn btn-success" value="Buscar"
+                                                           render="formServicios" execute="@form" action="#{contratosModel.probar()}" />
+                                        &nbsp;
+                                    </div>
+
+                                    <div>
+                                        <rich:dataTable id="tablaServicios" value="#{contratosModel.serviciosDisponibles}" var="_servicio"
+                                                        styleClass="table table-striped table-bordered table-hover" rows="10"
+                                                        noDataLabel="No hay registros">
+                                            <rich:column style="text-align: center" sortBy="#{_servicio.checked}" sortOrder="descending">
+                                                <f:facet name="header">
+                                                    <h:outputText value="Seleccione" />
+                                                    <h:selectBooleanCheckbox id="selectAll" value="#{contratosModel.checkAllServices}">
+                                                        <a4j:ajax event="change" execute="selectAll" render="tablaServicios" />
+                                                    </h:selectBooleanCheckbox>
+                                                </f:facet>
+                                                <h:selectBooleanCheckbox id="selectRow" value="#{_servicio.checked}">
+                                                    <a4j:ajax event="change" execute="selectRow" render="tablaServicios" />
+                                                </h:selectBooleanCheckbox>
+                                            </rich:column>
+                                            <rich:column>
+                                                <f:facet name="header">#{msg['label.contrato.codigoMinisterio']}</f:facet>
+                                                <h:outputText value="#{_servicio.codigoMinisterioSalud}" />
+                                            </rich:column>
+                                            <rich:column filterValue="#{contratosModel.descipcionServicioFiltro}"
+                                                         filterExpression="#{fn:containsIgnoreCase(_servicio.descripcion,contratosModel.descipcionServicioFiltro)}">
+                                                <f:facet name="header">
+                                                    <h:panelGroup>
+                                                        <h:outputText value="#{msg['label.description']}" />
+                                                        <h:inputText value="#{contratosModel.descipcionServicioFiltro}">
+                                                            <a4j:ajax event="keyup" render="tablaServicios@body,dsTablaServicios" execute="@this" status="none">
+                                                                <a4j:attachQueue  requestDelay="700" ignoreDupResponses="true" />
+                                                            </a4j:ajax>
+                                                        </h:inputText>
+                                                    </h:panelGroup>
+                                                </f:facet>
+                                                <h:outputText value="#{_servicio.descripcion}" />
+                                            </rich:column>
+                                            <rich:column>
+                                                <f:facet name="header">#{msg['label.contrato.hospitalario']}</f:facet>
+                                                <h:outputText value="#{_servicio.hospitalario ? 'SI' : 'NO'}" />
+                                            </rich:column>
+                                            <rich:column>
+                                                <f:facet name="header">#{msg['label.contrato.nivelAtencion']}</f:facet>
+                                                <h:outputText value="#{_servicio.nivelDeAtencion}" />
+                                            </rich:column>
+                                            <rich:column id="colTarifario">
+                                                <f:facet name="header">#{msg['label.contrato.tarifario']}</f:facet>
+<!--                                                <a4j:commandButton id="btnAsignarTarifario" value="#{msg['label.contrato.asignarTarifario']}" styleClass="btn btn-success" 
+                                                                   disabled="#{not _servicio.checked}" execute="btnAsignarTarifario" render="panelTarifario"
+                                                                   oncomplete="#{rich:component('popup')}.show(); return false;">
+                                                    <f:setPropertyActionListener value="#{_servicio}" target="#{contratosModel.servicioSeleccionado}" />
+                                                </a4j:commandButton>-->
+                                                <h:selectOneMenu styleClass="form-control" value="#{_servicio.idTarifario}" disabled="#{not _servicio.checked}">
+                                                    <f:selectItem itemValue="-1" itemLabel="#{msg['label.seleccione']}" />
+                                                    <f:selectItems value="#{contratosModel.tarifariosDisponibles}" var="_tarifario"
+                                                                   itemLabel="#{_tarifario.id}" itemValue="#{_tarifario.id}" />
+                                                    <a4j:ajax event="change" execute="selectTarifario" render="colTarifario,colPorcNeg,txtPorcNegociado" />
+                                                </h:selectOneMenu>
+                                            </rich:column>
+                                            <rich:column id="colPorcNeg">
+                                                <f:facet name="header">#{msg['label.contrato.porcentajeNegociado']}</f:facet>
+                                                <h:inputText id="txtPorcNegociado" value="#{_servicio.tarifario.porcentajeNegociado}" 
+                                                             styleClass="form-control" required="true" 
+                                                             converterMessage="El valor debe ser un número entero"
+                                                             requiredMessage="El valor es requerido"
+                                                             disabled="#{_servicio.idTarifario eq null or _servicio.idTarifario lt 0}">
+                                                    <a4j:ajax event="change" execute="txtPorcNegociado" render="colPorcNeg" />
+                                                </h:inputText>
+                                                <rich:message styleClass="error" for="txtPorcNegociado" />
+                                            </rich:column>
+                                        </rich:dataTable>
+                                        <div align="center" style="text-align: center">
+                                            <rich:dataScroller for="tablaServicios" fastControls="hide" renderIfSinglePage="true" id="dsTablaServicios">
+                                                <f:facet name="first">
+                                                    <h:outputText value="««" />
+                                                </f:facet>
+                                                <f:facet name="last">
+                                                    <h:outputText value="»»" />
+                                                </f:facet>
+                                            </rich:dataScroller>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </h:form>
+                    <!--Se comenta ya que se va a manejar en la misma tabla, se deja para futuras referencias-->
+<!--                    <rich:popupPanel id="popup" modal="true" onmaskclick="#{rich:component('popup')}.hide()"
+                                 styleClass="fade modal-overflow in row well col-lg-4" headerClass="modal-header" moveable="false" autosized="true">
+                    <f:facet name="header">
+                        <h3 class="modal-title">#{msg['label.contrato.asignarTarifario']}</h3>
+                    </f:facet>
+                    <f:facet name="controls">
+                        <h:commandButton styleClass="modal-close" onclick="#{rich:component('popup')}.hide();
+                                return false;" value="x" />
+                    </f:facet>
+                    <h:form id="formTarifario">
+                        <div class="modal-body">
+                            <fieldset class="form-horizontal">
+                                <h:panelGroup id="panelTarifario">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{msg['label.contrato.tarifario']}" styleClass="col-lg-2 control-label" />
+                                        <div class="col-lg-8">
+                                            <h:selectOneMenu styleClass="form-control" value="#{contratosModel.servicioSeleccionado.idTarifario}">
+                                                <f:selectItem itemValue="#{null}" itemLabel="#{msg['label.seleccione']}" />
+                                                <f:selectItems value="#{contratosModel.tarifariosDisponibles}" var="_tarifario"
+                                                               itemLabel="#{_tarifario.id}" itemValue="#{_tarifario.id}" />
+                                            </h:selectOneMenu>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{msg['label.contrato.tarifario']}" styleClass="col-lg-2 control-label" />
+                                        <div class="col-lg-8">
+                                            <h:inputText styleClass="form-control" value="#{contratosModel.servicioSeleccionado.descripcion}" />
+                                        </div>
+                                    </div>
+                                </h:panelGroup>
+                                <div class="form-group text-right" style="padding-right: 20px">
+                                    <a4j:commandButton id="btnAceptar" styleClass="btn btn-primary btn-success" value="Aceptar 8" 
+                                                     execute="panelTarifario" render="formServicios"
+                                                     oncomplete="#{rich:component('popup')}.hide(); return false;"/>
+                                    &nbsp;
+                                    <a4j:commandButton id="cancel" styleClass="btn btn-danger" value="#{msg['label.button.cerrar']}"
+                                                       onclick="#{rich:component('popup')}.hide();
+                                return false;" />
+                                </div>
+                            </fieldset>
+                        </div>
+                    </h:form>
+                </rich:popupPanel>-->
+                </div>
+            </div>
+        </div>
+    </ui:define>
+</ui:composition>

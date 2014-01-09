@@ -1,0 +1,671 @@
+body, html{
+    margin:2px 0 0 0;
+    padding:0;
+}
+
+body {
+	background: #FFFFFF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #2E2E2E;
+	height: 100%;
+}
+
+h2{
+	color: #FF5700;
+	font-size: 18px;
+	letter-spacing: 2px;
+	text-align: center;
+}
+
+hr {
+	display: none;
+}
+
+table {
+	border: none;
+}
+
+/* Evita el resize de los text area */
+textarea {
+  resize: none;
+}
+
+/* 
+	Clases para la generacion de una separacion dentro de contenedores
+	Se utiliza un div que internamente tiene un h4 encerrado en un tag <center>
+	El efecto logrado es: --------- Titulito -------------
+	
+	Ejemplo de uso
+	<div class="divide">
+		<center><h4>Diagnosticos</h4></center>
+	</div>
+					
+*/
+.divide{
+	border-top-style: solid; 
+	border-top-width: 1px; 
+	color:#2E6E9E;
+	font-size: 12px;
+	font-family: Verdana;
+	margin: 30px auto 10px auto;
+	width: 60%;
+}
+
+.divide h4
+{
+	background-color: #FFF;
+	color:#2E6E9E;
+	display: inline; 
+	font-size: 12px;
+	font-family: Verdana;
+	padding-left: 10px;
+	padding-right: 10px;
+	position: relative;
+	top: -8px;
+	left: auto;
+}
+
+.content{
+	background-color: #FFFFFF;
+    color: #696969;
+    font-family: tahoma;
+    font-size: 11px;
+}
+
+/************* Formularios *************/
+.form {
+	margin: 0;
+	padding: 0;
+	
+}
+.form table {
+	border: 0;
+	width: 100%;
+}
+
+.form td,tr {
+	border: 0;
+	/* border: 1px solid; */
+	padding: 2px;
+}
+
+.form td .fieldName {
+	text-align: left;
+}
+
+.form td .field {
+	text-align: right;
+}
+
+.form fieldset {
+	border: 1px solid #C28A72;
+}
+
+.form legend {
+	background-color: #912C00;
+	color: #FFFFFF;
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 5px;
+	text-align: left;
+}
+
+.form input,textarea,select {
+	background-color: #F3F3F3;
+	color: #696969;
+	border: 1px solid #BEBEBE;
+	font-family: Tahoma;
+	font-size: 11px;
+}
+
+.form .formActions {
+	padding-top: 10px;
+	font-size: 10px;
+}
+.form .formActions input {
+	padding: 5px 10px 5px 10px;
+	margin: 0 5px 0 5px;
+}
+
+/* estilos para grupos de radio buttons o grupos de checkboxes */
+.form td ul {
+	line-height: 90%;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.form td ul li input {
+	vertical-align:text-top;
+}
+
+.formLabel{
+	background-color: #FFFFFF;
+    color: #696969;
+    font-family: tahoma;
+    font-size: 11px;
+    padding: 2px;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.formLabelLeft{
+	background-color: #FFFFFF;
+	color: #696969;
+	font-family: tahoma;
+	font-size: 11px;
+	padding: 2px;
+	text-align: left;
+	vertical-align: middle;
+}
+
+
+.formLabelError{
+    color: #FF0000;
+}
+
+.dataLabel{
+	background-color: #FFFFFF;
+    color: #696969;
+    font-family: tahoma;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 2px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.errorLabel {
+	background-color: #FFFFFF;
+	font-weight: bold;
+    color: red;
+    font-family: tahoma;
+    font-size: 11px;
+    padding: 2px;
+    text-align: left;
+}
+.error  {
+	background-color: #FFFFFF;
+    color: red;
+}
+
+input.error {
+	background-color: #FFFFFF;
+    color: red;
+    border-color: #FF3C5A;
+}
+
+.text {
+    color: #635E55;
+}
+
+
+/* Usado en conjunto con genericContainer simula un titulo como el de un <legend> para un <fieldset> */
+/************* Cajas contenedoras - para resultados - info - etc ********/
+/* contenedor generico con borde */
+.genericContainer {
+	border: 1px solid #2E6E9E;
+	-moz-border-radius-topright:8px;
+    -moz-border-radius-topleft:8px;
+    -moz-border-radius-bottomright:8px;
+    -moz-border-radius-bottomleft:8px;
+    
+    -webkit-border-top-right-radius:8px;
+    -webkit-border-top-left-radius:8px;
+    -webkit-border-bottom-right-radius:8px;
+    -webkit-border-bottom-left-radius:8px;
+    
+    border-top-left-radius:8px;
+    border-top-right-radius:8px;
+    border-bottom-left-radius:8px;
+    border-bottom-right-radius:8px;
+}
+
+/* Titulo del contenedor */
+.genericContainer h3 {
+	position: relative;
+	top : -8px;
+	margin-left: 10px; 
+	display: inline; 
+	color:#FF5700;
+	background-color: #FFF; 
+	padding-left: 2px;
+	padding-right: 2px;
+	
+	font-size: 13px;
+	font-weight: bold; 
+	font-family:Arial;
+}
+
+/* Contenido del contenedor */
+.genericContainer .content
+{
+	margin: 5px 15px 10px 10px;
+}
+
+
+/* cada seccion del menu puede tener bordes. En este caso
+	el borde inferior sirve como divisor entre secciones 
+*/
+.genericList>ul {
+	border-top: 0px solid #CDC5B8;
+	border-right: 0px solid #CDC5B8;
+	border-left: 0px solid #CDC5B8;
+	border-bottom: 0px solid #CDC5B8;
+	
+}
+/* el menu de navegacion esta hecho como una ul */
+.genericList ul {
+	padding: 8px;
+	list-style: circle;
+	line-height: normal;
+}
+
+
+/*  cada item del menu es una li */
+.genericList li {
+	margin-bottom: 0px;
+	padding: 0 0 7px 0px;
+}
+
+.genericList li a {
+	text-align: left;
+	text-decoration: none;
+	cursor: pointer;
+    color: #696969;
+    font-family: tahoma;
+    font-size: 11px;
+    text-align: right;
+    vertical-align: middle;
+}
+
+/* 
+	innerTable
+	
+	Esta clase se usa cuando tenemos una tabla interna a otra tabla
+	Generalmente la vamos a tener para la busqueda de consulta, diagnostico, medicamento...
+	
+	Ademas se agregan 5 clases, .add .code .desc .mag y .cant  para determinar el ancho de los td de esta tabla interna
+	Se corresponden de izquierda a derecha, la imagen del +, el campo codigo, el de descripcion, la imagen de la lupa y por ultimo la cantidad
+	
+*/
+.innerTable
+{
+	font-family:Verdana;
+	font-size:11px;
+}
+
+.innerTable thead
+{
+	background-color:#C5DBEC;
+	color:#2E6E9E;
+	text-align: center;
+}
+
+#ticketInnerTableTbody
+{
+	text-align: center;
+}
+
+.innerTable thead .empty
+{
+	background-color:#FFF;
+}
+
+/* Agregar */
+.innerTable .add
+{
+	text-align:right;
+	width: 18px;
+}
+
+/* Codigo */
+.innerTable .code
+{
+	width: 40px;
+}
+
+.innerTable .code input
+{
+	width: 40px;
+}
+
+/* Descripcion */
+.innerTable .desc input
+{
+	width: 100%;
+}
+
+/* Descripcion */
+.innerTable .desc select
+{
+	width: 100%;
+}
+
+/* Lupa */
+.innerTable .mag
+{
+	width: 20px;
+}
+
+.innerTable .mag img
+{
+	vertical-align: bottom;
+}
+
+.innerTable .cant
+{
+	width: 30px;
+}
+
+.innerTable .cant input
+{
+	width: 30px;
+}
+
+
+#header
+{
+	font-size: 11px;
+	background-color: #1F4785;	
+	position:absolute;
+	height:70px;
+	top:0px;
+	width:100%;
+	overflow:hidden;
+}
+
+#header #logo-conexia
+{
+	position: absolute;
+  	right: 0;
+}
+
+#header #logo-saludcoop
+{
+	position: absolute;
+  	left: 0;
+}
+
+
+#header #conexialogo
+{
+	vertical-align:bottom;
+}
+
+#header #saludcooplogo
+{
+	vertical-align:bottom;
+}
+
+#header-bar
+{
+	position:absolute;
+	top:70px;
+	width:100%; 
+	overflow:hidden;
+	height: 5px;
+	background-color: #FF5800;	
+}
+
+#menu
+{
+	background: none repeat scroll 0 0 #F0EBE5;
+	font-size: 12px;
+	position:absolute;
+	top:75px; 
+	width:150px; 
+	bottom:15px; 
+	overflow:auto;
+}
+
+#menu h2
+{
+	text-align: center;
+	color: #FF5700;
+    font-family: Tahoma;
+    font-size: 11px;
+    padding: 5px;
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#div-menu-date
+{
+	margin-top: 10px;
+	margin-left: 5px;
+}
+
+#div-menu-hour
+{
+	margin-left: 5px;
+}
+
+#menu-date
+{
+	margin-left: 5px;
+}
+
+#menu-hour
+{
+	margin-left: 10px;
+}
+
+#div-menu-usuario
+{
+	margin-left: 5px;
+}
+#div-menu-ips
+{
+	margin-left: 5px;
+}
+#menu-user
+{
+	margin-left: 5px;
+}
+
+#menu-ips
+{
+	margin-left: 5px;
+}
+#content
+{
+	position:absolute;
+	top:75px; 
+	left:150px; 
+	bottom:15px; 
+	overflow:auto;
+	right:0px;
+}
+
+#footer-bar
+{
+	background-color: #2E6E9E;
+	left:0px;
+	bottom:0px;
+	height:15px;
+	right:0px;
+    color: #FFF;
+	font-size: 12px;
+	position:absolute;
+    text-align: center;
+}
+
+/****** Menu container  **********/
+/* menu de navegacion a izquierda */
+#navigation-menu {
+	padding-top: 15px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	border-style: none;
+	text-align: left;
+}
+
+/* los items del menu son links */
+#navigation-menu a {
+	text-align: left;
+	text-decoration: none;
+	cursor: pointer;
+	/* font-weight: bold; */
+}
+
+/* cada seccion del menu puede tener bordes. En este caso
+	el borde inferior sirve como divisor entre secciones 
+*/
+#navigation-menu>ul {
+	border-top: 0px solid #CDC5B8;
+	border-right: 0px solid #CDC5B8;
+	border-left: 0px solid #CDC5B8;
+	border-bottom: 0px solid #CDC5B8;
+	
+}
+/* el menu de navegacion esta hecho como una ul */
+#navigation-menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	line-height: normal;
+}
+
+/*  cada item del menu es una li */
+#navigation-menu li {
+	margin-bottom: 0px;
+	padding: 0 0 6px 0px;
+}
+
+/*  un item del menu 
+	puede ser "closed" cuando es una opcion (tipo un submenu cerrado)
+	o puede ser "open" cuando es una opcion (tipo un submenu abierto)
+ */
+#navigation-menu ul li.closed>h3 {
+	background-position: 4px;
+	background-repeat: no-repeat;
+	background-image: url("./../images/standard/category-closed.gif");
+}
+
+/*  un item del menu
+	puede ser "closed" cuando es una opcion (tipo un submenu cerrado)
+	o puede ser "open" cuando es una opcion (tipo un submenu abierto)
+ */
+#navigation-menu ul li.open>h3 {
+	background-position: 4px;
+	background-repeat: no-repeat;
+	background-image: url("./../images/standard/category-open.gif");
+}
+
+/*  Un �tem cerrado puede tener un Link en su t�tulo: dicho link debe
+	comportarse de manera similar a los links del resto del men�.
+ */
+#navigation-menu ul li.closed h3>a {
+	text-align: left;
+	text-decoration: none;
+	/* font-weight: bold; */
+	color: #000000;
+}
+
+#navigation-menu ul li.closed h3>a:hover {
+	text-decoration: underline;
+}
+
+#navigation-menu ul li.disabled a{
+	color: #A4A4A4;
+	text-decoration: none;
+}
+
+#navigation-menu ul li.disabled a:hover{
+	color: #A4A4A4;
+	text-decoration: none;
+}
+
+#navigation-menu ul li.disabled h3>a{
+	color: #A4A4A4;
+	text-decoration: none;
+}
+
+#navigation-menu ul li.disabled h3>a:hover{
+	color: #A4A4A4;
+	text-decoration: none;
+}
+
+
+/*  cada item del menu es una li y cada item puede tener a su vez
+	otros items definidos como otra ul con sus li
+ */
+#navigation-menu li ul {
+	margin: 0px 10px;
+	line-height: 200%;
+}
+
+/*  hay un pequenio corriemiento para cada sub-item */
+#navigation-menu li li {
+	margin: -2px 0 0 0;
+	padding: 0px 0px 3px 0px;
+}
+
+/*  un sub-item puede ser un link */
+#navigation-menu li li a {
+	padding: 0px 0px 0px 0px;
+	/* font-weight: bold; */
+	color: #000000;
+}
+
+/*  un sub-item puede ser un link - al pasarle mouse por arriba */
+#navigation-menu li li a:hover {
+	text-decoration: underline;
+}
+
+/* el label de cada item se define como un h3 */
+#navigation-menu h3 {
+	height: 14px;
+	margin: 0 0 10px 0px;
+	padding: 6px 0px 2px 20px;
+	text-transform: none;
+	font-size: 12px;
+	font-weight: normal;
+	color: black;
+}
+
+#procedimientosTable td
+{
+	border-bottom: 1px dashed #C5DBEC;
+}
+
+/*************************************************
+   Estas clases son para darle estilo a algun elemento
+   que va acompañado de alguna funcionalidad y tienen
+   atributos data-attr
+**************************************************/
+
+.clone{
+	padding-right:5px;
+	padding-left:5px;
+}
+
+
+/*************************************************
+   Estas clases pueden usarse junto a 960.fluid 
+ para evitar usar estilos dentro de los elementos 
+**************************************************/
+.text_left{
+	text-align:left;
+}
+.text_center {
+	text-align:center;
+}
+.text_right{
+	text-align:right;
+}
+.visible {
+	display:block;
+}
+.hidden {
+	display:none;
+}
+.fill_x {
+	width:100%;
+}
+.fill_y {
+	height:100%;
+}

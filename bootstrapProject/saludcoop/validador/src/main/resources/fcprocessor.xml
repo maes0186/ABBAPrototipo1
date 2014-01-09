@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<controller_processor xmlns:ns2="processes">
+    <actions>
+        <action actionType="AUTORIZACION_CTC">
+            <internal_process sequence="1" order="1" id="RNAutorizacionesCTC"/>
+            <internal_process sequence="1" order="2" id="RNGenerarEntregas"/>
+            <internal_process sequence="1" order="3" id="RNSaveTickets"/>
+            <internal_process sequence="1" order="4" id="RN9999"/>
+        </action>
+        <action actionType="AUTORIZACION_AC">
+            <internal_process sequence="1" order="1" id="RNAutorizacionesAC"/>
+            <internal_process sequence="1" order="2" id="RNGenerarEntregas"/>
+            <internal_process sequence="1" order="3" id="RNSaveTickets"/>
+            <internal_process sequence="1" order="4" id="RN9999"/>
+        </action>
+        <action actionType="AUTORIZACION_CS">
+            <internal_process sequence="1" order="1" id="RNAutorizacionesCS"/>
+            <internal_process sequence="1" order="2" id="RNGenerarEntregas"/>
+            <internal_process sequence="1" order="3" id="RNSaveTickets"/>
+            <internal_process sequence="1" order="4" id="RN9999"/>
+        </action>
+        <action actionType="AUTORIZACION_BANDEJA_ESPECIALIZADA">
+            <internal_process sequence="1" order="1" id="RNAutorizacionBandejaEspecializada"/>
+            <internal_process sequence="1" order="2" id="RNGenerarEntregas"/>
+            <internal_process sequence="1" order="3" id="RNSaveTickets"/>
+            <internal_process sequence="1" order="4" id="RN9999"/>
+        </action>
+        <action actionType="COMPROBACION_DERECHOS">
+            <internal_process sequence="1" order="1" id="RN0000"/>
+            <internal_process sequence="1" order="2" id="RN9999"/>
+        </action>
+        <action actionType="CONSUMIR_SOLICITUD_ITEM">
+            <internal_process sequence="1" order="1" id="RN0008"/>
+            <internal_process sequence="1" order="2" id="RNSaveConsumo"/>
+            <internal_process sequence="1" order="3" id="RN9999"/>
+        </action>
+        <action actionType="DEVOLVER_SOLICITUD_ITEM">
+            <internal_process sequence="1" order="1" id="RN0012"/>
+            <internal_process sequence="1" order="2" id="RN9999"/>
+        </action>
+        <action actionType="OBTENER_AUTORIZACION">
+            <internal_process sequence="1" order="1" id="RNNivelAutorizacion01"/>
+            <internal_process sequence="1" order="2" id="RN9999"/>
+        </action>
+        <action actionType="OBTENER_ROLE_ESCALAMIENTO">
+            <internal_process sequence="1" order="1" id="RNTargetEscalamiento"/>
+            <internal_process sequence="1" order="2" id="RN9999"/>
+        </action>
+        <action actionType="REDIRECCION_IPS_ITEM">
+            <internal_process sequence="1" order="1" id="RNRedireccionamientoIPS"/>
+            <internal_process sequence="1" order="2" id="RN9999"/>
+        </action>
+        <action actionType="ANULAR_IPS_ITEM">
+            <internal_process sequence="1" order="1" id="RNAnulacionAutorizacion"/>
+            <internal_process sequence="1" order="2" id="RN9999"/>
+        </action>
+        <action actionType="CONSULTAR_TOP_TEN_SEDES_IPS_REDIRECCIONAMIENTO">
+            <internal_process sequence="1" order="1" id="RN0003"/>
+            <internal_process sequence="1" order="2" id="RN9999"/>
+        </action>
+        <action actionType="GESTIONAR_ITEM_TUTELA">
+            <internal_process sequence="1" order="1" id="RNTutelas"/>
+            <internal_process sequence="1" order="2" id="RNGenerarEntregas"/>
+            <internal_process sequence="1" order="3" id="RNSaveTickets"/>
+            <internal_process sequence="1" order="4" id="RN9999"/>
+        </action>
+        <action actionType="ACTUALIZAR_DATOS_CONTACTO_AFILIADO">
+            <internal_process sequence="1" order="1" id="RNSaveDatosContactoAfiliado"/>
+            <internal_process sequence="1" order="2" id="RN9999"/>
+        </action>
+        <action actionType="SOLICITUD_AUTORIZACION">
+            <internal_process sequence="1" order="1" id="RN0001"/>
+            <internal_process sequence="1" order="2" id="RN0002"/>
+            <internal_process sequence="1" order="3" id="RN0009"/>
+            <internal_process sequence="1" order="4" id="RNKitGlucometria"/>
+            <internal_process sequence="1" order="5" id="RNKitOstomia"/>
+            <internal_process sequence="1" order="6" id="RN0010"/>
+            <internal_process sequence="1" order="7" id="RN0004"/>
+            <internal_process sequence="1" order="8" id="RN0014"/>
+            <internal_process sequence="1" order="9" id="RNSaveSolicitud"/>
+            <internal_process sequence="1" order="10" id="RNGenerarEntregas"/>
+            <internal_process sequence="1" order="11" id="RNSaveTickets"/>
+            <internal_process sequence="1" order="12" id="RN9999"/>
+        </action>
+        <action actionType="VALIDAR_TOPE_CANTIDAD">
+            <internal_process sequence="1" order="1" id="RNValidarTopesCantidad"/>
+            <internal_process sequence="1" order="2" id="RN9999"/>
+        </action>
+    </actions>
+    <processes>
+        <internal_process id="RN0000" className="RN0000" description="Regla de comprobacion de derechos. Si el beneficiario existe.">
+            <next_sequence actionType="COMPROBACION_DERECHOS" processEndingCode="0" nextSequenceId="1" order="2"/>
+            <next_sequence actionType="COMPROBACION_DERECHOS" processEndingCode="250" nextSequenceId="1" order="2"/>
+        </internal_process>
+        <internal_process id="RN0001" className="RN0001" description="Regla que verifica si el beneficiario existe y esta habilitado.">
+            <next_sequence actionType="SOLICITUD_AUTORIZACION" processEndingCode="0" nextSequenceId="1" order="2"/>
+            <next_sequence actionType="SOLICITUD_AUTORIZACION" processEndingCode="250" nextSequenceId="1" order="12"/>
+        </internal_process>
+        <internal_process id="RN0002" className="RN0002" description="Regla que realiza el direccionamiento de los precedimientos.">
+            <next_sequence actionType="SOLICITUD_AUTORIZACION" processEndingCode="0" nextSequenceId="1" order="3"/>
+            <next_sequence actionType="SOLICITUD_AUTORIZACION" processEndingCode="250" nextSequenceId="1" order="12"/>
+        </internal_process>
+        <internal_process id="RN0003" className="RN0003" description="Regla que realiza la consulta del TOP 10 de sedes ips para el redireccionamiento de items.">
+            <next_sequence actionType="CONSULTAR_TOP_TEN_SEDES_IPS_REDIRECCIONAMIENTO" processEndingCode="0" nextSequenceId="1" order="2"/>
+            <next_sequence actionType="CONSULTAR_TOP_TEN_SEDES_IPS_REDIRECCIONAMIENTO" processEndingCode="250" nextSequenceId="1" order="2"/>
+        </internal_process>
+        <internal_process id="RN0004" className="RN0004" description="Calculo de copagos y cuotas moderadoras.">
+            <next_sequence actionType="SOLICITUD_AUTORIZACION" processEndingCode="0" nextSequenceId="1" order="8"/>
+            <next_sequence actionType="SOLICITUD_AUTORIZACION" processEndingCode="250" nextSequenceId="1" order="12"/>
+        </internal_process>
+        <internal_process id="RN0005" className="RN0005" description="Verificar y marcar afiliado con complicaciones de Hemofilia.">
+            <next_sequence actionType="SOLICITUD_AUTORIZA CION" processEndingCode="0" nextSequenceId="2" order="5"/>
+            <next_sequence actionType="SOLICITUD_AUTORIZACION" processEndingCode="250" nextSequenceId="1" order="4"/>
+            <next_sequence actionType="SOLICITUD_AUTORIZACION" processEndingCode="0" nextSequenceId="2" order="5"/>
+        </internal_process>
+        <internal_process id="RN0006" className="RN0006" description="Verificar y marcar afiliado con complicaciones de Artritis Rematoidea.">
+            <next_sequence actionType="SOLICITUD_AUTORIZACION" processEndingCode="0" nextSequenceId="2" order="6"/>
+            <next_sequence actionType="SOLICITUD_AUTORIZACION" processEndingCode="250" nextSequenceId="1" order="5"/>
+        </internal_process>
+        <internal_process id="RN0007" className="RN0007" description="Verificar si existen autorizaciones previas.">
+            <next_sequence actionType="SOLICITUD_AUTORIZACION" processEndingCode="250" nextSequenceId="1" order="5"/>
+            <next_sequence actionType="SOLICITUD_AUTORIZACION" processEndingCode="0" nextSequenceId="2" order="1"/>
+        </internal_process>
+        <internal_process id="RN0008" className="RN0008" description="Validar vigencia de los medicamentos. Estan vigentes por 30 dias.">
+            <next_sequence actionType="CONSUMIR_SOLICITUD_ITEM" processEndingCode="0" nextSequenceId="1" order="2"/>
+            <next_sequence actionType="CONSUMIR_SOLICITUD_ITEM" processEndingCode="250" nextSequenceId="1" order="3"/>
+        </internal_process>
+        <internal_process id="RN0009" className="RN0009" description="Validar si un medicamento es condicionado sin diagnostico asociado valido, en cuyo caso setea estado para direccionar a CTC.">
+            <next_sequence actionType="SOLICITUD_AUTORIZACION" processEndingCode="0" nextSequenceId="1" order="4"/>
+            <next_sequence actionType="SOLICITUD_AUTORIZACION" processEndingCode="250" nextSequenceId="1" order="12"/>
+        </internal_process>
+        <internal_process id="RNSaveSolicitud" className="RNSaveSolicitud" description="Proceso que guarda la solicitud.">
+            <next_sequence actionType="SOLICITUD_AUTORIZACION" processEndingCode="0" nextSequenceId="1" order="10"/>
+            <next_sequence actionType="SOLICITUD_AUTORIZACION" processEndingCode="250" nextSequenceId="1" order="12"/>
+        </internal_process>
+        <internal_process id="RN0010" className="RN0010" description="Valida nivel de autorizacion y setea el estado de autorizacion.">
+            <next_sequence actionType="SOLICITUD_AUTORIZACION" processEndingCode="250" nextSequenceId="1" order="12"/>
+            <next_sequence actionType="SOLICITUD_AUTORIZACION" processEndingCode="0" nextSequenceId="1" order="7"/>
+        </internal_process>
+        <internal_process id="RN0011" className="RN0011" description="Validar Topes.">
+            <next_sequence actionType="SOLICITUD_AUTORIZACION" processEndingCode="250" nextSequenceId="1" order="5"/>
+            <next_sequence actionType="SOLICITUD_AUTORIZACION" processEndingCode="0" nextSequenceId="2" order="2"/>
+        </internal_process>
+        <internal_process id="RN0012" className="RN0012" description="Actualiza datos para devolucion de Ips">
+            <next_sequence actionType="DEVOLVER_SOLICITUD_ITEM" processEndingCode="0" nextSequenceId="1" order="2"/>
+            <next_sequence actionType="DEVOLVER_SOLICITUD_ITEM" processEndingCode="250" nextSequenceId="1" order="2"/>
+        </internal_process>
+        <internal_process id="RN0013" className="RN0013" description="Valida la vigencia de los items y setea el vencimiento en caso negativo."/>
+        <internal_process id="RN9999" className="RN9999" description="Regla 'Dumb', hecha al solo efecto de facilitar el armado del xml flowcontroller "/>
+        <internal_process id="RNNivelAutorizacion01" className="RNNivelAutorizacion01" description="Valida nivel de autorizacion y setea el estado de autorizacion para redireccionamiento">
+            <next_sequence actionType="OBTENER_AUTORIZACION" processEndingCode="0" nextSequenceId="1" order="2"/>
+            <next_sequence actionType="OBTENER_AUTORIZACION" processEndingCode="250" nextSequenceId="1" order="2"/>
+        </internal_process>
+        <internal_process id="RNTargetEscalamiento" className="RNTargetEscalamiento" description="Obtiene el target Destino al que se debe escalar un item, para bandejas de Redirección y Anulación en LDF">
+            <next_sequence actionType="OBTENER_ROLE_ESCALAMIENTO" processEndingCode="0" nextSequenceId="1" order="2"/>
+            <next_sequence actionType="OBTENER_ROLE_ESCALAMIENTO" processEndingCode="250" nextSequenceId="1" order="2"/>
+        </internal_process>
+        <internal_process id="RNRedireccionamientoIPS" className="RNRedireccionamientoIPS" description="Redirecciona la ips de un determinado item">
+            <next_sequence actionType="REDIRECCION_IPS_ITEM" processEndingCode="0" nextSequenceId="1" order="2"/>
+            <next_sequence actionType="REDIRECCION_IPS_ITEM" processEndingCode="250" nextSequenceId="1" order="2"/>
+        </internal_process>
+        <internal_process id="RNAnulacionAutorizacion" className="RNAnulacionAutorizacion" description="Anula la autorizaci�n de uno o varios items">
+            <next_sequence actionType="ANULAR_IPS_ITEM" processEndingCode="0" nextSequenceId="1" order="2"/>
+            <next_sequence actionType="ANULAR_IPS_ITEM" processEndingCode="250" nextSequenceId="1" order="2"/>
+        </internal_process>
+        <internal_process id="RNGenerarEntregas" className="RNGenerarEntregas" description="Genera las entregas para los medicamentos.">
+            <next_sequence actionType="AUTORIZACION_AC" processEndingCode="0" nextSequenceId="1" order="3"/>
+            <next_sequence actionType="AUTORIZACION_AC" processEndingCode="250" nextSequenceId="1" order="4"/>
+            <next_sequence actionType="AUTORIZACION_CS" processEndingCode="0" nextSequenceId="1" order="3"/>
+            <next_sequence actionType="AUTORIZACION_CS" processEndingCode="250" nextSequenceId="1" order="4"/>
+            <next_sequence actionType="AUTORIZACION_CTC" processEndingCode="0" nextSequenceId="1" order="3"/>
+            <next_sequence actionType="AUTORIZACION_CTC" processEndingCode="250" nextSequenceId="1" order="4"/>
+            <next_sequence actionType="GESTIONAR_ITEM_TUTELA" processEndingCode="0" nextSequenceId="1" order="3"/>
+            <next_sequence actionType="GESTIONAR_ITEM_TUTELA" processEndingCode="250" nextSequenceId="1" order="4"/>
+            <next_sequence actionType="SOLICITUD_AUTORIZACION" processEndingCode="0" nextSequenceId="1" order="11"/>
+            <next_sequence actionType="SOLICITUD_AUTORIZACION" processEndingCode="250" nextSequenceId="1" order="12"/>
+        </internal_process>
+        <internal_process id="RNAutorizacionesCTC" className="RNAutorizacionesCTC" description="Proceso que guarda la solicitud.">
+            <next_sequence actionType="AUTORIZACION_CTC" processEndingCode="0" nextSequenceId="1" order="2"/>
+            <next_sequence actionType="AUTORIZACION_CTC" processEndingCode="250" nextSequenceId="1" order="4"/>
+        </internal_process>
+        <internal_process id="RNAutorizacionesAC" className="RNAutorizacionesAC" description="Proceso que actualiza la solicitud de alto costo.">
+            <next_sequence actionType="AUTORIZACION_AC" processEndingCode="0" nextSequenceId="1" order="2"/>
+            <next_sequence actionType="AUTORIZACION_AC" processEndingCode="250" nextSequenceId="1" order="4"/>
+        </internal_process>
+        <internal_process id="RNTutelas" className="RNTutelas" description="Proceso que actualiza la solicitud de items para tutelas.">
+            <next_sequence actionType="GESTIONAR_ITEM_TUTELA" processEndingCode="0" nextSequenceId="1" order="2"/>
+            <next_sequence actionType="GESTIONAR_ITEM_TUTELA" processEndingCode="250" nextSequenceId="1" order="4"/>
+        </internal_process>
+        <internal_process id="RNAutorizacionBandejaEspecializada" className="RNAutorizacionBandejaEspecializada" description="Proceso que actualiza la solicitud de items desde las bandejas de auditor especializado.">
+            <next_sequence actionType="AUTORIZACION_BANDEJA_ESPECIALIZADA" processEndingCode="0" nextSequenceId="1" order="2"/>
+            <next_sequence actionType="AUTORIZACION_BANDEJA_ESPECIALIZADA" processEndingCode="250" nextSequenceId="1" order="4"/>
+        </internal_process>
+        <internal_process id="RNAutorizacionesCS" className="RNAutorizacionesCS" description="Proceso que actualiza la solicitud desde la bandeja de contact service.">
+            <next_sequence actionType="AUTORIZACION_CS" processEndingCode="0" nextSequenceId="1" order="2"/>
+            <next_sequence actionType="AUTORIZACION_CS" processEndingCode="250" nextSequenceId="1" order="4"/>
+        </internal_process>
+        <internal_process id="RNSaveConsumo" className="RNSaveConsumo" description="Graba el consumo de un item.">
+            <next_sequence actionType="CONSUMIR_SOLICITUD_ITEM" processEndingCode="0" nextSequenceId="1" order="3"/>
+            <next_sequence actionType="CONSUMIR_SOLICITUD_ITEM" processEndingCode="250" nextSequenceId="1" order="3"/>
+        </internal_process>
+        <internal_process id="RNSaveTickets" className="RNSaveTickets" description="Graba los tickets de las autorizaciones.">
+            <next_sequence actionType="AUTORIZACION_AC" processEndingCode="0" nextSequenceId="1" order="4"/>
+            <next_sequence actionType="AUTORIZACION_AC" processEndingCode="250" nextSequenceId="1" order="4"/>
+            <next_sequence actionType="AUTORIZACION_CS" processEndingCode="0" nextSequenceId="1" order="4"/>
+            <next_sequence actionType="AUTORIZACION_CS" processEndingCode="250" nextSequenceId="1" order="4"/>
+            <next_sequence actionType="AUTORIZACION_CTC" processEndingCode="0" nextSequenceId="1" order="4"/>
+            <next_sequence actionType="AUTORIZACION_CTC" processEndingCode="250" nextSequenceId="1" order="4"/>
+            <next_sequence actionType="SOLICITUD_AUTORIZACION" processEndingCode="0" nextSequenceId="1" order="12"/>
+            <next_sequence actionType="SOLICITUD_AUTORIZACION" processEndingCode="250" nextSequenceId="1" order="12"/>
+        </internal_process>
+        <internal_process id="RNKitGlucometria" className="RNKitGlucometria" description="Valida si el afiliado es apto para obtener un kit de glucometria.">
+            <next_sequence actionType="SOLICITUD_AUTORIZACION" processEndingCode="0" nextSequenceId="1" order="5"/>
+            <next_sequence actionType="SOLICITUD_AUTORIZACION" processEndingCode="250" nextSequenceId="1" order="12"/>
+        </internal_process>
+        <internal_process id="RNSaveDatosContactoAfiliado" className="RNSaveDatosContactoAfiliado" description="Actualiza los datos de contacto del afiliado.">
+            <next_sequence actionType="ACTUALIZAR_DATOS_CONTACTO_AFILIADO" processEndingCode="0" nextSequenceId="1" order="2"/>
+            <next_sequence actionType="ACTUALIZAR_DATOS_CONTACTO_AFILIADO" processEndingCode="250" nextSequenceId="1" order="2"/>
+        </internal_process>
+        <internal_process id="RN0014" className="RN0014" description="Calculo estimado de cuota moderadora y copago.">
+            <next_sequence actionType="SOLICITUD_AUTORIZACION" processEndingCode="0" nextSequenceId="1" order="9"/>
+            <next_sequence actionType="SOLICITUD_AUTORIZACION" processEndingCode="250" nextSequenceId="1" order="12"/>
+        </internal_process>
+        <internal_process id="RNValidarTopesCantidad" className="RNValidarTopesCantidad" description="Valida el tope de elemento dado.">
+            <next_sequence actionType="VALIDAR_TOPE_CANTIDAD" processEndingCode="0" nextSequenceId="1" order="2"/>
+            <next_sequence actionType="VALIDAR_TOPE_CANTIDAD" processEndingCode="250" nextSequenceId="1" order="2"/>
+        </internal_process>        
+        <internal_process id="RNKitOstomia" className="RNKitOstomia" description="Valida si el afiliado es apto para obtener un kit de ostomia.">
+            <next_sequence actionType="SOLICITUD_AUTORIZACION" processEndingCode="0" nextSequenceId="1" order="6"/>
+            <next_sequence actionType="SOLICITUD_AUTORIZACION" processEndingCode="250" nextSequenceId="1" order="12"/>
+        </internal_process>
+    </processes>
+</controller_processor>

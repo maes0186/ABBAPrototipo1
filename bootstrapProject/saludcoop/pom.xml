@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+  	<!-- 
+  		*************************************************************************************
+  		****** SC: PROYECTO PADRE DE SC MAVENIZADOS.				 				*****
+  		****** Se definen 3 perfiles: desarrollo, pre-produccion o produccion			*****
+  		****** IMPORTANTE: El proyecto debe estar codificado en UTF-8	 				*****
+  		****** click derecho en saludcoop -> properties -> resources - Text file encoding 	*****
+  		*************************************************************************************
+  	 -->
+  	<modelVersion>4.0.0</modelVersion>
+  	<groupId>com.conexia.saludcoop</groupId>
+  	<artifactId>saludcoop</artifactId>
+  	<version>0.0.1</version>
+  	<packaging>pom</packaging>
+  	<name>saludcoop-padre</name>
+  	<description>Proyecto padre de los modulos de SaludCoop</description>
+  	
+  	<organization>
+  		<name>Conexia - Salus</name>
+  	</organization>
+  	
+  	<!-- ************ Definicion de propiedades globales *********** -->
+  	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		
+		<!-- Librerías utilizadas -->
+		<junit.version>4.8.2</junit.version>
+		<jackson.version>1.9.13</jackson.version>
+		<spring.version>3.2.3.RELEASE</spring.version>
+		<spring-data.version>1.3.4.RELEASE</spring-data.version>
+		<spring-security.version>3.1.4.RELEASE</spring-security.version>
+		<hibernate.version>3.6.7.Final</hibernate.version>
+		<hibernate-validator.version>4.1.0.Final</hibernate-validator.version>
+		<aspectj-weaver.version>1.7.2</aspectj-weaver.version>
+		<commons-collections.version>3.2.1</commons-collections.version>
+<!-- 		<postgres-driver.version>9.1-901.jdbc4</postgres-driver.version> -->
+		<jtds.version>1.3.1</jtds.version>
+		<c3p0.version>0.9.1.2</c3p0.version>
+		<jdbcdslog.version>1.0.6.2</jdbcdslog.version>
+		<slf4j.version>1.6.4</slf4j.version>
+		<log4j.version>1.2.16</log4j.version>
+		<javax-mail.version>1.4</javax-mail.version>
+		<commons-lang.version>2.6</commons-lang.version>
+		<commons-dbcp.version>1.2.2</commons-dbcp.version>
+		<commons-fileupload.version>1.2.2</commons-fileupload.version>
+		<commons-io.version>1.3.2</commons-io.version>
+		<jmesa.version>3.0.3</jmesa.version>
+		<servlet-api.version>2.5</servlet-api.version>
+		<jsp-api.version>2.0</jsp-api.version>
+		<jstl.version>1.2</jstl.version>
+		<jasperreports.version>4.5.1</jasperreports.version>
+		<simplecaptcha.version>1.2.1</simplecaptcha.version>
+		<jdom.version>1.0</jdom.version>
+		<joda-time.version>2.3</joda-time.version>
+		<recaptcha4j-version>0.0.7</recaptcha4j-version>
+		
+		<conexia-generic-object-mapper.version>1.1.1</conexia-generic-object-mapper.version>
+		<conexia-generic-persistence-framework.version>1.0.0</conexia-generic-persistence-framework.version>
+		<conexia-file-repository-access.version>1.1</conexia-file-repository-access.version>
+		<conexia-rules-annotations.version>0.0.1</conexia-rules-annotations.version>
+				
+		<!-- Defino un directorio donde se creara el jar y se copiaran las configuraciones -->
+  		<dist.destino>${project.build.directory}/dist/${project.artifactId}-${project.version}</dist.destino>
+	</properties>
+	
+	<!-- ***************** Definicion de plugins comunes ****************** -->
+	<build>
+		<plugins>
+			<!-- Definimos que utilizamos JDK 1.7 -->
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			
+			<!-- Arma los archivos .classpath y .wtpmodules de Eclipse -->
+			<plugin>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.8</version>
+			</plugin>
+		</plugins>
+	</build>
+
+	<!-- ***************** Definicion de perfiles ****************** -->
+  	<profiles>
+  		<!-- ######### DESARROLLO ######### -->
+		<profile>
+			<id>desarrollo</id>
+			<build>
+				<plugins>
+					<!-- COPIAMOS LAS DEPENDENCIA EN UNA CARPETA LIB -->
+					<plugin>
+						<groupId>org.codehaus.cargo</groupId>
+						<artifactId>cargo-maven2-plugin</artifactId>
+						<version>${cargo.version}</version>
+						<configuration>
+							<container>
+								<!-- tomcat5x, tomcat6x -->
+								<containerId>tomcat5x</containerId>
+								<!-- Posibles tipos: installed, embedded y remote -->
+								<type>remote</type>
+								<timeout>600000</timeout>
+							</container>
+							<configuration>
+								<type>runtime</type>
+								<!-- Configuracion para el deploy con tomcat 7 -->
+								<properties>
+									<cargo.hostname>192.168.0.141</cargo.hostname>
+									<cargo.servlet.port>83</cargo.servlet.port>
+									<cargo.tomcat.ajp.port>83</cargo.tomcat.ajp.port>
+									<cargo.remote.username>2inshsg5x9vf</cargo.remote.username>
+									<cargo.remote.password>0xochfvkt90a</cargo.remote.password>
+								</properties>
+							</configuration>
+						</configuration>
+						<executions>
+							<execution>
+								<phase>install</phase>
+								<goals>
+									<goal>redeploy</goal>
+								</goals>
+							</execution>
+						</executions>
+						<dependencies>
+							<dependency>
+								<groupId>org.apache.tomcat</groupId>
+								<artifactId>tomcat-catalina</artifactId>
+								<version>7.0.27</version>
+							</dependency>
+						</dependencies>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+  	
+  		<!-- ######### PREPRODUCCION ######### -->
+		<profile>
+			<id>pre-produccion</id>
+			<build>
+				<plugins>
+					<!-- COPIAMOS LAS DEPENDENCIA EN UNA CARPETA LIB -->
+					<plugin>
+						<groupId>org.codehaus.cargo</groupId>
+						<artifactId>cargo-maven2-plugin</artifactId>
+						<version>${cargo.version}</version>
+						<configuration>
+							<container>
+								<!-- tomcat5x, tomcat6x -->
+								<containerId>tomcat5x</containerId>
+								<!-- Posibles tipos: installed, embedded y remote -->
+								<type>remote</type>
+								<timeout>600000</timeout>
+							</container>
+							<configuration>
+								<type>runtime</type>
+								<!-- Configuracion para el deploy con tomcat 7 -->
+								<properties>
+									<cargo.hostname>192.168.0.159</cargo.hostname>
+									<cargo.servlet.port>83</cargo.servlet.port>
+									<cargo.tomcat.ajp.port>83</cargo.tomcat.ajp.port>
+									<cargo.remote.username>x5daqch6cfbw</cargo.remote.username>
+									<cargo.remote.password>wurtiwe1vvvg</cargo.remote.password>
+								</properties>
+							</configuration>
+						</configuration>
+						<executions>
+							<execution>
+								<phase>install</phase>
+								<goals>
+									<goal>redeploy</goal>
+								</goals>
+							</execution>
+						</executions>
+						<dependencies>
+							<dependency>
+								<groupId>org.apache.tomcat</groupId>
+								<artifactId>tomcat-catalina</artifactId>
+								<version>7.0.27</version>
+							</dependency>
+						</dependencies>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		
+		<!-- ######### PRODUCCION ######### -->
+		<profile>
+			<id>produccion</id>
+			<build>
+				<plugins>
+					<plugin>					
+						<groupId>org.codehaus.cargo</groupId>
+						<artifactId>cargo-maven2-plugin</artifactId>
+						<version>${cargo.version}</version>
+						<configuration>
+							<container>
+								<!-- tomcat5x, tomcat6x -->
+								<containerId>tomcat5x</containerId>
+								<!-- Posibles tipos: installed, embedded y remote -->
+								<type>remote</type>
+								<timeout>600000</timeout>
+							</container>
+							<configuration>
+								<type>runtime</type>
+								<!-- Configuracion para el deploy con tomcat 7 -->
+								<properties>
+									<cargo.hostname>localhost</cargo.hostname>
+									<cargo.servlet.port>9090</cargo.servlet.port>
+									<cargo.tomcat.ajp.port>9009</cargo.tomcat.ajp.port>
+									<cargo.remote.username>admin</cargo.remote.username>
+									<cargo.remote.password>admin</cargo.remote.password>
+								</properties>
+							</configuration>
+						</configuration>
+						<dependencies>
+							<dependency>
+								<groupId>org.apache.tomcat</groupId>
+								<artifactId>tomcat-catalina</artifactId>
+								<version>7.0.27</version>
+							</dependency>
+						</dependencies>
+					</plugin>
+					
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+	<!-- ************ Dependencias comunes ************ -->
+  	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<type>jar</type>
+			<scope>test</scope>
+		</dependency>
+  	</dependencies>
+ 
+ 	<!-- ************ Dependencias de modulos ************ --> 	
+  	<modules>
+  		<module>commons</module>
+  		<module>web</module>
+  		<module>validador</module>
+
+		<!-- Se deshabilita el módulo de administración hasta que se reinicie su desarrollo -->  		
+		<!-- module>administracion</module -->
+  	</modules>
+  	
+  	 <!-- ************ Definicion del repositorio archiva ************ -->
+	<repositories>
+		<repository>
+			<id>conexia_maven_repo</id>
+			<url>http://192.168.0.57:8080/archiva/repository/internal</url>
+		</repository>
+	</repositories>
+  	
+</project>
