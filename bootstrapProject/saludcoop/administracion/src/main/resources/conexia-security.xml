@@ -11,14 +11,12 @@
     <http pattern="/resources" security="none" />
 
     <http use-expressions="true">
-	    <intercept-url pattern="/jcaptcha" access="permitAll" />
-	    <intercept-url pattern="/expiredPassword" access="isAnonymous()" />
-	    <intercept-url pattern="/updatePassword" access="permitAll" />
-	    <intercept-url pattern="/updatePassword/*" access="isAnonymous()" />
-		<intercept-url pattern="/jsp/includes/*" access="isAuthenticated()" />
-		<intercept-url pattern="/jsp/common/*" access="hasAnyRole('ROLE_IPS','ROLE_REPORTER')" />
-    	<intercept-url pattern="/prestador/*" access="hasRole('ROLE_IPS')"/>
-        
+		<intercept-url pattern="/*/*" access="isAuthenticated()" />
+		<intercept-url pattern="/jcaptcha" access="permitAll" />
+		<intercept-url pattern="/expiredPassword" access="isAnonymous()" />
+		<intercept-url pattern="/updatePassword" access="permitAll" />
+		<intercept-url pattern="/updatePassword/*" access="isAnonymous()" />
+
         <form-login login-page="/" 
 					authentication-failure-url="/jsp/public/index.jsp?login_error=t" 
 					default-target-url="/main"

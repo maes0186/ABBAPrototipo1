@@ -12,7 +12,7 @@
 	
 	<!-- Appender General por ARCHIVO -->
 	<appender name="file" class="org.apache.log4j.FileAppender">
-		<param name="File" value="/logs/saludcoop-cargaFirmas.log" />
+		<param name="File" value="/logs/saludcoop-web.log" />
 		<param name="Append" value="true" />
 		<layout class="org.apache.log4j.PatternLayout">
 			<param name="ConversionPattern" value="%d{dd-MM-yyyy HH:mm:ss} %-5p  %m%n" />
@@ -66,35 +66,35 @@
 	
 	<!-- SPRING -->
 	<logger name="org.springframework">
-		<level value="error" />
+		<level value="debug" />
 		<appender-ref ref="console" />
 	</logger>
 	<logger name="org.springframework.aop" additivity="false">
-		<level value="info" />
+		<level value="debug" />
 		<appender-ref ref="console" />
 	</logger>
 	<logger name="org.springframework.core" additivity="false">
-		<level value="info" />
+		<level value="debug" />
 		<appender-ref ref="console" />
 	</logger>
 	<logger name="org.springframework.core.io" additivity="false">
-		<level value="info" />
+		<level value="debug" />
 		<appender-ref ref="console" />
 	</logger>
 	<logger name="org.springframework.context" additivity="false">
-		<level value="info" />
+		<level value="debug" />
 		<appender-ref ref="console" />
 	</logger>
 	<logger name="org.springframework.context.annotation" additivity="false">
-		<level value="info" />
+		<level value="debug" />
 		<appender-ref ref="console" />
 	</logger>
 	<logger name="org.springframework.beans" additivity="false">
-		<level value="error" />
+		<level value="debug" />
 		<appender-ref ref="console" />
 	</logger>
 	<logger name="org.springframework.beans.factory" additivity="false">
-		<level value="info" />
+		<level value="debug" />
 		<appender-ref ref="console" />
 	</logger>
 	<logger name="org.springframework.web" additivity="false">
@@ -121,7 +121,7 @@
 	org.hibernate               Log everything (a lot of debugrmation, but very useful  
 	 -->
 	<logger name="org.hibernate">
-		<level value="debug" />
+		<level value="error" />
 	<appender-ref ref="console" />
 	</logger>
 	<!-- esto es lo mismo que show_sql=true (que ya no se usa mas) -->
@@ -146,14 +146,14 @@
 	
 	<!-- EHCACHE -->
 	<logger name="net.sf.ehcache">
-		<level value="error" />
+		<level value="debug" />
 		<appender-ref ref="console" />
 	</logger>
 
 
 	<!-- C3P0 -->
 	<logger name="com.mchange">
-		<level value="error" />
+		<level value="debug" />
 		<appender-ref ref="console" />
 	</logger>
 
@@ -164,11 +164,11 @@
 		<appender-ref ref="console" />
 	</logger>
 	<logger name="org.jdbcdslog.DataSourceProxyBase">
-		<level value="off" />
+		<level value="debug" />
 		<appender-ref ref="console" />
 	</logger>
 	<logger name="org.jdbcdslog.ConnectionLogger">
-		<level value="off" />
+		<level value="debug" />
 		<appender-ref ref="console" />
 	</logger>
 	

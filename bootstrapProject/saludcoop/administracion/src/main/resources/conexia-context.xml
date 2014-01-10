@@ -11,16 +11,21 @@
 	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
         <property name="basename" value="messages"/>
     </bean>
-	 
+	
+      
 	<!-- Indica que se va a utilizar Annotations para el manejo de la configuración -->
 	<context:annotation-config />
+	
+	 <bean id="reCaptchaService" class="net.tanesha.recaptcha.ReCaptchaImpl">
+        <property name="privateKey" value="6LfxoOsSAAAAAHMxglfLnUGyWnuzatboC7-KDTdY"></property>
+    </bean>
 
 	<!-- Indica los paquetes que escanea para buscar clases con estereotipos 
 		de Spring (controllers, services, etc) -->
-	<context:component-scan base-package="com.conexia.saludcoop, com.conexia.common" />
-
+	<context:component-scan base-package="com.conexia.saludcoop" />
+	
 	<import resource="classpath:conexia-hibernate.xml" />
 	<import resource="classpath:conexia-security.xml" />
-	<import resource="classpath:conexia-transaction.xml" />
-	<import resource="classpath:conexia-mail.xml" /> 
+	<import resource="classpath:conexia-transaction.xml"/>
+	 
 </beans>
