@@ -1,11 +1,17 @@
 package com.conexia.saludcoop.web.vo;
 
+import com.conexia.saludcoop.common.enumerator.RegimenAfiliacion;
+
+
 public class AfiliadoVO {
+	
+	private Long id;
 	private String primerNombre;
 	private String segundoNombre;
 	private String primerApellido;
 	private String segundoApellido;
-	private String eps;
+	private Long eps;
+	private String epsNombre;
 	private String tipoIdent;
 	private String numeroIdentificacion;
 	private String genero;
@@ -16,16 +22,22 @@ public class AfiliadoVO {
 	private String estado;
 	private String razonEstado;
 	private String ipsPrimaria;
+	private String municipioIpsPrimaria;
 	private String direccionIPS;
 	private String telefonoIPS;
 	private String departamento;
+	private Long departamentoId;
 	private String municipio;
+	private Long municipioId;
 	private String direccionResidencial;
 	private String emailPersonal;
 	private String telefonoResidencial;
 	private String telefonoCelular;
 	private Integer tipoIdentID;
-	
+	private String nombreCompleto;
+	private Short tutela;
+	private Long regimenAfiliacion;
+
 	public String getPrimerNombre() {
 		return primerNombre;
 	}
@@ -58,12 +70,12 @@ public class AfiliadoVO {
 		this.segundoApellido = segundoApellido;
 	}
 
-	public String getEps() {
+	public Long getEps() {
 
 		return eps;
 	}
 
-	public void setEps(String eps) {
+	public void setEps(Long eps) {
 		this.eps = eps;
 	}
 
@@ -107,13 +119,13 @@ public class AfiliadoVO {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
-	public String getNivel() {
-		return nivel;
-	}
-
-	public void setNivel(String nivel) {
-		this.nivel = nivel;
-	}
+    public String getNivel() {
+    	return nivel;
+    }
+	
+    public void setNivel(String nivel) {
+    	this.nivel = nivel;
+    }
 
 	public String getTipoAfiliado() {
 		return tipoAfiliado;
@@ -220,4 +232,76 @@ public class AfiliadoVO {
 		return tipoIdentID;
 	}
 
+	public String getNombreCompleto() {
+		return nombreCompleto;
+	}
+
+	public void setNombreCompleto(String nombreCompleto) {
+		this.nombreCompleto = nombreCompleto;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+    public Short getTutela() {
+        return tutela;
+    }
+
+    public void setTutela(Short tutela) {
+        this.tutela = tutela;
+    }
+
+    public Long getDepartamentoId() {
+        return departamentoId;
+    }
+
+    public void setDepartamentoId(Long departamentoId) {
+        this.departamentoId = departamentoId;
+    }
+
+    public Long getMunicipioId() {
+        return municipioId;
+    }
+
+    public void setMunicipioId(Long municipioId) {
+        this.municipioId = municipioId;
+    }
+
+    public String getEpsNombre() {
+    	return epsNombre;
+    }
+
+    public void setEpsNombre(String epsNombre) {
+    	this.epsNombre = epsNombre;
+    }
+    
+    public String getMunicipioIpsPrimaria() {
+    	return municipioIpsPrimaria;
+    }
+	
+    public void setMunicipioIpsPrimaria(String municipioIpsPrimaria) {
+    	this.municipioIpsPrimaria = municipioIpsPrimaria;
+    }
+
+    public Long getRegimenAfiliacion() {
+    	return regimenAfiliacion;
+    }
+	
+    public void setRegimenAfiliacion(Long regimenAfiliacion) {
+    	this.regimenAfiliacion = regimenAfiliacion;
+    }
+
+    public boolean getEsRegimenContributivo() {
+    	return this.getRegimenAfiliacion() == RegimenAfiliacion.CONTRIBUTIVO.getId();
+    }
+
+	//TODO Ver si esto se puede hacer menos quemado!
+    public boolean getHabilitarCreacionSolicitud() {
+    	return this.estado.equals("VIGENTES") && !this.razonEstado.equals("Protección Laboral");
+    }
 }
