@@ -133,7 +133,7 @@
 				action="${pageContext.request.contextPath}/j_spring_security_check"
 				id="loginForm" method="post">
 				<fieldset>
-					<legend>Login</legend>
+					<legend>Login Boostrap</legend>
 					<div class="col-lg-offset-2 col-lg-10" id="errors"></div>
 					<div class="form-group">
 						<label for="username" class="col-lg-2 control-label">${user}</label>
