@@ -1,5 +1,7 @@
 package com.conexia.saludcoop.listener;
-import org.apache.log4j.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.dao.DataAccessException;
@@ -14,8 +16,10 @@ import com.conexia.saludcoop.security.SaludCoopUserDetailsService;
 
 @Component
 public class BadCredentialsApplicationListener implements ApplicationListener<AuthenticationFailureBadCredentialsEvent> {
-    private static final Logger LOG = Logger.getLogger(BadCredentialsApplicationListener.class);
+    
+	private static Logger LOG = LoggerFactory.getLogger(BadCredentialsApplicationListener.class);
 
+	
     @Autowired
     private SaludCoopUserDetailsService saludCoopUserDetailsManager;
     

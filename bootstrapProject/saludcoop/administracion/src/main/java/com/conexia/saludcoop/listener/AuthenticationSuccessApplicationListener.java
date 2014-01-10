@@ -1,5 +1,7 @@
 package com.conexia.saludcoop.listener;
-import org.apache.log4j.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.security.authentication.event.AuthenticationSuccessEvent;
@@ -10,8 +12,8 @@ import com.conexia.saludcoop.security.SaludCoopUserDetailsService;
 
 @Component
 public class AuthenticationSuccessApplicationListener implements ApplicationListener<AuthenticationSuccessEvent> {
-    private static final Logger LOG = Logger.getLogger(AuthenticationSuccessApplicationListener.class);
-
+    
+    private static Logger LOG = LoggerFactory.getLogger(AuthenticationSuccessApplicationListener.class);
     @Autowired
     private SaludCoopUserDetailsService saludCoopUserDetailsManager;
     

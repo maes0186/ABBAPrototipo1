@@ -6,25 +6,21 @@ import java.util.Properties;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.log4j.xml.DOMConfigurator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.conexia.saludcoop.Globals;
 
 
 public class SaludCoopAppListener implements ServletContextListener {
 
-	private static Log logger = LogFactory.getLog(SaludCoopAppListener.class);
-	
+	private static Logger logger = LoggerFactory.getLogger(SaludCoopAppListener.class);
+
 	public void contextDestroyed(ServletContextEvent servletContextEvent) {
 		logger.debug("Context saludcoop Destroyed...");
 	}
 
 	public void contextInitialized(ServletContextEvent servletContextEvent) {
-		
-		//configure log4j first
-		DOMConfigurator.configure(this.getClass().getResource("/log4j.xml"));
 		
 		//configure app later
 		logger.info("saludcoop system startup");
