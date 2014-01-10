@@ -1,8 +1,17 @@
 package com.conexia.saludcoop.web.form;
 
 
+
 public class DiagnosticoItemForm {
 	
+	private Long id;
+	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	private String codigo;
 	private String descripcion;
 	private boolean esPrincipal;
@@ -25,5 +34,7 @@ public class DiagnosticoItemForm {
 	public void setEsPrincipal(boolean esPrincipal) {
 		this.esPrincipal = esPrincipal;
 	}
+	
+
 	
 }

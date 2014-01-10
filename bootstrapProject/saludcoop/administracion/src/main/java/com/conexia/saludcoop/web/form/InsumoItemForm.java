@@ -1,9 +1,9 @@
 package com.conexia.saludcoop.web.form;
 
 
-public class ProcedimientoItemForm {
-	
-	private Long id;
+public class InsumoItemForm {
+
+private Long id;
 	
 	public Long getId() {
 		return id;
@@ -14,14 +14,28 @@ public class ProcedimientoItemForm {
 	private String tipoPPM;
 	private String codigo;
 	private String descripcion;
-	private Integer especialidad;
 	private Integer cant;
 	private String dxAsociado;
-	private FormularioCTCProcedimientoForm formularioCTC;
-	private PrescripcionProcedimientoForm prescripcion;
+	private FormularioCTCInsumoForm formularioCTC;
+	private PrescripcionInsumoForm prescripcion;
+	private boolean visibleCtc;
 	private Integer nivel;
-	private Boolean aplicaTutela;
-	
+    private Boolean aplicaTutela;
+	private Boolean superaTopes;
+    
+    
+	public Boolean getSuperaTopes() {
+        return superaTopes;
+    }
+    public void setSuperaTopes(Boolean superaTopes) {
+        this.superaTopes = superaTopes;
+    }
+    public Integer getNivel() {
+		return nivel;
+	}
+	public void setNivel(Integer nivel) {
+		this.nivel = nivel;
+	}
 	public String getTipoPPM() {
 		return tipoPPM;
 	}
@@ -40,12 +54,7 @@ public class ProcedimientoItemForm {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-	public Integer getEspecialidad() {
-		return especialidad;
-	}
-	public void setEspecialidad(Integer especialidad) {
-		this.especialidad = especialidad;
-	}
+
 	public Integer getCant() {
 		return cant;
 	}
@@ -58,23 +67,23 @@ public class ProcedimientoItemForm {
 	public void setDxAsociado(String dxAsociado) {
 		this.dxAsociado = dxAsociado;
 	}
-	public FormularioCTCProcedimientoForm getFormularioCTC() {
+	public FormularioCTCInsumoForm getFormularioCTC() {
 		return formularioCTC;
 	}
-	public void setFormularioCTC(FormularioCTCProcedimientoForm formularioCTC) {
+	public void setFormularioCTC(FormularioCTCInsumoForm formularioCTC) {
 		this.formularioCTC = formularioCTC;
 	}
-	public PrescripcionProcedimientoForm getPrescripcion() {
+	public PrescripcionInsumoForm getPrescripcion() {
 		return prescripcion;
 	}
-	public void setPrescripcion(PrescripcionProcedimientoForm prescripcion) {
+	public void setPrescripcion(PrescripcionInsumoForm prescripcion) {
 		this.prescripcion = prescripcion;
 	}
-	public Integer getNivel() {
-		return nivel;
+	public boolean isVisibleCtc() {
+		return visibleCtc;
 	}
-	public void setNivel(Integer nivel) {
-		this.nivel = nivel;
+	public void setVisibleCtc(boolean visibleCtc) {
+		this.visibleCtc = visibleCtc;
 	}
     public Boolean getAplicaTutela() {
         return aplicaTutela;
@@ -82,5 +91,5 @@ public class ProcedimientoItemForm {
     public void setAplicaTutela(Boolean aplicaTutela) {
         this.aplicaTutela = aplicaTutela;
     }
-	
+
 }

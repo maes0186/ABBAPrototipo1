@@ -4,143 +4,112 @@ import java.util.Vector;
 
 public class FormularioCTCProcedimientoForm {
 
-
-	private Integer objetivo;
-	private Integer tipoPrestacion;
-	private Integer origen;
+	private String resumenHistoriaClinica;
 	private Integer causaExterna;
 	private Integer finalidad;
 	private Integer tipoCatastrofico;
-	private boolean sinAlternativaPos;
-	private Vector<ProcedimientoPosForm> posPrevios;
-	private String justificacionSinAlternativaPOS;
-	private Integer respClinicaObservadas;
-	private ProcedimientoPosForm posHomologo;
-	private boolean riesgoInminente;
-	private String justificacion;
-	private boolean posibilidadesPOSAgotadas;
+	private boolean sinAlternativaPos = false;
+	private String justificacionSinHomologo;
+	private Vector<ProcedimientoPosPrevioForm> procedimientosPosPrevios = new Vector<>();
+	private String justificacionSinPosPrevio;
+	private ProcedimientoPosHomologoForm procedimientoPosHomologo;
+	private boolean riesgoInminente = false;
+	private String justificacionRiesgoInminente;
+	private boolean posibilidadesPOSAgotadas = false;
 	private String autorizadoINVIMA;
-
+	private String justificacionMedico;
 	
 	
-	public String getJustificacionSinAlternativaPOS() {
-		return justificacionSinAlternativaPOS;
+	
+	public String getJustificacionSinHomologo() {
+		return justificacionSinHomologo;
 	}
-
-	public void setJustificacionSinAlternativaPOS(
-			String justificacionSinAlternativaPOS) {
-		this.justificacionSinAlternativaPOS = justificacionSinAlternativaPOS;
+	public void setJustificacionSinHomologo(String justificacionSinHomologo) {
+		this.justificacionSinHomologo = justificacionSinHomologo;
 	}
-
-	public Integer getObjetivo() {
-		return objetivo;
+	public String getResumenHistoriaClinica() {
+		return resumenHistoriaClinica;
 	}
-
-	public void setObjetivo(Integer objetivo) {
-		this.objetivo = objetivo;
+	public void setResumenHistoriaClinica(String resumenHistoriaClinica) {
+		this.resumenHistoriaClinica = resumenHistoriaClinica;
 	}
-
-	public Integer getTipoPrestacion() {
-		return tipoPrestacion;
-	}
-
-	public void setTipoPrestacion(Integer tipoPrestacion) {
-		this.tipoPrestacion = tipoPrestacion;
-	}
-
-	public Integer getOrigen() {
-		return origen;
-	}
-
-	public void setOrigen(Integer origen) {
-		this.origen = origen;
-	}
-
 	public Integer getCausaExterna() {
 		return causaExterna;
 	}
-
 	public void setCausaExterna(Integer causaExterna) {
 		this.causaExterna = causaExterna;
 	}
-
 	public Integer getFinalidad() {
 		return finalidad;
 	}
-
 	public void setFinalidad(Integer finalidad) {
 		this.finalidad = finalidad;
 	}
-
 	public Integer getTipoCatastrofico() {
 		return tipoCatastrofico;
 	}
-
 	public void setTipoCatastrofico(Integer tipoCatastrofico) {
 		this.tipoCatastrofico = tipoCatastrofico;
 	}
-
 	public boolean isSinAlternativaPos() {
 		return sinAlternativaPos;
 	}
-
 	public void setSinAlternativaPos(boolean sinAlternativaPos) {
 		this.sinAlternativaPos = sinAlternativaPos;
 	}
-
-	public Vector<ProcedimientoPosForm> getPosPrevios() {
-		return posPrevios;
+	public Vector<ProcedimientoPosPrevioForm> getProcedimientosPosPrevios() {
+		return procedimientosPosPrevios;
 	}
-
-	public void setPosPrevios(Vector<ProcedimientoPosForm> posPrevios) {
-		this.posPrevios = posPrevios;
+	public void setProcedimientosPosPrevios(
+			Vector<ProcedimientoPosPrevioForm> procedimientosPosPrevios) {
+		this.procedimientosPosPrevios = procedimientosPosPrevios;
 	}
-
-	public Integer getRespClinicaObservadas() {
-		return respClinicaObservadas;
+	public String getJustificacionSinPosPrevio() {
+		return justificacionSinPosPrevio;
 	}
-
-	public void setRespClinicaObservadas(Integer respClinicaObservadas) {
-		this.respClinicaObservadas = respClinicaObservadas;
+	public void setJustificacionSinPosPrevio(String justificacionSinPosPrevio) {
+		this.justificacionSinPosPrevio = justificacionSinPosPrevio;
 	}
-
-	public ProcedimientoPosForm getPosHomologo() {
-		return posHomologo;
+	public ProcedimientoPosHomologoForm getProcedimientoPosHomologo() {
+		return procedimientoPosHomologo;
 	}
-
-	public void setPosHomologo(ProcedimientoPosForm posHomologo) {
-		this.posHomologo = posHomologo;
+	public void setProcedimientoPosHomologo(
+			ProcedimientoPosHomologoForm procedimientoPosHomologo) {
+		this.procedimientoPosHomologo = procedimientoPosHomologo;
 	}
-
 	public boolean isRiesgoInminente() {
 		return riesgoInminente;
 	}
-
 	public void setRiesgoInminente(boolean riesgoInminente) {
 		this.riesgoInminente = riesgoInminente;
 	}
-
-	public String getJustificacion() {
-		return justificacion;
+	
+	public String getJustificacionRiesgoInminente() {
+		return justificacionRiesgoInminente;
 	}
-
-	public void setJustificacion(String justificacion) {
-		this.justificacion = justificacion;
+	public void setJustificacionRiesgoInminente(String justificacionRiesgoInminente) {
+		this.justificacionRiesgoInminente = justificacionRiesgoInminente;
 	}
-
 	public boolean isPosibilidadesPOSAgotadas() {
 		return posibilidadesPOSAgotadas;
 	}
-
 	public void setPosibilidadesPOSAgotadas(boolean posibilidadesPOSAgotadas) {
 		this.posibilidadesPOSAgotadas = posibilidadesPOSAgotadas;
 	}
-
 	public String getAutorizadoINVIMA() {
 		return autorizadoINVIMA;
 	}
-
 	public void setAutorizadoINVIMA(String autorizadoINVIMA) {
 		this.autorizadoINVIMA = autorizadoINVIMA;
 	}
+	public String getJustificacionMedico() {
+		return justificacionMedico;
+	}
+	public void setJustificacionMedico(String justificacionMedico) {
+		this.justificacionMedico = justificacionMedico;
+	}
+	
+	
+	
 }
+	

@@ -3,13 +3,14 @@ package com.conexia.saludcoop.web.form;
 public class PasswordRecoveryForm {
 	private String nombre;
 	private String mail;
-	private String jcaptchaText;
+	private String recaptcha_response_field;
 	
-	public String getJcaptchaText() {
-		return jcaptchaText;
+
+	public String getRecaptcha_response_field() {
+		return recaptcha_response_field;
 	}
-	public void setJcaptchaText(String jcaptchaText) {
-		this.jcaptchaText = jcaptchaText;
+	public void setRecaptcha_response_field(String recaptcha_response_field) {
+		this.recaptcha_response_field = recaptcha_response_field;
 	}
 	public String getNombre() {
 		return nombre;

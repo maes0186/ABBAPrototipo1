@@ -1,17 +1,16 @@
 package com.conexia.saludcoop.web.form;
 
-import java.util.Vector;
 
-public class FormularioCTCMedicamentoForm {
+public class FormularioCTCInsumoForm {
 
 	private String resumenHistoriaClinica;
 	private Integer causaExterna;
 	private Integer finalidad;
 	private Integer tipoCatastrofico;
 	private boolean sinAlternativaPos = false;
-	private Vector<MedicamentoPosPrevioForm> medicamentosPosPrevios = new Vector<>();
+//	private Vector<InsumoPosPrevioForm> insumosPosPrevios = new Vector<>();
 	private String justificacionSinPosPrevio;
-	private MedicamentoPosForm medicamentoPosHomologo ;
+	private InsumoPosForm insumoPosHomologo ;
 	private boolean riesgoInminente = false;
 	private String justificacionRiesgoInminente;
 	private boolean posibilidadesPOSAgotadas = false;
@@ -47,24 +46,24 @@ public class FormularioCTCMedicamentoForm {
 	public void setSinAlternativaPos(boolean sinAlternativaPos) {
 		this.sinAlternativaPos = sinAlternativaPos;
 	}
-	public Vector<MedicamentoPosPrevioForm> getMedicamentosPosPrevios() {
-		return medicamentosPosPrevios;
-	}
-	public void setMedicamentosPosPrevios(
-			Vector<MedicamentoPosPrevioForm> medicamentosPosPrevios) {
-		this.medicamentosPosPrevios = medicamentosPosPrevios;
-	}
+//	public Vector<InsumoPosPrevioForm> getInsumosPosPrevios() {
+//		return insumosPosPrevios;
+//	}
+//	public void setInsumosPosPrevios(
+//			Vector<InsumoPosPrevioForm> insumosPosPrevios) {
+//		this.insumosPosPrevios = insumosPosPrevios;
+//	}
 	public String getJustificacionSinPosPrevio() {
 		return justificacionSinPosPrevio;
 	}
 	public void setJustificacionSinPosPrevio(String justificacionSinPosPrevio) {
 		this.justificacionSinPosPrevio = justificacionSinPosPrevio;
 	}
-	public MedicamentoPosForm getMedicamentoPosHomologo() {
-		return medicamentoPosHomologo;
+	public InsumoPosForm getInsumoPosHomologo() {
+		return insumoPosHomologo;
 	}
-	public void setMedicamentoPosHomologo(MedicamentoPosForm medicamentoPosHomologo) {
-		this.medicamentoPosHomologo = medicamentoPosHomologo;
+	public void setInsumoPosHomologo(InsumoPosForm insumoPosHomologo) {
+		this.insumoPosHomologo = insumoPosHomologo;
 	}
 	public boolean isRiesgoInminente() {
 		return riesgoInminente;

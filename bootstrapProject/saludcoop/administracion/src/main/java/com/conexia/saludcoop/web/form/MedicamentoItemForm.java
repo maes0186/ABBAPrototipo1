@@ -3,6 +3,15 @@ package com.conexia.saludcoop.web.form;
 
 public class MedicamentoItemForm {
 
+	
+private Long id;
+	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	private String tipoPPM;
 	private String codigo;
 	private String descripcion;
@@ -10,7 +19,9 @@ public class MedicamentoItemForm {
 	private Integer cant;
 	private String dxAsociado;
 	private FormularioCTCMedicamentoForm formularioCTC;
-	private PrescripcionProcedimientoForm prescripcion;
+	private PrescripcionMedicamentoForm prescripcion;
+	private boolean visibleCtc;
+    private Boolean aplicaTutela;
 	
 	public String getTipoPPM() {
 		return tipoPPM;
@@ -54,10 +65,23 @@ public class MedicamentoItemForm {
 	public void setFormularioCTC(FormularioCTCMedicamentoForm formularioCTC) {
 		this.formularioCTC = formularioCTC;
 	}
-	public PrescripcionProcedimientoForm getPrescripcion() {
+	public PrescripcionMedicamentoForm getPrescripcion() {
 		return prescripcion;
 	}
-	public void setPrescripcion(PrescripcionProcedimientoForm prescripcion) {
+	public void setPrescripcion(PrescripcionMedicamentoForm prescripcion) {
 		this.prescripcion = prescripcion;
 	}
+	public boolean isVisibleCtc() {
+		return visibleCtc;
+	}
+	public void setVisibleCtc(boolean visibleCtc) {
+		this.visibleCtc = visibleCtc;
+	}
+    public Boolean getAplicaTutela() {
+        return aplicaTutela;
+    }
+    public void setAplicaTutela(Boolean aplicaTutela) {
+        this.aplicaTutela = aplicaTutela;
+    }
+
 }

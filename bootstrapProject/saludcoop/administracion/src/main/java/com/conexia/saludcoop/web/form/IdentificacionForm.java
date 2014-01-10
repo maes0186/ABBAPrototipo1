@@ -3,53 +3,69 @@
  */
 package com.conexia.saludcoop.web.form;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 /**
  * @author nobregon
- *
+ * 
  */
 public class IdentificacionForm {
+	@Autowired
+	private Integer tipoIdentificacion;
+	private String numeroIdentificacion;
+	private String nombres;
+	private String apellidos;
+	private Long eps;
 
-	private String tipoDocumento;
-	private String numeroDocumento;
 	private String target;
-	/**
-	 * Devuelve el valor de tipoDocumento.
-	 *
-	 * @return El valor de tipoDocumento.
-	 */
-	public String getTipoDocumento() {
-		return tipoDocumento;
+
+	public Integer getTipoIdentificacion() {
+		return tipoIdentificacion;
 	}
-	/**
-	 * Asigna un nuevo valor a tipoDocumento.
-	 *
-	 * @param tipoDocumento El valor a asignar a tipoDocumento.
-	 */
-	public void setTipoDocumento(String tipoDocumento) {
-		this.tipoDocumento = tipoDocumento;
+
+	public void setTipoIdentificacion(Integer tipoIdentificacion) {
+		this.tipoIdentificacion = tipoIdentificacion;
+	}
+
+	public String getNumeroIdentificacion() {
+		return numeroIdentificacion;
+	}
+
+	public void setNumeroIdentificacion(String numeroIdentificacion) {
+		this.numeroIdentificacion = numeroIdentificacion;
+	}
+
+	
+	public String getNombres() {
+		return nombres;
+	}
+
+	public void setNombres(String nombres) {
+		this.nombres = nombres;
+	}
+
+	public String getApellidos() {
+		return apellidos;
+	}
+
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
+	}
+
+	public Long getEps() {
+		return eps;
 	}
 	
-	/**
-	 * Devuelve el valor de numeroDocumento.
-	 *
-	 * @return El valor de numeroDocumento.
-	 */
-	public String getNumeroDocumento() {
-		return numeroDocumento;
+	public void setEps(Long eps) {
+		this.eps = eps;
 	}
-	/**
-	 * Asigna un nuevo valor a numeroDocumento.
-	 *
-	 * @param numeroDocumento El valor a asignar a numeroDocumento.
-	 */
-	public void setNumeroDocumento(String numeroDocumento) {
-		this.numeroDocumento = numeroDocumento;
-	}
+
 	public String getTarget() {
 		return target;
 	}
+
 	public void setTarget(String target) {
 		this.target = target;
 	}
-	
+
 }

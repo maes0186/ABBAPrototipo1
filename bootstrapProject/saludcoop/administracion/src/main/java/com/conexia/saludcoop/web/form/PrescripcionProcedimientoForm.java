@@ -2,25 +2,61 @@ package com.conexia.saludcoop.web.form;
 
 public class PrescripcionProcedimientoForm {
 
-	private String dosis;
-	private String duracion;
+	private Integer causaExterna;
+	private Integer finalidad;
+	private Integer tipoCatastrofico;
 	private Integer lateralidad;
 	private String posologia;
+	private Integer origen;
+	private Integer objetivo;
+	private Integer tipoPrestacion;
 
-	public String getDosis() {
-		return dosis;
+	public Integer getCausaExterna() {
+		return causaExterna;
 	}
 
-	public void setDosis(String dosis) {
-		this.dosis = dosis;
+	public void setCausaExterna(Integer causaExterna) {
+		this.causaExterna = causaExterna;
 	}
 
-	public String getDuracion() {
-		return duracion;
+	public Integer getFinalidad() {
+		return finalidad;
 	}
 
-	public void setDuracion(String duracion) {
-		this.duracion = duracion;
+	public void setFinalidad(Integer finalidad) {
+		this.finalidad = finalidad;
+	}
+
+	public Integer getTipoCatastrofico() {
+		return tipoCatastrofico;
+	}
+
+	public void setTipoCatastrofico(Integer tipoCatastrofico) {
+		this.tipoCatastrofico = tipoCatastrofico;
+	}
+
+	public Integer getOrigen() {
+		return origen;
+	}
+
+	public void setOrigen(Integer origen) {
+		this.origen = origen;
+	}
+
+	public Integer getObjetivo() {
+		return objetivo;
+	}
+
+	public void setObjetivo(Integer objetivo) {
+		this.objetivo = objetivo;
+	}
+
+	public Integer getTipoPrestacion() {
+		return tipoPrestacion;
+	}
+
+	public void setTipoPrestacion(Integer tipoPrestacion) {
+		this.tipoPrestacion = tipoPrestacion;
 	}
 
 	public Integer getLateralidad() {

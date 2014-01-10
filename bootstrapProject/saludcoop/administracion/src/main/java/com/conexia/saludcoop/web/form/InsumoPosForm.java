@@ -1,6 +1,6 @@
 package com.conexia.saludcoop.web.form;
 
-public class MedicamentoPosForm {
+public class InsumoPosForm {
 
 private Long id;
 	
@@ -37,5 +37,4 @@ private Long id;
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-
 }
