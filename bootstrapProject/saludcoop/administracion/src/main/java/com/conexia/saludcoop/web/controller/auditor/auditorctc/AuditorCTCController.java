@@ -11,7 +11,6 @@ import com.conexia.saludcoop.web.BaseValidatingController;
 import com.conexia.saludcoop.web.manager.DepartamentoManager;
 import com.conexia.saludcoop.web.manager.EpsManager;
 import com.conexia.saludcoop.web.manager.EstadoAfiliacionManager;
-import com.conexia.saludcoop.web.manager.TipoIdentificacionAfiliadoManager;
 
 /**
  * 
@@ -21,9 +20,7 @@ import com.conexia.saludcoop.web.manager.TipoIdentificacionAfiliadoManager;
 @Controller
 public class AuditorCTCController extends BaseValidatingController {
 
-    @Autowired
-    private TipoIdentificacionAfiliadoManager tipoIdentAfiliadoManager;
-
+    
     @Autowired
     private EstadoAfiliacionManager estadoAfiliacionManager;
 

@@ -32,7 +32,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.conexia.saludcoop.Globals;
 import com.conexia.saludcoop.common.entity.security.User;
-import com.conexia.saludcoop.mail.MailService;
+import com.conexia.saludcoop.common.mail.exception.CannotSendEmailException;
+import com.conexia.saludcoop.common.mail.service.IEmailSenderService;
 import com.conexia.saludcoop.security.SaludCoopUserDetails;
 import com.conexia.saludcoop.security.dto.RecoveryTokenDto;
 import com.conexia.saludcoop.web.BaseValidatingController;
@@ -53,7 +54,7 @@ public class UpdatePasswordController extends BaseValidatingController {
 	private UsuarioManager userManager;
 			
 	@Autowired
-	private MailService mailService;
+	private IEmailSenderService mailService;
 		
 	@Autowired
 	private RecoveryTokenManager tokenService;
@@ -82,7 +83,7 @@ public class UpdatePasswordController extends BaseValidatingController {
 	public String updatePassword(
 			HttpServletRequest request, HttpServletResponse response,
 			@ModelAttribute @Valid UpdatePasswordForm form, 
-			@ModelAttribute BindingResult bindingResult,
+			BindingResult bindingResult,
 			Model model){
 		
 		if (bindingResult.hasErrors()){
@@ -101,9 +102,9 @@ public class UpdatePasswordController extends BaseValidatingController {
 		String message = getMessage("mail.updatePassword.body");
 		
 		try {
-			getMailService().sendMail(getMessage("mail.updatePassword.subject"),message, user.getEmail());
-		} catch (EnviarMailException e) {
-			// TODO Auto-generated catch block
+			this.mailService.sendEmail(user.getEmail(), getMessage("mail.updatePassword.subject"), message);
+		} catch (final CannotSendEmailException e) {
+			/* TODO Definir manejo de la excepción */
 			e.printStackTrace();
 		}
 		
@@ -112,7 +113,7 @@ public class UpdatePasswordController extends BaseValidatingController {
 			authenticateUserAndSetSession(user, form.getPassword(), request);
 		}
 		model.addAttribute("passwordMessage", getMessage("message.updatePassword.passwordUpdated"));
-		return "common/loggedIn";
+		return "redirect:/main";
 		
 	}
 
@@ -213,28 +214,4 @@ public class UpdatePasswordController extends BaseValidatingController {
 	public void setUserManager(UsuarioManager userManager) {
 		this.userManager = userManager;
 	}
-
-	/**
-	 * Devuelve el valor de mailService.
-	 *
-	 * @return El valor de mailService.
-	 */
-	public MailService getMailService() {
-		return mailService;
-	}
-
-	/**
-	 * Asigna un nuevo valor a mailService.
-	 *
-	 * @param mailService El valor a asignar a mailService.
-	 */
-	public void setMailService(MailService mailService) {
-		this.mailService = mailService;
-	}
-
-
-	
-
-
-	
 }

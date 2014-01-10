@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.Vector;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -190,5 +191,10 @@ public class BaseValidatingController {
 			elementos.add(new TipoIdentificacionVO(enumItem));
 		}
 		map.put(elemento, elementos);
+	}
+	
+	public void removeFromSession(ModelMap modelMap, HttpSession session, String key){
+		modelMap.remove(key);
+		session.removeAttribute(key);
 	}
 }

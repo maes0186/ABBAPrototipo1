@@ -71,12 +71,7 @@ public class SaludCoopUserDetails implements UserDetails {
 	 * Contiene el nombre del prestador.
 	 */
 	private String nombre;
-	
-	/**
-	 * Contiene el Tipo de Usuario en cuestion. Puede Ser un Prestador, un Asegurador, etc.
-	 */
-	private TipoUsuarioDto tipoUsuario;
-	
+
 	
 	public Date getCredentialsExpirationDate() {
 		return credentialsExpirationDate;
@@ -236,26 +231,6 @@ public class SaludCoopUserDetails implements UserDetails {
 	}
 
 	
-    /**
-     * Devuelve el valor de tipoUsuario.
-     *
-     * @return El valor de tipoUsuario.
-     */
-    public TipoUsuarioDto getTipoUsuario() {
-    
-    	return this.tipoUsuario;
-    }
-
-	
-    /**
-     * Asigna un nuevo valor a tipoUsuario.
-     *
-     * @param tipoUsuario El valor a asignar a tipoUsuario.
-     */
-    public void setTipoUsuario(TipoUsuarioDto tipoUsuario) {
-    
-    	this.tipoUsuario = tipoUsuario;
-    }
 
 	/* (non-Javadoc)
      * @see java.lang.Object#toString()

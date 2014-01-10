@@ -18,7 +18,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.conexia.saludcoop.Globals;
 import com.conexia.saludcoop.common.entity.security.User;
-import com.conexia.saludcoop.mail.MailService;
+import com.conexia.saludcoop.common.mail.exception.CannotSendEmailException;
+import com.conexia.saludcoop.common.mail.service.IEmailSenderService;
 import com.conexia.saludcoop.util.ValidatedResponse;
 import com.conexia.saludcoop.web.BaseValidatingController;
 import com.conexia.saludcoop.web.form.PasswordRecoveryForm;
@@ -35,7 +36,7 @@ public class PasswordRecoveryController extends BaseValidatingController {
 	private UsuarioManager usuarioManager;
 	
 	@Autowired
-	private MailService mailService;
+	private IEmailSenderService mailService;
 	
 	@Autowired
 	private PasswordRecoveryValidator passwordRecoveryValidator;
@@ -59,7 +60,7 @@ public class PasswordRecoveryController extends BaseValidatingController {
 	@ResponseBody
 	protected ValidatedResponse<PasswordRecoveryVO> passwordRecovery(HttpServletRequest request, HttpServletResponse response,
 			@ModelAttribute @Valid PasswordRecoveryForm form, 
-			@ModelAttribute BindingResult bindingResult,
+			BindingResult bindingResult,
 			Model model) throws Exception{
 
 			//Valido que el captcha ingresado coincida con la imagen
@@ -100,8 +101,8 @@ public class PasswordRecoveryController extends BaseValidatingController {
 			String message = getMessage("mail.passwordRecovery.body", url);
 			
 			try {
-				getMailService().sendMail(getMessage("mail.passwordRecovery.subject"),message, user.getEmail());
-			} catch (EnviarMailException e) {
+				this.mailService.sendEmail(user.getEmail(), getMessage("mail.passwordRecovery.subject"), message);
+			} catch (final CannotSendEmailException e) {
 				validatedResponse.addGeneralErrors(this.getMessage("message.mailService.notSendMail"));
 				passwordRecoveryVo.setStatus("NOTOK");
 				validatedResponse.setContent(passwordRecoveryVo);
@@ -121,17 +122,6 @@ public class PasswordRecoveryController extends BaseValidatingController {
 	public void setUsuarioManager(UsuarioManager usuarioManager) {
 		this.usuarioManager = usuarioManager;
 	}
-
-
-	public MailService getMailService() {
-		return mailService;
-	}
-
-
-	public void setMailService(MailService mailService) {
-		this.mailService = mailService;
-	}
-
 
 	/**
 	 * Devuelve el valor de passwordRecoveryValidator.

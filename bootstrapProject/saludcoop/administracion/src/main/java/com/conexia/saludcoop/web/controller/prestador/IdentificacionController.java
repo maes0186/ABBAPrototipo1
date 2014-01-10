@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
-import javax.validation.Valid;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.util.CollectionUtils;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -27,16 +26,20 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.conexia.saludcoop.common.dto.AfiliadoDto;
-import com.conexia.saludcoop.common.dto.TipoIdentificacionDto;
+import com.conexia.saludcoop.common.dto.MunicipioDto;
+import com.conexia.saludcoop.common.dto.RespuestaDto;
 import com.conexia.saludcoop.util.ValidatedResponse;
 import com.conexia.saludcoop.web.BaseValidatingController;
+import com.conexia.saludcoop.web.form.DatosAfiliadoForm;
 import com.conexia.saludcoop.web.form.IdentificacionForm;
-import com.conexia.saludcoop.web.manager.AfiliadoManager;
-import com.conexia.saludcoop.web.manager.TipoIdentificacionAfiliadoManager;
+import com.conexia.saludcoop.web.manager.EpsManager;
+import com.conexia.saludcoop.web.manager.DepartamentoManager;
+import com.conexia.saludcoop.web.manager.IAfiliadoManager;
+import com.conexia.saludcoop.web.manager.TipoIdentificacionManager;
 import com.conexia.saludcoop.web.manager.ValidatorServiceManager;
 import com.conexia.saludcoop.web.validator.IdentificacionValidator;
 import com.conexia.saludcoop.web.vo.AfiliadoVO;
-import com.conexia.saludcoop.web.vo.TipoIdentificacionVO;
+import com.conexia.saludcoop.web.vo.VOUtils;
 import com.conexia.saludcoop.web.vo.utils.ParserVO;
 
 /**
@@ -44,7 +47,7 @@ import com.conexia.saludcoop.web.vo.utils.ParserVO;
  * 
  */
 @Controller
-@SessionAttributes({ "beneList", "beneficiarioTrx", "afiliado" })
+@SessionAttributes({ "beneList", "beneficiarioTrx", "afiliado","sedeIPs" })
 @RequestMapping(method = RequestMethod.GET)
 public class IdentificacionController extends BaseValidatingController {
 
@@ -52,7 +55,7 @@ public class IdentificacionController extends BaseValidatingController {
 	private IdentificacionValidator identificacionValidator;
 
 	@Autowired
-	private AfiliadoManager afiliadoManager;
+	private IAfiliadoManager afiliadoManager;
 
 	@Autowired
 	private ValidatorServiceManager validatorServiceManager;
@@ -60,8 +63,14 @@ public class IdentificacionController extends BaseValidatingController {
 	@Autowired
 	private ParserVO pvo;
 
+    @Autowired
+    private DepartamentoManager departamentoManager;
+	
 	@Autowired
-	private TipoIdentificacionAfiliadoManager tipoIdentAfiliadoManager;
+	private TipoIdentificacionManager tipoIdentificacionManager;
+	
+	@Autowired
+    private EpsManager epsManager;
 	
 	@InitBinder
 	protected void initBinder(WebDataBinder binder) {
@@ -74,11 +83,9 @@ public class IdentificacionController extends BaseValidatingController {
 	protected String iniciarComprobacion(@ModelAttribute String target,
 			ModelMap map) {
 
-		Vector<TipoIdentificacionVO> tiposDeDocumento = new Vector<TipoIdentificacionVO>();
-		for (TipoIdentificacionDto td : tipoIdentAfiliadoManager.getAll()) {
-			tiposDeDocumento.add(new TipoIdentificacionVO(td));
-		}
-		map.put("tiposDeDocumento", tiposDeDocumento);
+		cargarElementosTipoIdentificacion("tipoIdentificacion", map, tipoIdentificacionManager.getAll());
+		map.put("eps", VOUtils.toEpsVO(epsManager.findAll()));
+		map.put("departamentos", departamentoManager.findAll());
 		map.put("target", target);
 		return "prestador/common/identificacion";
 	}
@@ -101,33 +108,78 @@ public class IdentificacionController extends BaseValidatingController {
 
 	@RequestMapping(value = "/prestador/identificacion", method = RequestMethod.POST)
 	@ResponseBody
-	protected ValidatedResponse<AfiliadoVO> identificar(
-			@ModelAttribute @Valid IdentificacionForm form,
-			BindingResult bindingResult, ModelMap model) throws Exception {
-
-		ValidatedResponse<AfiliadoVO> validatedResponse = new ValidatedResponse<AfiliadoVO>();
-		if (!bindingResult.hasErrors()) {
-			AfiliadoDto afiliadoDto = getAfiliadoManager()
-					.getBeneficiarioByTipoNumeroDocumento(
-							Integer.valueOf(form.getTipoDocumento()),
-							form.getNumeroDocumento());
-
-			validatorServiceManager.comprobarDerechos(afiliadoDto);
-
-			AfiliadoVO afiliado = pvo.getAfiliadoVO(afiliadoDto);
-			model.put("afiliado", afiliado);
-			validatedResponse.setContent(afiliado);
+	protected ValidatedResponse<AfiliadoVO> comprobarDerechos(@ModelAttribute AfiliadoVO afiliadoVo, ModelMap model, HttpSession session) throws Exception {
+			ValidatedResponse<AfiliadoVO> validatedResponse = new ValidatedResponse<>();
+		removeFromSession(model, session, "afiliado");
+		
+		AfiliadoDto afiliadoDto = afiliadoManager.getAfiliadoByTipoNumeroDocumento(afiliadoVo.getTipoIdentID(), afiliadoVo.getNumeroIdentificacion());
+		RespuestaDto respuesta = validatorServiceManager.comprobarDerechos(afiliadoDto);
+		Integer codigoRespuesta = new Integer(getMessage("respuestaTrx.codigoOk"));
+			
+		if(respuesta != null && respuesta.getCodigoRespuesta() == codigoRespuesta){
+			model.put("afiliado", afiliadoVo);
+			validatedResponse.setContent(afiliadoVo);
 
 		} else {
-			validatedResponse
-					.setValidationResult(getFieldErrorsStringMap(bindingResult));
-			validatedResponse
-					.setGeneralErrors(getGlobalErrorsList(bindingResult));
+			List<String> errores = new Vector<>();
+			if(respuesta == null){
+				errores.add("Error - No se pudo comunicar con el validador");
+			}else{
+				errores.add(respuesta.getMensajeRespuesta());	
+			}
+			
+			validatedResponse.setGeneralErrors(errores);
+			
 		}
 
 		return validatedResponse;
 
 	}
+	
+	@RequestMapping(value = "/prestador/getAfiliado", method = RequestMethod.POST)
+	@ResponseBody
+	protected ValidatedResponse<AfiliadoVO> getAfiliado(ModelMap model) throws Exception {
+		ValidatedResponse<AfiliadoVO> validatedResponse = new ValidatedResponse<>();
+		AfiliadoVO afiliadoVo = (AfiliadoVO)model.get("afiliado");
+		
+		validatedResponse.setContent(afiliadoVo);
+
+		return validatedResponse;
+
+	}
+	
+	@RequestMapping(value = "/afiliado/guardarDatosContacto", method = RequestMethod.POST)
+    @ResponseBody
+    protected ValidatedResponse<Boolean> saveDatosContacto(ModelMap model, DatosAfiliadoForm form) throws Exception {
+        ValidatedResponse<Boolean> validatedResponse = new ValidatedResponse<>();
+        
+        AfiliadoDto afiliadoDto = new AfiliadoDto();
+        afiliadoDto.setId(form.getId());
+        afiliadoDto.setMunicipioResidencia(new MunicipioDto());
+        afiliadoDto.getMunicipioResidencia().setId(form.getMunicipioId());
+        afiliadoDto.setDireccionDeResidencia(form.getDireccionResidencial());
+        afiliadoDto.setEmailPersonal(form.getEmailPersonal());
+        afiliadoDto.setTelefonoCelular(form.getTelefonoCelular());
+        afiliadoDto.setTelefonoResidencial(form.getTelefonoResidencial());
+        
+        RespuestaDto respuesta = validatorServiceManager.actualizarDatosContactoAfiliado(afiliadoDto);
+        
+        if (validatedResponse != null) {
+            validatedResponse.setContent(respuesta.getCodigoRespuesta() == 0 ? Boolean.TRUE : Boolean.FALSE);
+            validatedResponse.addGeneralError(respuesta.getMensajeRespuesta());
+        }
+        
+        AfiliadoVO vo = (AfiliadoVO) model.get("afiliado");
+        vo.setMunicipioId(form.getMunicipioId());
+        vo.setDepartamentoId(form.getDepartamentoId());
+        vo.setDireccionResidencial(form.getDireccionResidencial());
+        vo.setEmailPersonal(form.getEmailPersonal());
+        vo.setTelefonoCelular(form.getTelefonoCelular());
+        vo.setTelefonoResidencial(form.getTelefonoResidencial());
+        
+        return validatedResponse;
+
+    }
 
 	/**
 	 */
@@ -158,6 +210,12 @@ public class IdentificacionController extends BaseValidatingController {
 		}
 		return validatedResponse;
 	}
+	
+	@RequestMapping(value="/removeAfiliadoFromSession", method=RequestMethod.GET)
+	@ResponseBody
+	public void resetAfiliadoFromSession(ModelMap model, HttpSession session){
+		removeFromSession(model, session, "afiliado");	
+	}
 
 	/**
 	 * Devuelve el valor de identificacionValidator.
@@ -179,11 +237,11 @@ public class IdentificacionController extends BaseValidatingController {
 		this.identificacionValidator = identificacionValidator;
 	}
 
-	public AfiliadoManager getAfiliadoManager() {
+	public IAfiliadoManager getAfiliadoManager() {
 		return afiliadoManager;
 	}
 
-	public void setAfiliadoManager(AfiliadoManager afiliadoManager) {
+	public void setAfiliadoManager(IAfiliadoManager afiliadoManager) {
 		this.afiliadoManager = afiliadoManager;
 	}
 

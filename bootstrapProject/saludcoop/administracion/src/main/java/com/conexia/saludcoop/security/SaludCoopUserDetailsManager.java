@@ -52,6 +52,7 @@ public class SaludCoopUserDetailsManager implements SaludCoopUserDetailsService 
 		User user = null;
 		try {
 			user = userDao.findOneByUsername(username);
+			if (user == null) throw new NoResultException();
 		}catch(NoResultException nre){
 			/* si no encuentra el usuario que le pasan, es un problema de autenticacion
 			 * asi que lanzo una UsernameNotFoundException, que entra en el circuito de

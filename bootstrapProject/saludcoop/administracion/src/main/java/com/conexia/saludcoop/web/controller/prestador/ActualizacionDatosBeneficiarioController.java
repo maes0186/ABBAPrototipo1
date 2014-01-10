@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.conexia.saludcoop.web.BaseValidatingController;
 import com.conexia.saludcoop.web.form.ActualizarDatosBeneficiarioForm;
-import com.conexia.saludcoop.web.manager.AfiliadoManager;
+import com.conexia.saludcoop.web.manager.IAfiliadoManager;
 import com.conexia.saludcoop.web.validator.ActualizacionDatosBeneficiarioValidator;
 
 /**
@@ -28,7 +28,7 @@ import com.conexia.saludcoop.web.validator.ActualizacionDatosBeneficiarioValidat
 public class ActualizacionDatosBeneficiarioController extends BaseValidatingController{
 	
 	@Autowired 
-	private AfiliadoManager beneficiarioManager;
+	private IAfiliadoManager beneficiarioManager;
 	
 	@Autowired
 	private ActualizacionDatosBeneficiarioValidator actDatosBeneValidator;
@@ -60,7 +60,7 @@ public class ActualizacionDatosBeneficiarioController extends BaseValidatingCont
 	 *
 	 * @return El valor de beneficiarioManager.
 	 */
-	public AfiliadoManager getBeneficiarioManager() {
+	public IAfiliadoManager getBeneficiarioManager() {
 		return beneficiarioManager;
 	}
 
@@ -69,7 +69,7 @@ public class ActualizacionDatosBeneficiarioController extends BaseValidatingCont
 	 *
 	 * @param beneficiarioManager El valor a asignar a beneficiarioManager.
 	 */
-	public void setBeneficiarioManager(AfiliadoManager beneficiarioManager) {
+	public void setBeneficiarioManager(IAfiliadoManager beneficiarioManager) {
 		this.beneficiarioManager = beneficiarioManager;
 	}
 
