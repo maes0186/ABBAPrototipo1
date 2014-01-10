@@ -3,24 +3,24 @@
  */
 package com.conexia.saludcoop.administracion.contratos;
 
-import com.conexia.saludcoop.administracion.contratos.dtos.ServicioContratoDto;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 import javax.inject.Named;
 
 import org.springframework.context.annotation.Scope;
 
 import com.conexia.saludcoop.administracion.contratos.dtos.EspecialidadContratoDto;
+import com.conexia.saludcoop.administracion.contratos.dtos.ServicioContratoDto;
 import com.conexia.saludcoop.common.dto.ContratoDto;
 import com.conexia.saludcoop.common.dto.IpsDto;
 import com.conexia.saludcoop.common.dto.SedeIpsDto;
 import com.conexia.saludcoop.common.dto.TarifarioDto;
 import com.conexia.saludcoop.common.dto.TipoPlanContratoDto;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Map;
-import java.util.TreeMap;
 
 /**
  * <b>CDI Bean para la administración de contratos</b>
@@ -63,7 +63,7 @@ public class ContratosModel implements Serializable {
                 dto.setCodigoMinisterioSalud("1234MS" + i);
                 dto.setDescripcion("Servicio " + i);
                 dto.setHospitalario(Boolean.TRUE);
-                dto.setId(i);
+                dto.setId(Long.valueOf(i));
                 dto.setNivelDeAtencion(Double.valueOf(Math.random() * 4).intValue() + 1);
                 serviciosDisponibles.add(dto);
             }
@@ -98,7 +98,7 @@ public class ContratosModel implements Serializable {
                 TarifarioDto dto = new TarifarioDto();
                 dto.setFechaFinalizacion(new Date());
                 dto.setFechaInicio(new Date());
-                dto.setId(i);
+                dto.setId(Long.valueOf(i));
                 dto.setPorcentajeAjuste(10d);
                 tarifariosDisponibles.add(dto);
                 tarifariosMap.put(i, dto);
@@ -148,11 +148,11 @@ public class ContratosModel implements Serializable {
     public List<IpsDto> getListaIps() {
         listaIps= new ArrayList<IpsDto>();
          IpsDto dto= new IpsDto();
-         dto.setId(1);
+         dto.setId(Long.valueOf(1));
          dto.setRazonSocial("IPS 1");
          listaIps.add(dto);
          dto= new IpsDto();
-         dto.setId(2);
+         dto.setId(Long.valueOf(2));
          dto.setRazonSocial("IPS 2");
          listaIps.add(dto);
          return listaIps;
@@ -164,7 +164,7 @@ public class ContratosModel implements Serializable {
      public List<SedeIpsDto> getListaSedeIps() {
          this.listaSedeIps=new ArrayList<SedeIpsDto>();
          SedeIpsDto dto= new SedeIpsDto();
-         dto.setId(1);
+         dto.setId(Long.valueOf(1));
          dto.setNombre(String.valueOf(sedeIpsDto.getIps().getId()));
          listaSedeIps.add(dto);
          return listaSedeIps;
@@ -177,7 +177,7 @@ public class ContratosModel implements Serializable {
      public ContratoDto getContratoDto() {
          if(contratoDto==null){
              contratoDto= new ContratoDto();
-             contratoDto.setTarifario(new TarifarioDto());
+             contratoDto.setTarifarioDto(new TarifarioDto());
              contratoDto.setTipoPlanContrato(new TipoPlanContratoDto());
          }
          return contratoDto;
@@ -190,7 +190,7 @@ public class ContratosModel implements Serializable {
      public List<TipoPlanContratoDto> getTiposPlanContrato() {
          tiposPlanContrato = new ArrayList<TipoPlanContratoDto>();
          TipoPlanContratoDto tipoContratoDto= new TipoPlanContratoDto();
-         tipoContratoDto.setId(1);
+         tipoContratoDto.setId(Long.valueOf(1));
          tipoContratoDto.setDescripcion("tipo contrato1");
          tiposPlanContrato.add(tipoContratoDto);
          return tiposPlanContrato;
@@ -203,7 +203,7 @@ public class ContratosModel implements Serializable {
      public List<TarifarioDto> getTarifariosDto() {
          tarifariosDto= new ArrayList<TarifarioDto>();
          TarifarioDto dto= new TarifarioDto();
-         dto.setId(1);
+         dto.setId(Long.valueOf(1));
          tarifariosDto.add(dto);
          return tarifariosDto;
      }

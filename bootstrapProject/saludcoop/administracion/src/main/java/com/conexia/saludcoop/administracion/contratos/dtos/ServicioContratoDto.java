@@ -4,9 +4,9 @@
  */
 package com.conexia.saludcoop.administracion.contratos.dtos;
 
-import com.conexia.saludcoop.common.dto.ServicioDto;
-import com.conexia.saludcoop.common.dto.TarifarioExcepcionDto;
 import java.io.Serializable;
+
+import com.conexia.saludcoop.common.dto.ServicioDto;
 
 /**
  *
@@ -17,8 +17,26 @@ public class ServicioContratoDto extends ServicioDto implements Serializable {
     private boolean checked;
     private TarifarioExcepcionDto tarifario;
     private Integer idTarifario;
+    private boolean hospitalario;
+    private Long id;
     
-    public boolean isChecked() {
+    public boolean isHospitalario() {
+		return hospitalario;
+	}
+
+	public void setHospitalario(boolean hospitalario) {
+		this.hospitalario = hospitalario;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public boolean isChecked() {
         return checked;
     }
 
