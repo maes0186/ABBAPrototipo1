@@ -20,7 +20,16 @@ public class ContratoDto {
 	private Double porcentajeNegociado;
 	private Set<ServicioContratadoDto>serviciosContratados;
 	private String estado;
+	private TarifarioDto tarifarioDto;
 	
+
+	public TarifarioDto getTarifarioDto() {
+		return tarifarioDto;
+	}
+
+	public void setTarifarioDto(TarifarioDto tarifarioDto) {
+		this.tarifarioDto = tarifarioDto;
+	}
 
 	public void setId(Long id){
 		this.id = id;

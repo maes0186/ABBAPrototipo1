@@ -14,7 +14,25 @@ public class TarifarioDto {
 	private Long id;
 	private Double porcentajeAjuste;
 	private Set<ProcedimientoDto>procedimientos;
+	private Date fechaFinalizacion;
+	private Date fechaInicio;
 	
+	public Date getFechaFinalizacion() {
+		return fechaFinalizacion;
+	}
+
+	public void setFechaFinalizacion(Date fechaFinalizacion) {
+		this.fechaFinalizacion = fechaFinalizacion;
+	}
+
+	public Date getFechaInicio() {
+		return fechaInicio;
+	}
+
+	public void setFechaInicio(Date fechaInicio) {
+		this.fechaInicio = fechaInicio;
+	}
+
 	/**
 	 * Tipo de tarifario.
 	 */
