@@ -247,7 +247,7 @@
  	<!-- ************ Dependencias de modulos ************ --> 	
   	<modules>
   		<module>commons</module>
-  		<module>web</module>
+  		<module>administracion</module>
   		<module>validador</module>
 
 		<!-- Se deshabilita el módulo de administración hasta que se reinicie su desarrollo -->  		
