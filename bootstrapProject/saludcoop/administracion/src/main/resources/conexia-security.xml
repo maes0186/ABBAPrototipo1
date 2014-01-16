@@ -12,7 +12,7 @@
         <sec:intercept-url pattern="/jsp/public/**" access="permitAll"/>
         <sec:intercept-url pattern="/javax.faces.resource/**" access="permitAll"/>
         <sec:intercept-url pattern="/**" access="permitAll"/>
-        <sec:form-login login-page="/jsp/public/test.jsf"
+        <sec:form-login login-page="/jsp/public/indexJSF.jsf"
         authentication-failure-url="/jsp/public/index.jsp?login_error=t"
 		authentication-failure-handler-ref="authFailureHandler"
         />
