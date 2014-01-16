@@ -1,49 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<beans:beans xmlns="http://www.springframework.org/schema/security"
-    xmlns:beans="http://www.springframework.org/schema/beans"
+<beans:beans
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
-
-    <global-method-security pre-post-annotations="enabled" />
-    <http pattern="/jsp/public/**" security="none"/>
-    <http pattern="/resources" security="none" />
-
-    <http use-expressions="true">
-		<intercept-url pattern="/*/*" access="isAuthenticated()" />
-		<intercept-url pattern="/jcaptcha" access="permitAll" />
-		<intercept-url pattern="/expiredPassword" access="isAnonymous()" />
-		<intercept-url pattern="/updatePassword" access="permitAll" />
-		<intercept-url pattern="/updatePassword/*" access="isAnonymous()" />
-
-        <form-login login-page="/" 
-					authentication-failure-url="/jsp/public/index.jsp?login_error=t" 
-					default-target-url="/main"
-					authentication-failure-handler-ref="authFailureHandler"
-					/>
-	
-		<logout invalidate-session="true" 
-			logout-success-url="/jsp/public/loggedOut.jsp" 
-			logout-url="/logout"/>
-
-		<session-management invalid-session-url="/jsp/public/timedOut.jsp" >
-            <concurrency-control max-sessions="1" error-if-maximum-exceeded="true" />
-        </session-management>
+    xmlns:sec="http://www.springframework.org/schema/security"
+    xmlns:beans="http://www.springframework.org/schema/beans"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+ 						http://www.springframework.org/schema/security
+						http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+ 
+    <sec:http auto-config="true" use-expressions="true">
+        <sec:intercept-url pattern="/jsp/public/**" access="permitAll"/>
+        <sec:intercept-url pattern="/javax.faces.resource/**" access="permitAll"/>
+        <sec:intercept-url pattern="/**" access="permitAll"/>
+        <sec:form-login login-page="/jsp/public/test.jsf"
+        authentication-failure-url="/jsp/public/index.jsp?login_error=t"
+		authentication-failure-handler-ref="authFailureHandler"
+        />
+        <sec:logout
+            invalidate-session="true"
+            delete-cookies="JSESSIONID,SPRING_SECURITY_REMEMBER_ME_COOKIE"
+            logout-success-url="/jsp/public/loggedOut.jsp"></sec:logout>
+   
+     
+     
+     <sec:session-management invalid-session-url="/jsp/public/timedOut.jsp" >
+            <sec:concurrency-control max-sessions="1" error-if-maximum-exceeded="true" />
+        </sec:session-management>
         
-        <access-denied-handler error-page="/jsp/public/accessDenied.jsp" />
-        
-    </http>
-    
-    <authentication-manager alias="authenticationManager">
-	        <authentication-provider user-service-ref="saludCoopUserDetailsManager">
-	        		<password-encoder hash="md5"/>
-	        </authentication-provider>
-	</authentication-manager>
-    
-	<beans:bean id="saludCoopUserDetailsManager" class="com.conexia.saludcoop.security.SaludCoopUserDetailsManager"/>
+        <sec:access-denied-handler error-page="/jsp/public/accessDenied.jsp" />
+      </sec:http>
+     <sec:authentication-manager alias="authenticationManager">
+	        <sec:authentication-provider user-service-ref="saludCoopUserDetailsManager">
+	        		<sec:password-encoder hash="md5"/>
+	        </sec:authentication-provider>
+	</sec:authentication-manager>
 	
-	<beans:bean id="authFailureHandler" class="org.springframework.security.web.authentication.ExceptionMappingAuthenticationFailureHandler">
+		<beans:bean id="saludCoopUserDetailsManager" class="com.conexia.saludcoop.security.SaludCoopUserDetailsManager"/>
+     
+     <beans:bean id="authFailureHandler" class="org.springframework.security.web.authentication.ExceptionMappingAuthenticationFailureHandler">
 		<beans:property name="exceptionMappings">
 			<beans:props>
 				<!--    /jsp/public/index.jsp?login_error=t	-->
@@ -61,5 +55,5 @@
 			</beans:props>
 		</beans:property>
 	</beans:bean>
-
+     
 </beans:beans>
