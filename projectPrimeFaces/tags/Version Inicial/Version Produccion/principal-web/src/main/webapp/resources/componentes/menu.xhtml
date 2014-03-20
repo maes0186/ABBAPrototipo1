@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	 xmlns:a4j="http://richfaces.org/a4j"
+	 xmlns:p="http://primefaces.org/ui"
+	 xmlns:composite="http://java.sun.com/jsf/composite">
+<h:head>
+
+	<title>This will not be present in rendered output</title>
+
+</h:head>
+
+<h:body>
+	<composite:interface
+		displayName="Input text field with label, input and message components">
+	</composite:interface>
+	<composite:implementation>
+			<p:panelMenu styleClass="styleMenu" binding="#{menuBeans.menu}"/>
+	</composite:implementation>
+</h:body>
+</html>
