@@ -106,7 +106,7 @@
 
 				<datasource jndi-name="java:jboss/datasources/PostgresDS"
 					pool-name="PostgresDS" enabled="true" use-java-context="true">
-					<connection-url>jdbc:postgresql:base_frame</connection-url>
+					<connection-url>jdbc:postgresql://localhost:5432/baseframe  </connection-url>
 					<driver>postgresql-driver</driver>
 					<security>
 						<user-name>app_frame</user-name>
