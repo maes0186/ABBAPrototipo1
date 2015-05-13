@@ -116,6 +116,7 @@
                <inherited>true</inherited>
                <configuration>
                   <skip>true</skip>
+                
                </configuration>
             </plugin>
          </plugins>
