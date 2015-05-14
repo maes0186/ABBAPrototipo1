@@ -3,10 +3,14 @@ package org.empresa.modelo.administrarpersonas;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import org.empresa.dto.PersonaDTO;
+import org.primefaces.event.SelectEvent;
+import org.primefaces.event.UnselectEvent;
 
 @ManagedBean
 @SessionScoped
@@ -34,5 +38,15 @@ public class AdministrarPersonasModel implements Serializable {
 	public void setPersonaDTO(PersonaDTO personaDTO) {
 		this.personaDTO = personaDTO;
 	}
+	
+	public void onRowSelect(SelectEvent event) {
+        FacesMessage msg = new FacesMessage("Car Selected", ((PersonaDTO) event.getObject()).getNombre1());
+        FacesContext.getCurrentInstance().addMessage(null, msg);
+    }
+ 
+    public void onRowUnselect(UnselectEvent event) {
+        FacesMessage msg = new FacesMessage("Car Unselected", ((PersonaDTO) event.getObject()).getNombre2());
+        FacesContext.getCurrentInstance().addMessage(null, msg);
+    }
 
 }

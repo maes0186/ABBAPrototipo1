@@ -76,6 +76,25 @@ public class AdministrarPersonasController implements Serializable {
 		}
 	}
 
+	public void editarPersona(PersonaDTO personaDTO) {
+		try {
+			if (administrarPersonasFachada
+					.creacionPersona(personaDTO)) {
+				administrarPersonasModel
+				.setTodasPersonas(administrarPersonasFachada
+							.obtenerTodasPersonas());
+				FacesUtil.addMessage(FacesMessage.SEVERITY_INFO,
+						"Persona editada Correctamente");
+			} else {
+				FacesUtil.addMessage(FacesMessage.SEVERITY_ERROR,
+						"No se pudo editar el Persona");
+			}
+		} catch (Throwable e) {
+			LOGGER.log(Level.SEVERE,e.getMessage());
+			FacesUtil.addMessage(FacesMessage.SEVERITY_ERROR,
+					"Error Inesperado" + e.getMessage());
+		}
+	}
 	public AdministrarPersonasFachada getAdministrarPersonasFachada() {
 		return administrarPersonasFachada;
 	}

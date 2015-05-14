@@ -23,6 +23,7 @@ public class AdaptadorPersonas {
 		personaDTO.setApellido2(persona.getApellido2());
 		personaDTO.setNombre1(persona.getNombre1());
 		personaDTO.setNombre2(persona.getNombre2());
+		personaDTO.setId(persona.getId());
 		return personaDTO;
 	}
 
@@ -32,6 +33,7 @@ public class AdaptadorPersonas {
 		persona.setApellido2(personaDTO.getApellido2());
 		persona.setNombre1(personaDTO.getNombre1());
 		persona.setNombre2(personaDTO.getNombre2());
+		persona.setId(personaDTO.getId());
 		return persona;
 	}
 

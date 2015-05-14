@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -22,11 +24,11 @@ public class AdministrarPersonasNegocio implements Serializable {
 	@PersistenceContext
 	EntityManager em;
 	
-	
+	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public boolean creacionPersona(PersonaDTO personaDTO) throws Throwable{
 		try{
 		Persona persona= AdaptadorPersonas.toPersona(personaDTO);
-		em.persist(persona);
+		em.merge(persona);
 		return true;
 		}
 		catch(Throwable tr){

@@ -1,25 +1,123 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:c="http://java.sun.com/jstl/core"
-	xmlns:p="http://primefaces.org/ui" template="/WEB-INF/templates/template.xhtml">
-	<ui:define name="aplicacion">
+	 xmlns:a4j="http://richfaces.org/a4j"
+	 xmlns:p="http://primefaces.org/ui"	>
+<h:head>
 
-			<h:form id="form">
-				<p:inputTextarea rows="3" cols="100" counter="counter"
-					maxlength="150" counterTemplate="{0} characters remaining."
-					required="true" autoResize="false" />
-				<h:outputText value="&lt;br/&gt;" escape="false" />
-				<h:outputText id="counter" />
-				<h:panelGroup id="mensajesParticulares">
-					<p:commandButton value="Press"
-						action="#{testController.procesarMensaje()}"
-						update="form:mensajesParticulares" />
-					<h:outputText id="out" value="#{testModelo.texto}"
-						styleClass="ui-widget display" />
+</h:head>
 
-				</h:panelGroup>
-			</h:form>
-</ui:define>
-</ui:composition>
+<h:form id="form1" >
+			
+		<f:loadBundle basename="propiedades.template" var="template" />
+		<p:growl id="mensajes"/>  
+	<h:head>
+		<title>Java EE 6 Starter Application</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<h:outputStylesheet name="css/screen.css" />
+	</h:head>
+
+	<h:body styleClass="cuerpo" style="background-image: url(#{request.contextPath}/#{template.colorFondo});">
+	<div id="todo">
+			<div>
+	<p:selectOneMenu id="departamentos" value="#{personasDepartamentos.departamentoSeleccionado}">
+            <f:selectItems value="#{personasDepartamentos.departamentos}" />
+            <p:ajax update="departamentos,ciudades"  
+                       	 />  
+        </p:selectOneMenu>
+</div>
+ <p:separator />  
+  <p:separator />  
+  <p:selectOneMenu id="ciudades" value="#{personasDepartamentos.ciudad}">
+            <f:selectItems value="#{personasDepartamentos.ciudades}" />
+   </p:selectOneMenu>
+ <p:separator />  
+  <p:separator />  
+   
+   <p:dataTable id="tabla" var="var"
+				value="#{personasDepartamentos.todasPersonas}" paginator="true"
+				rows="10"
+				>
+				<f:facet name="header">Personas</f:facet>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Nombre1" />
+					</f:facet>
+					<h:outputText value="#{var.nombre1}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Nombre2" />
+					</f:facet>
+					<h:outputText value="#{var.nombre2}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Apellido1" />
+					</f:facet>
+					<h:outputText value="#{var.apellido1}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Apellido2" />
+					</f:facet>
+					<h:outputText value="#{var.apellido2}" />
+				</p:column>
+				
+				<p:column style="width:32px">
+         			 <p:commandButton value="Eliminar"
+				actionListener="#{personasDepartamentos.eliminarPersona(var)}"
+				 />
+      			 </p:column>
+      			 
+      			 	
+      			 <p:column style="width:32px;text-align: center">
+             <p:commandButton update=":form1:detalleId,tabla" oncomplete="dlg2.show();" icon="ui-icon-search" title="View">
+                <f:setPropertyActionListener value="#{var}" target="#{personasDepartamentos.personaeditable}" />
+            </p:commandButton>
+        </p:column>
+      			 
+			</p:dataTable>
+
+
+<p:dialog header="InfoPerosna" widgetVar="dlg2" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+        <p:outputPanel id="detalleId" style="text-align:center;">
+            <p:panelGrid  columns="2" rendered="#{not empty personasDepartamentos.personaeditable}" columnClasses="label,value">
+               <h:inputText value="#{personasDepartamentos.personaeditable.nombre1}" />   
+           		<h:inputText value="#{personasDepartamentos.personaeditable.nombre2}" />  
+           		<h:inputText value="#{personasDepartamentos.personaeditable.apellido1}" />  
+           		<h:inputText value="#{personasDepartamentos.personaeditable.apellido2}" />   
+  
+				
+				<p:commandButton update=":form1:detalleId,tabla" oncomplete="dlg2.hide();" icon="ui-icon-search" title="View"
+				actionListener="#{administrarPersonasController.editarPersona(personasDepartamentos.personaeditable)}"
+				>
+            </p:commandButton>
+            </p:panelGrid>
+        </p:outputPanel>
+    </p:dialog>
+
+
+         
+        
+        
+                
+</div>
+		</h:body>
+	
+</h:form>
+
+</html>
+
+
+
+
+
