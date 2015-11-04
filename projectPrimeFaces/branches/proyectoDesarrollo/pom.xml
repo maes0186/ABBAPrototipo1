@@ -15,9 +15,11 @@
       <module>principal-ear</module>
     
   </modules>
+  
 
    <properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <glassfish.directory>D:/Programas_Configuracion/glassfish-3.1.2.2/glassfish3</glassfish.directory>
    </properties>
 
    <dependencyManagement>
@@ -86,6 +88,12 @@
             <scope>test</scope>
          </dependency>
          
+         <dependency>
+	<groupId>com.lowagie</groupId>
+	<artifactId>itext</artifactId>
+	<version>2.1.7</version>
+</dependency>
+         
         
 
       </dependencies>
@@ -109,16 +117,58 @@
             <!-- Due to Maven's lack of intelligence with EARs we need to 
                configure the jboss-as maven plugin to skip deployment for all modules. We 
                then enable it specifically in the ear module. -->
-            <plugin>
-               <groupId>org.jboss.as.plugins</groupId>
-               <artifactId>jboss-as-maven-plugin</artifactId>
-               <version>7.1.1.Final</version>
-               <inherited>true</inherited>
-               <configuration>
-                  <skip>true</skip>
+<!--             <plugin> -->
+<!--                <groupId>org.jboss.as.plugins</groupId> -->
+<!--                <artifactId>jboss-as-maven-plugin</artifactId> -->
+<!--                <version>7.1.1.Final</version> -->
+<!--                <inherited>true</inherited> -->
+<!--                <configuration> -->
+<!--                   <skip>true</skip> -->
                 
-               </configuration>
+<!--                </configuration> -->
+<!--             </plugin> -->
+
+				<plugin>
+                <groupId>org.glassfish.maven.plugin</groupId>
+                <artifactId>maven-glassfish-plugin</artifactId>
+                <version>2.1</version>
+                <executions>
+                    <execution>
+                        <id>gf-undeploy</id>
+                        <goals>
+                            <goal>undeploy</goal>
+                        </goals>
+                        <phase>clean</phase>
+                    </execution>
+                    <execution>
+                        <id>gf-deploy</id>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                        <phase>package</phase>
+                    </execution>
+                </executions>
+                <configuration>
+                    <user>admin</user>
+                    <glassfishDirectory>${glassfish.directory}</glassfishDirectory>
+                    <domainDirectory>${glassfish.directory}/glassfish/domains/</domainDirectory>
+                    <passwordFile>${glassfish.directory}/glassfish/domains/domain1/config/domain-passwords</passwordFile>
+                    <domain>
+                        <name>domain1</name>
+                        <adminPort>4848</adminPort>
+                        <httpPort>8081</httpPort>
+                        <httpsPort>8443</httpsPort>
+                    </domain>
+                    <components>
+                        <component>
+                            <name>principal</name>
+                            <artifact>principal-ear/target/principal.ear</artifact>
+                        </component>
+                    </components>
+                     <skip>true</skip>
+                </configuration>
             </plugin>
+
          </plugins>
       </pluginManagement>
    </build>
