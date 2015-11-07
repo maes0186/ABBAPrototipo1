@@ -18,8 +18,9 @@ import org.empresa.util.FacesUtil;
  * @author Mario
  * 
  */
-@ManagedBean
+@ManagedBean(name="menuBeans")
 @SessionScoped
+
 public class MenuBeans implements Serializable {
 
 
