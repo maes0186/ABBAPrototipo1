@@ -11,7 +11,7 @@
 			listener="#{administrarPersonasController.init}" />
 		<h:panelGroup id="listPersonas">
 			<p:menubar>
-<p:submenu label="Acciones" icon="ui-icon-pencil">  
+		<p:submenu label="Acciones" icon="ui-icon-pencil">  
             <p:menuitem value="Nuevo" url="#" icon="ui-icon-arrowreturnthick-1-w" />  
             <p:menuitem value="Editar" url="#" icon="ui-icon-arrowreturnthick-1-e" />  
         </p:submenu>
@@ -46,9 +46,8 @@
 					</p:megaMenu>
 				</f:facet>
 			</p:menubar>
-			
 			 <p:separator />  
-			<p:dataTable id="tabla" var="var"
+			<p:dataTable id="tabla" var="var" styleClass="pretty-table"
 				value="#{administrarPersonasModel.todasPersonas}" paginator="true"
 				rows="10"
 				paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
@@ -90,7 +89,7 @@
 			<h:inputText value="#{administrarPersonasModel.personaDTO.apellido2}"></h:inputText>
 			<p:commandButton value="Guardar"
 				actionListener="#{administrarPersonasController.guardarPersona()}"
-				update="mensajes,criteriapersona" />
+				update="mensajes,listPersonas" />
 		</h:panelGroup>
 
 	</ui:define>
